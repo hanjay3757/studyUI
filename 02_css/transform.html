@@ -36,12 +36,25 @@ body{
         transform:translate(-50%,50%) rotate(45deg);
     }
 }
+.box{
+    width:200px;
+    height:150px;
+    background:green;
+    transition: 0.5s;
+}
+/* hover = 가상의 동작  */
+.box:hover{
+    transform: scale(0.9);
+
+}
     </style>
 </head>
 <body>
     <div class="login-wrap">
         <p class="tooltip">
-        <img src="./images/lighting.svg" alt="번개">3초만에 빠른 가입
+        <img src="./images/lighting.svg" alt="번개"><span>3초만에 빠른 가입</span>
     </p></div>
+
+    <div class="box"></div>
 </body>
 </html>
