@@ -1,0 +1,150 @@
+body {
+  background: #151515;
+}
+/* header */
+header {
+  padding: 0 2.5vw;
+  /* vw= view port 화면의 2.5% */
+}
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+.header-wrap > div {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.header-wrap > div ul {
+  display: flex;
+  gap: 50px;
+}
+.header-wrap > div ul > li > a {
+  color: white;
+  text-transform: uppercase;
+}
+.header-wrap > .header-wrap-right .ham-btn > a {
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: rgb(255, 196, 0) url(./images/iconmonstr-menu-lined.svg) no-repeat
+    center center;
+  background-size: 40px;
+  /* 글자 보이는거 안보이게끔 왼쪽 화면 멀리 버리기 */
+  text-indent: -9999px;
+}
+
+.login-wrap {
+  display: flex;
+  justify-content: center;
+  height: calc(100vh- 80px);
+}
+/* main */
+.login-container {
+  padding: 50px;
+}
+.login-member {
+  /* 전체 100% 왼쪽 400px */
+  /* width:calc(100% -400px); */
+  width: 910px;
+  font-size: 0.88em;
+}
+.login-member-wrap {
+  display: flex;
+}
+.login-member-wrap > div {
+  flex: 1;
+  padding: 50px;
+  /* 비율 1:1 */
+}
+.login-member-wrap > .login {
+  background: #d6d6d6;
+}
+.login-member-wrap > .member {
+  background: #ffd800;
+}
+.login-member-wrap > div p {
+  margin: 20px 0 10px;
+}
+.login-member-wrap > div button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  background: #151515;
+  color: white;
+}
+/* .login-member-wrap>.login .memberlogin form>p{
+
+}
+.login-member-wrap>.login form>p label{
+
+}
+.login-member-wrap>.login form> p input{
+
+} */
+/* 한칸 띈거 = 빈칸 , 꺽세있으면 위에꺼랑 똑같음음 */
+.login-member-wrap {
+  > .login {
+    form {
+      p {
+        position: relative;
+        left: 10px;
+        transform: translateY(-50%);
+        /*ㄴ 변형 명렁어 절반으로 줄면서 정확히 가운데로로 */
+        label {
+          position: absolute;
+          top: 50%;
+          left: 10px;
+        }
+
+        input {
+          width: 100%;
+          line-height: 40px;
+          border: none;
+        }
+      }
+      .login-check {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+/* footer */
+footer {
+  color: #888;
+  background: #151515;
+
+  > div {
+    > div {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: rgba(255, 0, 0, 0.1);
+
+      .topBtn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateY(-50%);
+      }
+    }
+    .footer-menu {   display:flex;
+      justify-content:center;
+      gap:51px;
+      li {
+
+        a {
+        
+          color:#888;
+          text-transform: uppercase;
+       
+        
+        }
+      }
+    }
+  }
+}

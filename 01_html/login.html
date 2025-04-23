@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내셔널 로그인</title>
+    <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+    <!-- header logo,menu,gnb -->
+    <header>
+        <div class="header-wrap">
+            <div class="header-wrap-left">
+                <h1 class="logo"><a href="#"><img src="./images/logo-big.jpg" alt="내셔널 로고"></a></h1>
+                <nav>
+                    <!-- ul.nav>li*6>a[href="#"] -->
+                    <ul class="nav">
+                        <li><a href="#">channel</a></li>
+                        <li><a href="#">magazines</a></li>
+                        <li><a href="#">video</a></li>
+                        <li><a href="#">news</a></li>
+                        <li><a href="#">store</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-wrap-right">
+                <ul class="header-login">
+                    <li><a href="#">login</a></li>
+                    <li><a href="#">sign up</a></li>
+                </ul>
+                <p class="ham-btn"><a href="#">햄버거버튼</a></p>
+            </div>
+        </div>
+    </header>
+    <!-- 본문내용 -->
+    <main>
+        <section class="login-wrap">            
+            <div class="login-member">
+                <h2 class="title">로그인</h2>
+                <div class="login-member-wrap">
+                    <div class="login">
+                        <h3>회원 로그인</h3>
+                        <p>가입하신 아이디와 비밀번호를 입력해주세요<br>
+                        비밀번호는 대소문자를 구분합니다</p>
+                        <form name="memberLogin">
+                            <p><label for="memberId">member id</label>
+                                <input type="text" id="memberId" name="memberId"></p>
+                            <p><label for="memberPass">password</label>
+                                <input type="text" id="memberPass" name="memberPass">
+                            </p>
+                            <div class="login-check">
+                                <label><input type="checkbox" name="idSave"> 아이디 저장</label>
+                                <label><input type="checkbox" name="autoLogin"> 자동 로그인</label>
+                            </div>
+                            <button class="loginBtn">log-in</button>
+                        </form>
+                    </div>
+                    <div class="member">
+                        <h3>회원가입</h3>
+                        <div>
+                            <p>아직 회원이 아니신가요?<br>
+                            회원가입을 하시면 다양한 헤택을 편리하게 이용하실수 있습니다</p>
+                            <button class="memberBtn">join-us</button>
+                        </div>
+                        <div>
+                            <p>아이디 혹은 비밀번호를 잊으셨나요?<br>
+                            간단한 정보를 입력 후 잃어버린 정보를 찾으실 수 있습니다</p>
+                            <button class="memberBtn">id/password</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 하단로고, 주소줄, 하단메뉴 -->
+    <footer>
+        <div class="footer-top">
+            <div class="content-center">
+                <p class="topBtn"><a href="#"><img src="./images/btn-top.png" alt="상단으로 가는 버튼"></a></p>
+                <ul class="footer-menu">
+                    <li><a href="#">channel</a></li>
+                    <li><a href="#">magazines</a></li>
+                    <li><a href="#">video</a></li>
+                    <li><a href="#">news</a></li>
+                    <li><a href="#">store</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="content-center">
+                <p class="footer-logo"><img src="./images/logo-big.jpg" alt="하단 내셔널 로고"></p>
+                <div class="footer-contact">
+                    <div class="contact-wrap">
+                        <h2 class="content-title">contact us</h2>
+                        <div class="contact-contents">
+                            <div>
+                                <strong>의류</strong>
+                                <p>02.1588.2906</p>
+                            </div>
+                            <div>
+                                <strong>매거진</strong>
+                                <p>02.2004.8800</p>
+                            </div>
+                            <div>
+                                <strong>트래블러 매거진</strong>
+                                <p>02.763.8600</p>
+                            </div>
+                            <div>
+                                <strong>방송</strong>
+                                <p>02.3490.2742</p>
+                            </div>
+                            <div>
+                                <strong>모바일 액세서리</strong>
+                                <p>080.643.12345</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copy-wrap">
+                        <p class="copy">copyright</p>
+                        <ul class="personal-menu">
+                            <li><a href="#">개인정보처리방침[업데이트]</a></li>
+                            <li><a href="#">이용약관</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
