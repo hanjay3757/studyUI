@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body{
+    background:#ddd;
+    }
+.login-wrap{
+    max-width:500px;
+    width:300;
+    background:white;
+    margin:0 auto;
+    padding: max(2vw,20px);
+    border-radius:30px;
+    .tooltip{
+        background:#444c83;
+        color: white;
+        font-size: 0.88rem;
+        border-radius:10px;
+        display:flex;
+        padding:10px;
+        position: relative;
+    }
+    .tooltip:after{
+        content:"";
+        display:block;
+        width:20px;
+        height: 20px;
+        background: #444c83;
+        position:absolute;
+        bottom:0;
+        left:50%;
+        transform:translate(-50%,50%) rotate(45deg);
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="login-wrap">
+        <p class="tooltip">
+        <img src="./images/lighting.svg" alt="번개">3초만에 빠른 가입
+    </p></div>
+</body>
+</html>
