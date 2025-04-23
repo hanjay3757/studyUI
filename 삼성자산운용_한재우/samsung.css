@@ -7,39 +7,28 @@ body {
 }
 
 header {
-  padding: 0 0.25vw;
-  position: sticky;
-  top: 0;
-  background: #fff;
-  z-index: 100;
-  width: 100%;
+  height: 135px;
+  padding: 0 85vw;
 }
 
 .header-wrap {
+  height: 65px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 65px;
-  max-width: 1920px;
-  margin: 0 auto;
-  padding: 0 40px;
 }
 
 .header-wrap-left {
   display: flex;
-  align-items: center;
-  gap: 40px;
 }
 
 .header-wrap > div {
   display: flex;
   align-items: center;
-  gap: 40px;
 }
 
 .header-wrap > div ul {
   display: flex;
-  gap: 15px;
   flex-wrap: nowrap;
 }
 
@@ -57,6 +46,7 @@ header {
 
 .logo img {
   display: flex;
+  margin-left: 100px;
   height: 40px;
   align-items: center;
 }
@@ -126,13 +116,14 @@ header {
 .header-wrap-right {
   display: flex;
   align-items: center;
-  gap: 15px;
+  margin-right: 150px;
 }
 
 .header-login {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .header-login li a {
@@ -162,7 +153,7 @@ header {
 /* member 버튼 */
 .header-login li:nth-child(3) a {
   background: url(./login_samsung/member.svg) no-repeat center center;
-  width: 80px;
+  width: 30px;
   height: 100px;
   background-size: 50px;
   text-indent: -99999px;
@@ -182,13 +173,13 @@ header {
 
 .ham-btn {
   display: block;
-  margin-left: 10px;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 40px;
   background: url(./login_samsung/hambuger.svg) no-repeat center center;
   background-size: 50px;
   text-indent: -9999px;
   flex-shrink: 0;
+
 }
 
 /* main */
@@ -397,7 +388,7 @@ main {
         margin: 0 auto; */
   display: flex;
   /* justify-content: space-between; */
-  gap: 360px;
+  gap: 370px;
   margin-left: 230px;
   flex-direction: row;
 }
