@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.grid-wrap{
+        background: antiquewhite;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    >div{
+            background: dodgerblue;
+            border:1px solid #fff;
+            padding: 20px;
+            font-size: 2em;
+            text-align: center;
+        }
+
+    }
+    @media screen and (max-width:1000px) {
+        .grid1 {
+            grid-area:1/1/2/4;
+        }
+        .grid2{
+            grid-area:3/3/4/4;
+        }
+        .grid4{
+            grid-area:2/2/4/3;
+        }
+        .grid5{
+            /* 시작열/시작행/끝열/끝행 */
+            grid-area:3/1/4/2;
+        }
+    }
+
+
+</style>
+
+<body>
+    <div class="grid-wrap">
+        <div class="grid1">1</div>
+        <div class="grid2">2</div>
+        <div class="grid3">3</div>
+        <div class="grid4">4</div>
+        <div class="grid5">5</div>
+        <div class="grid6">6</div>
+    </div>
+</body>
+
+</html>
