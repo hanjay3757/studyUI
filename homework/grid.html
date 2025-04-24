@@ -24,6 +24,39 @@
                 grid-row: 1/4;
             }
         }
+
+        .grid-test {
+            background: black;
+            display: grid;
+
+            grid-template-columns:repeat(3, 1fr);
+            >div {
+                background: purple;
+                border: 1px solid #000;
+                color: white;
+            }
+            .grid-test3{
+                grid-column: 3;
+                grid-row:1/3;
+            }
+
+        }
+.grid-pre{
+    background:gray;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:5px;
+    >div{
+background:blue;
+border: 1px solid #000;
+    }
+    .grid-pre2{
+
+        grid-row:1/4;
+        grid-column:2/3;
+    }
+}
+
     </style>
 </head>
 
@@ -35,6 +68,30 @@
         <div class="grid4">4</div>
         <div class="grid5">5</div>
     </div>
+
+    <div class="grid-test">
+        <div class="grid-test1">1</div>
+        <div class="grid-test2">2</div>
+        <div class="grid-test3">3</div>
+        <div class="grid-test4">4</div>
+        <div class="grid-test5">5</div>
+        <div class="grid-test6">6</div>
+    </div>
+<div class="grid-pre">
+    <div class="grid-pre1">1</div>
+    <div class="grid-pre2">2</div>
+    <div class="grid-pre3">3</div>
+    <div class="grid-pre4">4</div>
+    <div class="grid-pre5">5</div>
+    <div class="grid-pre6">6</div>
+    <div class="grid-pre7">7</div>
+    <div class="grid-pre8">8</div>
+    <div class="grid-pre9">9</div>
+    <div class="grid-pre10">10</div>
+</div>
+
+
+
 </body>
 
 </html>
