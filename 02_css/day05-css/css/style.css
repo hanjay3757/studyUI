@@ -33,7 +33,6 @@ header {
         justify-content: space-between;
         align-items: center;
         height: 8rem;
-        background:white;
 
         #mainNav {
             >ul {
@@ -123,7 +122,7 @@ header {
                             transform: translate(-50%,-50%);                         
                             background-image: url(../images/icon_line_w.svg);
                             background-repeat: no-repeat;
-                            background-position: 40% -19.2rem;
+                            background-position: 40% -24rem;
                             background-size:1100% auto;
                         }
 
