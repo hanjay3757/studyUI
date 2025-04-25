@@ -1,0 +1,16 @@
+:root{
+    --ibk-main-color: #0055a2;
+    /* --ibk-main-text-color: #0075a3; */
+    --ibk-text-color: #0d020f;
+    --secondary-color: #72808e;
+    --border-radius: 4rem;
+    /* calc(16*3.2)px; */
+}
+/* body */
+body{
+    line-height:3rem;
+    color: var(--ibk-text-color);
+}
+/* header */
+/* main */
+/* footer */
