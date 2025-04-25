@@ -27,13 +27,11 @@ html {
 
 /* header */
 header {
-    box-shadow:0 0 2rem 0 rgba(13, 14, 15, 0.14);
     .content-center {
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 8rem;
-        background:white;
 
         #mainNav {
             >ul {
@@ -71,7 +69,6 @@ header {
 
         .gnb-list {
             display: flex;
-            gap:10px;
 
             li {
                 a {
@@ -123,8 +120,6 @@ header {
                             transform: translate(-50%,-50%);                         
                             background-image: url(../images/icon_line_w.svg);
                             background-repeat: no-repeat;
-                            background-position: 40% -19.2rem;
-                            background-size:1100% auto;
                         }
 
                     }
