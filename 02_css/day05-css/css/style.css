@@ -197,13 +197,39 @@ header {
           border-radius: 0 3.5rem 0 0;
           bottom: 0;
           left: 0;
-          display:flex;
+          display: flex;
           width: 60%;
           height: 7rem;
-          ul{
-            display:flex;
+          justify-content: space-between;
+          align-items: center;
+          .bar-wrap {
+            width: 12rem;
+            height: 0.4rem;
+            border-radius: 2rem;
+            background: var(--ibk-secondary-color);
+            .progress-bar {
+              display: block;
+              width: 10px;
+              height: inherit;
+              background: #0d020f;
+            }
+          }
+          ul {
+            display: flex;
           }
         }
+.control-btn-wrap::before{
+content:"";
+display: block;
+width: 100px;
+height: 7.2rem;
+background: url(../images/deco_banner.svg);
+position: absolute;
+right:-4rem;
+bottom:-0.2rem;
+background-size: 100%;
+}
+    
       }
     }
     .cm-top-right {
