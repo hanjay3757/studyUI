@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보 게임</title>
+</head>
+
+<body>
+    <h1>가위 바위 보 게임</h1>
+    <div class="game-wrap">
+        <section>
+            <h2>당신이 낼 것을 선택하세요</h2>
+            <button onclick="play('가위')">✌</button>
+            <button onclick="play('바위')">👊</button>
+            <button onclick="play('보')">🖐</button>
+        </section>
+        <div class="result"></div> <!-- 클래스 이름 고쳤어 -->
+
+        <script>
+            function play(userChoice) {
+                console.log(userChoice);
+                // 컴퓨터의 선택
+                const comCh = ['가위', '바위', '보'];
+                const comChoice = comCh[Math.floor(Math.random() * 3)];
+
+                let result = '';
+                if (userChoice === comChoice) {
+                    result = '비겼다';
+                } else if (
+                    (userChoice === '가위' && comChoice === '보') ||
+                    (userChoice === '바위' && comChoice === '가위') ||
+                    (userChoice === '보' && comChoice === '바위')
+                ) {
+                    result = '승리';
+                } else {
+                    result = '패배';
+                }
+
+                document.querySelector(".result").innerHTML = `당신 : ${userChoice}<br>
+                컴퓨터 : ${comChoice}<br>
+                <strong>${result}</strong>`;
+            }
+        </script>
+    </div>
+</body>
+
+</html>

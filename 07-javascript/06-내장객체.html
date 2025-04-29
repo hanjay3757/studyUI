@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+// 1.data 객체
+let today = new Date();
+console.log(today);
+
+let year=today.getFullYear();
+console.log(year);
+
+let month= today.getMonth();
+console.log(month+1); 
+// 프로그램은 0부터 시작이라 1월은 프로그램에서는 0달로 표시
+let theDay = today.getDate();
+
+
+// 0: 일 1:월
+let day = today.getDay();
+switch (day) {
+  case 0:
+    console.log("오늘은 일요일입니다.");
+    break;
+  case 1:
+    console.log("오늘은 월요일입니다.");
+    break;
+  case 2:
+    console.log("오늘은 화요일입니다.");
+    break;
+  case 3:
+    console.log("오늘은 수요일입니다.");
+    break;
+  case 4:
+    console.log("오늘은 목요일입니다.");
+    break;
+  case 5:
+    console.log("오늘은 금요일입니다.");
+    break;
+  case 6:
+    console.log("오늘은 토요일입니다.");
+    break;
+  default:
+    console.log("잘못된 날짜입니다.");
+}
+console.log(day); 
+
+// getHours(); 0~23
+// 시간
+
+// getMinutes()
+ </script>
+</head>
+<body>
+    
+</body>
+</html>
