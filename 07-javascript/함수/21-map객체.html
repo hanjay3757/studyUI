@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const data = [
+            { id: 0, name: "홍길동", age: 18 },
+            { id: 1, name: "홍척동", age: 8 },
+            { id: 2, name: "돌쇠", age: 5 },
+            { id: 3, name: "임꺽정", age: 2 },
+            { id: 4, name: "영감", age: 70 }
+        ]
+        data.map((item, id) => {
+            if (id % 2 == 0) {
+                console.log(item);
+            }
+        })
+        const keyObject = [
+            { key: 0, value: 18 },
+            { key: 1, value: 8 },
+            { key: 2, value: 5 },
+            { key: 3, value: 2 },
+            { key: 4, value: 70 }
+        ]
+        let reKeyObject =keyObject.map(({key,value})=>({[key]:value}))
+        document.write(reKeyObject)
+        console.log(reKeyObject);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

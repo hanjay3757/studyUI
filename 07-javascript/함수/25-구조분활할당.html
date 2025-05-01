@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        // 배열
+        const colors = ["red","green","blue"];
+// first = colors[0];
+// second = colors[1];
+// third = colors[2];
+// 구조분해 할당
+const [first,second,third] =colors;
+console.log(first);
+console.log(second);
+console.log(third);
+
+
+// 받고자하는 변수가 적거나 많으면
+let store = ["과일","음료수","라면","떡복이","햄"];
+// 첫번째 과일은 fruit변수에 나머지는 food 변수에
+let [fruit,...food] = store;
+console.log(fruit,food);
+// 첫번째 fruit 두번째는 drink 세번째 네번째는 건너뛰고 마지막은 ham
+let [fruits,drink,,,ham]= store;
+console.log(fruits,drink,ham);
+
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
