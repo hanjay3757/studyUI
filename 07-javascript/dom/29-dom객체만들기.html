@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.방법 domcontentloaded
+        document.addEventListener("DOMContentLoaded", () => {
+            // 태그생성
+            let hTitle = document.createElement("h1");
+            // 내용물 생성하기
+            let hText = document.createTextNode("Dom 객체");
+            // h1 태그 속에 htext 내용물 넣기
+            hTitle.appendChild(hText);
+            // body 속에 붙이기
+            document.body.appendChild(hTitle);
+            // head 태그 안에 있을때 안되는 이유 프로그래밍은 위에서 아래로 그리고 body가 어딘지 모름
+            //    dom content load =  html 읽었을때만
+            // 다음에 2번 
+        })
+    </script>
+</head>
+
+<body>
+
+
+
+
+
+</body>
+
+</html>
