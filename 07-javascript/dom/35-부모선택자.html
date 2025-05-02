@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="wrap">여기는 부모영역
+
+        <p>자식영역</p>
+    </div>
+    <script>
+        let parent = document.querySelector("p").parentNode; // 부모영역 선택
+        parent.style["text-decoration"] = "underline"; // 부모영역 배경색 변경
+        console.log(parent); // 부모영역 확인
+
+    </script>
+    <style>
+.wrap {
+        background: lightgray;
+        padding: 20px;
+    }
+    p {
+        background: lightgreen;
+        padding: 10px;
+    }
+
+    </style>
+</body>
+</html>
