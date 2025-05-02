@@ -26,6 +26,8 @@ li {
     height: inherit;
     opacity: 0;
     z-index: 0;
+    transform:rotateY(180deg);
+    transition:0.5s;
 }
 
 .main-slider>.slider1 {
@@ -43,7 +45,7 @@ li {
 .main-slider>.active {
     opacity: 1;
     z-index: 100;
-    transition: all 1s ease-in-out;
+    transform:rotateY(0);
 }
 
 .pager {
