@@ -56,9 +56,9 @@ li {
     gap: 10px;
 }
 
-.pager > li {
+/* .pager > li {
     
-}
+} */
 
 .pager > li > button {
     border: none;

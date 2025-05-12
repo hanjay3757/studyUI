@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //localstorage 에 저장할 데이터 객체
+        const obj = {
+            name: 'John',
+            age: 30,
+            gender: true
+        }
+        //배열
+        const num = [1, 2, 3];
+
+        //객체 (obj), 배열을 저장하기 위해서는 json 문자열로 변환
+        const objString = JSON.stringify(obj);
+        const numString = JSON.stringify(num);
+
+        // setItem() 메서드로 localStorage에 저장
+        window.localStorage.setItem("person", objString);
+        window.localStorage.setItem("num", numString);
+
+        // getItem() 메서드로 localStorage에서 가져오기
+        const obj1 = window.localStorage.getItem("person");
+        console.log(obj1); // {"name":"John","age
+
+        // JSON.parse() 메서드로 문자열을 객체(obj)로 변환
+        const JSONobj1 = JSON.parse(obj1);
+        console.log(JSONobj1); // {"name":"John","age
+
+    </script>
+
+</body>
+
+</html>

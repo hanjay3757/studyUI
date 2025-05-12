@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Fixing the typo here to 'localStorage'
+        window.localStorage.setItem("name", "JohnDo");
+        window.localStorage.setItem("age", "20");
+        window.localStorage.setItem("hobby", "잠자기");
+        window.localStorage.setItem("tel", "010-1234-5678");
+        window.localStorage.setItem("email", "JohnDo@gmail.com");
+        window.localStorage.setItem("address", "서울시 강남구");
+
+        // Retrieving the keys from localStorage
+        // const key1 = window.localStorage.key(0);
+        // const key2 = window.localStorage.key(1);
+
+        // // Corrected the log statement to print both keys
+        // console.log(key1, key2); // Should log 'name' and 'age'
+        // 저장된 데이터와 모든 메서드 와 속성이 같이 출력
+        // for (const key in window.localStorage) {
+        //     const value = window.localStorage.getItem(key);
+        //     console.log(`${key}, ${value} <br>`); // Should log all keys and their values
+        // }
+
+        //저장된 데이터만 받아오기
+        // key 목록을 조회해서 출력
+        const keys = Object.keys(window.localStorage);
+        for (const key of keys) {
+            const value = window.localStorage.getItem(key);
+            document.write(`${key}, ${value} <br>`); // Should log all keys and their values
+        }
+        //  = for (let i = 0; i < keys.length; i++) {
+        //     const key = keys[i];
+        //     const value = window.localStorage.getItem(key);
+        //     console.log(`${key}, ${value} <br>`); // Should log all keys and their values
+        // }
+    </script>
+</body>
+
+</html>

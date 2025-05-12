@@ -1,0 +1,11 @@
+header h1 {
+  background: #ccc;
+  fint-size: 50px;
+  color: #333;
+  text-decoration: overline;
+}
+header .nav li a {
+  fint-size: 18px;
+  color: #111;
+  text-decoration: underline;
+}/*# sourceMappingURL=mixin.css.map */
