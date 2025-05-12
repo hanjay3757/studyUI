@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const user = {
+            name: "홍길동",
+            age: 25,
+            city: "seoul"
+        }
+        //  const name = user.name;
+        const { name, age, city, job = "프리랜서" } = user;
+        console.log(name, age, city, job)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
