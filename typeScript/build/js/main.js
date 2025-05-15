@@ -1,33 +1,31 @@
 "use strict";
 //number
 let number;
-let ingteger = 6;
-let float = 1.234;
+let integer = 6;
+let float = 1.2345;
 //string
 let string;
 let firstName = "홍길동";
 //boolean
 let boolean;
 let check = false;
-//array
-//한가지
-//여러재
-//문자열
-let fruits = ["사과", "바나나", "오렌지"];
-let names = ["홍길동", "이순신", "강감찬"];
+//배열
+//한가지 타입
+//문자
+let fruits = ["사과", "포도"];
+let names = ["홍길동", "김철수"];
 //숫자
-let num = [1, 2, 3, 4, 5];
-let num2 = [10, 20, 30, 40, 50];
-//여러개 들어가는 배열 union
-let ar1 = ["짱구", 1, 2];
-let ar2 = ["맹구", 5, 8];
+let num = [1, 2, 3, 4];
+let num2 = [10, 20, 30];
+//여러가지 타입을 가지는 배열(유니언 타입)
+let arr1 = ["짱구", 1, 2];
+let arr2 = ["홍길동", 20, 40];
 const user = {
     name: "홍길동",
-    age: 20,
-    gender: "남자",
-    isMarried: false,
+    age: 18,
+    gender: true
 };
-const dog1 = {
-    name: "멍멍이",
-    honey: true,
+const bear1 = {
+    name: "벌",
+    honey: true
 };

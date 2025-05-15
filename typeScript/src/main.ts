@@ -1,7 +1,7 @@
 //number
 let number: number;
-let ingteger: number = 6;
-let float: number = 1.234;
+let integer: number = 6;
+let float: number = 1.2345;
 
 //string
 let string: string;
@@ -11,43 +11,44 @@ let firstName: string = "홍길동";
 let boolean: boolean;
 let check: boolean = false;
 
-//array
+//배열
+//한가지 타입
+//문자
+let fruits: string[] = ["사과", "포도"];
+let names: Array<string> = ["홍길동", "김철수"];
 
-//한가지
-//여러재
-//문자열
-let fruits: string[] = ["사과", "바나나", "오렌지"];
-let names: Array<string> = ["홍길동", "이순신", "강감찬"];
 //숫자
-let num: number[] = [1, 2, 3, 4, 5];
-let num2: Array<number> = [10, 20, 30, 40, 50];
+let num: number[] = [1, 2, 3, 4];
+let num2: Array<number> = [10, 20, 30];
 
-//여러개 들어가는 배열 union
-let ar1: (string | number)[] = ["짱구", 1, 2];
-let ar2: Array<string | number> = ["맹구", 5, 8];
+//여러가지 타입을 가지는 배열(유니언 타입)
+let arr1: (string | number)[] = ["짱구", 1, 2];
+let arr2: Array<string | number> = ["홍길동", 20, 40];
 
 //interface
 interface Person {
-  name: string;
-  age: number;
-  gender: string;
-  isMarried: boolean;
+    name: string;
+    age: number;
+    gender: boolean
 }
-const user = {
-  name: "홍길동",
-  age: 20,
-  gender: "남자",
-  isMarried: false,
-};
+const user: Person = {
+    name: "홍길동",
+    age: 18,
+    gender: true
+}
 
-//상속
-interface animal {
-  name: string;
+
+// 확장
+interface Animal {
+    name: string
 }
-interface dog extends animal {
-  honey: boolean;
+
+interface Bear extends Animal {
+    honey: boolean
 }
-const dog1: dog = {
-  name: "멍멍이",
-  honey: true,
-};
+
+const bear1: Bear = {
+    name: "벌",
+    honey: true
+}
+

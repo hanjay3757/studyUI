@@ -1,0 +1,67 @@
+.movie-wrap{
+    max-width: 1600px;
+    margin: 0 auto;
+}
+.genreButtons{
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+    margin: 30px 0;
+
+    button{
+        border:2px solid #0037ff;
+        background: white;
+        border-radius: 30px;
+        padding:8px 30px;
+        /* margin: 5px 0; */
+
+        &.active{
+            background:#0037ff;
+            color:white;
+        }
+    }
+}
+.movie-wrap input{
+    line-height: 2;
+    padding: 0 10px;
+}
+.movie-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    li{
+        width: calc(25% - 30px);
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        transition: 0.5s;
+
+        &:hover{
+            transform: scale(1.05);
+        }
+        .posterImg{
+            flex:1;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        img{
+            width: 100%;
+            height:100%;
+            object-fit: cover;
+        }
+        .title{
+            display: flex;
+            justify-content: space-between;
+            strong{
+                display: block;
+                font-size:2rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width:80%;
+            }
+            span{}
+        }
+    }
+}
