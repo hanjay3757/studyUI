@@ -1,0 +1,75 @@
+/* 선택자 여백 제거 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* a 밑줄 제거 */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* li 앞 장식 제거 */
+menu,
+ol,
+ul {
+  list-style: none;
+}
+/* img, video 정렬 과 크기 */
+img,
+video {
+  vertical-align: middle;
+  max-width: 100%;
+}
+/* input, button,text area, select 의 폰트는 부모에게 상속 */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* input:focus 테두리 제거 */
+input:focus {
+  outline: none;
+}
+/* table 테두리 2개 나오는데 그걸 한개로 변환 */
+table {
+  border-collapse: collapse;
+}
+/* .blind처리 */
+.blind {
+  position: absolute;
+  top: -999999px;
+}
+
+/* .skip 공통 */
+.skip-menu a {
+  display: block;
+  position: absolute;
+  top: -99999px;
+  line-height: 50px;
+  width: 100%;
+  color: white;
+  background: #0099da;
+  text-align: center;
+}
+.skip-menu a:focus {
+  top: 0;
+  outline: none;
+}
+address,
+i,
+em {
+  font-style: normal;
+}
+button {
+/* 버튼도 커서 갖다되면 손모양이 나오게 */
+    cursor: pointer;
+}
+/* body 폰트 기본글씨체  */
+body{
+    font-family: 'pretendard', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.032rem;
+}
