@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>자연스러운 버튼 퍼짐</title>
+    <style>
+        body {
+            background: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        .menu-container {
+            position: relative;
+            width: 300px;
+            height: 200px;
+        }
+
+        /* 중앙 버튼 */
+        .main-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 12px 24px;
+            font-size: 16px;
+            background: #e02222;
+            color: white;
+            border: none;
+            border-radius: 80px;
+            cursor: pointer;
+            z-index: 2;
+            /* 항상 위에 있도록 설정 */
+        }
+
+        /* 원형 버튼 기본 상태: 중앙에 겹쳐 있음 */
+        .circle-button {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: #333;
+            color: #f44336;
+            font-weight: bold;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            opacity: 0;
+            pointer-events: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.3) rotate(-45deg);
+            transition: all 0.4s ease-out;
+            z-index: 1;
+        }
+
+        /* 퍼질 때 이동 (좌측 위로) */
+        .menu-container.open .circle-left {
+            transform: translate(-8px, -90px) scale(1) rotate(0deg);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* 퍼질 때 이동 (우측 위로) */
+        .menu-container.open .circle-right {
+            transform: translate(48px, -50px) scale(1) rotate(0deg);
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menu-container">
+        <!-- 원형 버튼들 먼저 놓고 -->
+        <div class="circle-button circle-left">↺</div>
+        <div class="circle-button circle-right">↻</div>
+
+        <!-- 메인 버튼이 위에 -->
+        <button class="main-button">Click</button>
+    </div>
+
+    <script>
+        const container = document.querySelector('.menu-container');
+        const button = document.querySelector('.main-button');
+
+        button.addEventListener('click', () => {
+            container.classList.toggle('open');
+        });
+    </script>
+
+</body>
+
+</html>
