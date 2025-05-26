@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid1 {
+            grid-area: header;
+        }
+
+        .grid2 {
+            grid-area: main;
+        }
+
+        .grid3 {
+            grid-area: aside;
+        }
+
+        .grid4 {
+            grid-area: footer;
+        }
+
+        .grid-wrap {
+            background: blue;
+            display: grid;
+            grid-template-rows: repeat(4, 100px);
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas: "header header header"
+                                 "main  . ."
+                                 "main  . aside"
+                                 "footer footer footer";
+
+
+            >div {
+                border: 1px solid #fff;
+                background: salmon;
+                padding: 20px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1></h1>
+    <p>그리드 영역을 선언할 수 있다, 탬플릿 생성</p>
+
+    <div class="grid-wrap">
+        <div class="grid1">header</div>
+        <div class="grid2">main</div>
+        <div class="grid3">aside</div>
+        <div class="grid4">footer</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+/* pc */
+
+/* pc Title -ipad mobile title*/
+.pcTitle {
+}
+.ipadTitle,
+.mobileTitle {
+  display: none;
+}
+.main {
+  max-width: 1600px;
+  border: 1px solid black;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  > div {
+    height: 200px;
+  }
+  .box1,
+  .box3 {
+    width: 25%;
+    background: orange;
+  }
+  .box2 {
+    width: 45%;
+    background: green;
+  }
+}
+
+/* ipad */
+/* min 이랑 max 같이쓰면 min 넘어가면 max 발동 */
+@media screen and (max-width: 1280px) {
+  /* 768 ipad  */
+  .pcTitle {
+    display: none;
+  }
+  .ipadTitle {
+    display: block;
+  }
+  .main {
+    /* 넘쳐나는 자식들 줄 변경 */
+    flex-wrap: wrap;
+
+    .box1,
+    .box3 {
+      order: 1;
+      width: 47%;
+    }
+    .box2 {
+      width: 100%;
+    }
+  }
+}
+/* mobile */
+@media screen and (max-width: 767px) {
+  .mobileTitle {
+    display: block;
+  }
+  .pcTitle {
+    display: none;
+  }
+  .ipadTitle {
+    display: none;
+  }
+  .main {
+    .box1,
+    .box2,
+    .box3 {
+      width: 100%;
+    }
+    .box1,
+    .box3 {
+      order: 0;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.wrap {
+  background: antiquewhite;
+  /* display:flex; */
+  gap: 10px;
+  display: grid;
+  /* 가로로 5개 */
+  /* 칸의 갯수는 grid-template-columns 칸 1 칸 2 칸2  */
+  /* grid-template-columns:200px 200px 200px 200px 200px; */
+  /* 1. 부모사이즈에 맞춰서 알아서 자동으로 떨어짐 */
+  /* grid-template-columns: auto auto auto auto auto; */
+  /* 2.fr 단위는 **"fraction"**을 나타내어, 사용 가능한 공간을 비율대로 나누는 방식입니다. */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+  /* 3.grid-template-columns: repeat(5,1fr); */
+  /*값을 쓴 갯수만큼 나눠짐 1:2:1 비율로 크기 정해짐 */
+  grid-template-columns: 1fr 2fr 1fr;
+
+  /* 줄의 높이는 grid-templae-rows 로 줄높이 줄높이 정함 */
+  grid-template-rows: 100px 200px;
+  > div {
+    background: green;
+    border: 1px solid black;
+  }
+}
