@@ -1,0 +1,65 @@
+$메인컬러: #0004f8;
+$중간둥글기: 3rem;
+
+@mixin button($bg: $메인컬러) {
+    background: $bg;
+    color: white;
+    border: none;
+    border-radius: 3rem;
+    padding: 5px 20px;
+}
+
+@mixin flex($jc: space-between, $gap: 10px) {
+    display: flex;
+    justify-content: $jc;
+    gap: $gap;
+
+}
+
+.todo-app {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid #0004f8;
+    border-radius: $중간둥글기;
+    padding: 20px 40px;
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        input {
+            flex: 1;
+            line-height: 2.5;
+            border-radius: $중간둥글기;
+            border: 1px solid #ccc;
+        }
+
+        button {}
+    }
+
+    .todo-list {
+        li {
+            @include flex();
+            line-height: 3rem;
+            border-bottom: 1px solid #ccc;
+            span{}
+            div{
+                @include flex();
+                button{
+                    background: none;
+                    color:#0004f8;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+    button {
+        @include button()
+    }
+}
