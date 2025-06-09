@@ -1,7 +1,11 @@
-import React from "react";
+import React from 'react'
 
 const Women = () => {
-  return <div className="container">여성 </div>;
-};
+  return (
+    <div className='container'>
+      여자
+    </div>
+  )
+}
 
-export default Women;
+export default Women

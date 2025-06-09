@@ -1,7 +1,21 @@
-import React from "react";
+import React from 'react'
+import MainSwiper from '../components/MainSwiper'
 
 const Home = () => {
-  return <div className="container">메인화면</div>;
-};
+  return (
+    <>
+      <div className='container'>
+        <MainSwiper />
+        <div className='main'>
+          <section>
+            
+          </section>
+        </div>
+        
+      </div>
+    </>
 
-export default Home;
+  )
+}
+
+export default Home
