@@ -1,0 +1,146 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+$메인회색: #141414;
+$설명색: #999;
+$강조글자: #e60023;
+$섹션제목: 2.5rem;
+$섹션부제목: 1.25rem;
+$섹션강조: 1.5rem;
+$본문제목: 1rem;
+$서브페이지제목: 1.5rem;
+
+@mixin northFlex($wrap: null, $jc: space-between, $gap: null) {
+    display: flex;
+    justify-content: $jc;
+    align-items: center;
+    flex-wrap: $wrap;
+    gap: $gap
+}
+
+
+.content-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    // border: 1px solid pink;
+    padding: 0 16px;
+}
+
+.container{
+    padding:100px 0;
+    min-height: calc(100vh - 127px);
+    .section{
+        padding-bottom: 70px;
+    }
+    .titleBox{
+        text-align: center;
+        padding:50px 0;
+        h2{
+            font-size: $섹션제목;
+        }
+        p{
+            font-size: $섹션부제목;
+        }
+    }
+}
+
+
+
+.goods-list {
+    .swiper-slide {
+
+        a {
+
+            .img-box {
+                border: 1px solid #ddd;
+                // border-radius: 10px;
+
+                padding: 40px;
+
+                img {
+                    width: 100%;
+                    height: 200px;
+                    object-fit: contain;
+                }
+            }
+
+            .text-box {
+                min-height: 100px;
+
+                h3 {
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    font-size: 1rem;
+                    margin: 10px 0 20PX;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                }
+
+                >div {
+                    display: flex;
+                    gap: 10px;
+
+                    span {
+                        color: #c22014;
+                        display: block;
+                        font-weight: 600;
+
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+.goods-list-big-wrap {
+    display: flex;
+
+    .swiper-wrapper {
+        // flex-wrap: wrap;
+
+        a {
+            .img-box {
+                padding: 10px 40px;
+            }
+
+            .text-box {
+                >div {
+                    span {
+                        display: none;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+.big-img {
+    width: 45%;
+    // float: left;
+    margin-right: 24px;
+}
+
+.big-right {
+    width: 55%;
+}
+
+footer {
+    font-size: 0.9rem;
+    background: $메인회색 ;
+    color: #ddd;
+    padding: 20px 0;
+}
+
+.goods-list-big {
+  width: 100%;
+  padding: 20px;
+}
+
+.swiper {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,91 @@
+@use "../App.scss" as g;
+
+.header {
+    position: fixed;
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+    z-index: 1000;
+
+    .content-inner {
+        @include g.northFlex();
+
+        >div {
+            @include g.northFlex($gap: 10px);
+
+            .logo {
+                width: 100px;
+                margin-right: 50px;
+            }
+
+            &.header-left {
+                ul {
+                    @include g.northFlex($gap: 50px);
+
+                    li {
+                        a {
+                            font-weight: 600;
+                            font-size: 1.13rem;
+
+                            &:hover {
+                                color: g.$강조글자;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.header-right {
+                font-size:14px;
+                ul {
+                    @include g.northFlex($gap: 20px);
+                    line-height: 1.2;
+                    li{
+                        cursor: pointer;
+                        text-align: center;
+                        position: relative;
+                        img{
+                      
+                            height: 24px;
+                        }
+                        p{
+                            // display: block;
+                            font-size: 0.8rem;
+                           
+                            .cart-num{
+                                position: absolute;
+                                right:6px;
+                                top:0;
+                                font-size: 9px;
+                                background: #ff0000;
+                                color:white;
+                                width:14px;
+                                height:14px;
+                                line-height: 14px;
+                                border-radius: 50%;
+                                text-align: center
+                            }
+                        }
+                    };
+
+                }
+            }
+            .search-bar{
+                position: relative;
+                input{
+                    line-height: 40px;
+                    padding:  0 10px;
+                }
+                .search-icon{
+                    width: 24px;
+                    position: absolute;
+                    right:10px;
+                    top:50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+    }
+}

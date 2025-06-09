@@ -1,0 +1,135 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+.content-inner {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.container {
+  padding: 100px 0;
+}
+.container .section {
+  padding-bottom: 70px;
+}
+.container .titleBox {
+  text-align: center;
+  padding: 50px 0;
+}
+.container .titleBox h2 {
+  font-size: 2.5rem;
+}
+.container .titleBox p {
+  font-size: 1.25rem;
+}
+
+.goods-list .swiper-slide a .img-box {
+  border: 1px solid #ddd;
+  padding: 40px;
+}
+.goods-list .swiper-slide a .img-box img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.goods-list .swiper-slide a .text-box {
+  min-height: 100px;
+}
+.goods-list .swiper-slide a .text-box h3 {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin: 10px 0 20PX;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.goods-list .swiper-slide a .text-box > div {
+  display: flex;
+  gap: 10px;
+}
+.goods-list .swiper-slide a .text-box > div span {
+  color: #c22014;
+  display: block;
+  font-weight: 600;
+}
+
+.goods-list-big-wrap {
+  display: flex;
+}
+.goods-list-big-wrap .swiper-wrapper a .img-box {
+  padding: 10px 40px;
+}
+.goods-list-big-wrap .swiper-wrapper a .text-box > div span {
+  display: none;
+}
+
+.big-img {
+  width: 45%;
+  margin-right: 24px;
+}
+
+.big-right {
+  width: 55%;
+}
+
+footer {
+  font-size: 0.9rem;
+  background: #141414;
+  color: #ddd;
+  padding: 20px 0;
+}
+
+.product-detail {
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 70px;
+  align-items: flex-start;
+}
+.product-detail .img-box {
+  width: 30%;
+}
+.product-detail .img-box img {
+  width: 100%;
+}
+.product-detail .text-box {
+  width: 60%;
+  font-size: 1.25rem;
+  color: #777;
+}
+.product-detail .text-box .cate-title {
+  text-transform: uppercase;
+}
+.product-detail .text-box .item-title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.product-detail .text-box .price-wrap {
+  margin-bottom: 30px;
+}
+.product-detail .text-box .price-wrap p {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 2rem;
+  color: black;
+}
+.product-detail .text-box .price-wrap p strong {
+  font-size: 2rem;
+  color: black;
+}
+.product-detail .text-box .price-wrap p span {
+  color: #c22014;
+}
+.product-detail .text-box .btn {
+  margin-top: 50px;
+}
+.product-detail .text-box .btn button {
+  font-size: 1rem;
+  margin-right: 10px;
+}/*# sourceMappingURL=productDetail.css.map */
