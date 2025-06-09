@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import { Route, Router, Routes } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Jewelery from "./pages/Jewelery";
