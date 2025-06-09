@@ -1,7 +1,11 @@
-import React from "react";
+import React from 'react'
 
 const Electric = () => {
-  return <div className="container">가전제품</div>;
-};
+  return (
+    <div className='container'>
+      전자제품
+    </div>
+  )
+}
 
-export default Electric;
+export default Electric

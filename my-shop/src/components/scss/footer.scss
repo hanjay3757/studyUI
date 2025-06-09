@@ -1,0 +1,31 @@
+@use "../../App.scss" as g;
+
+footer{
+    font-size:0.85rem;
+    background: black;
+    color:white;
+    padding: 30px 0;
+    address{
+        margin-bottom: 20px;
+        p{
+            @include g.myFlex($jc:start);
+            span{
+                display: block;
+                padding-right: 10px;
+                margin-right: 10px;
+                position: relative;
+                &::after{
+                    content:"";
+                    display: block;
+                    width:1px;
+                    height:12px;
+                    background: white;
+                    position: absolute;
+                    right:0;
+                    top:50%;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,11 @@
-import React from "react";
+import React from 'react'
 
 const SectionSwiper = () => {
-  return <div className="goods-list">slider</div>;
-};
+  return (
+    <div className='goods-list'>
+      슬라이드
+    </div>
+  )
+}
 
-export default SectionSwiper;
+export default SectionSwiper

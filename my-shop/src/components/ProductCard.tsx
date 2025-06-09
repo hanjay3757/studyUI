@@ -1,18 +1,15 @@
-import React from "react";
+import React from 'react'
 
 const ProductCard = () => {
   return (
-    <div className="product-list">
-      <div className="img-box">img-box</div>
+    <div>
+      <div className="img-box">이미지</div>
       <div className="text-box">
         <h3>제품제목</h3>
-        <div>
-          <strong>30%</strong>
-          <p>가격</p>
-        </div>
+        <div><strong>30%</strong><p>가격</p></div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductCard;
+export default ProductCard

@@ -1,25 +1,28 @@
-@import url("//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
-
-* {
+@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+*{
   margin: 0;
-  padding: 0;
+  padding:0;
   box-sizing: border-box;
 }
-li {
+li{
   list-style: none;
 }
-a {
-  color: #222;
+a{
+  color:#222;
   text-decoration: none;
 }
-img {
+img{
   vertical-align: middle;
   max-width: 100%;
 }
-button {
+button{
   background: white;
   cursor: pointer;
 }
-body {
-  font-family: "spoqa-han-sans", "Sans-serif";
+address,i,em{
+  font-style: normal;
 }
+body {
+  font-family: "spoqa-han-sans",sans-serif;
+}
+

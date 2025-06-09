@@ -1,7 +1,11 @@
-import React from "react";
+import React from 'react'
 
 const Jewelery = () => {
-  return <div className="container">귀중품</div>;
-};
+  return (
+    <div className='container'>
+      보석
+    </div>
+  )
+}
 
-export default Jewelery;
+export default Jewelery
