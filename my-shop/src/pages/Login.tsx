@@ -1,9 +1,10 @@
 import React from 'react'
+import Title from '../components/Title'
 
 const Login = () => {
   return (
     <div className='container'>
-      로그인
+      <Title title="로그인" /> 
     </div>
   )
 }

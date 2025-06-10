@@ -4,7 +4,7 @@ import Title from '../components/Title'
 const Signup = () => {
   return (
     <div className='container'>
-      회원가입
+         <Title title="회원가입"/>
     </div>
   )
 }

@@ -1,0 +1,47 @@
+@use "../../App.scss" as g;
+
+.product-detail {
+    @include g.myFlex($gap:100px);
+    padding:50px 100px;
+
+    .img-box {
+        width: 30%;
+        img {
+            // height: 500px;
+        }
+    }
+
+    .text-box {
+        width: 70%;
+        color: #666;
+        font-size:1.13rem;
+
+        .category-name {
+            font-size: 1.13rem;
+            text-transform: uppercase;
+        }
+
+        .title {
+            font-size:g.$섹션제목;
+            color:black;
+            text-transform: uppercase;
+        }
+        .price{
+            margin: 0px 0 50px;
+            font-size: 3rem;
+        }
+        .rating{
+            background:g.$강조색;
+            color:white;
+            padding:2px 10px;
+            display: inline-block;
+            margin-top: 20px;
+            font-size:0.85rem;
+        }
+        .btn{
+            margin-top: 20px;
+            justify-content: flex-start;
+        }
+
+    }
+}

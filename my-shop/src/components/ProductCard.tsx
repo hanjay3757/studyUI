@@ -1,26 +1,26 @@
-import { Product } from "../types/ProductType";
-import "./scss/Product.scss";
-
-interface sendItem {
-  product: Product;
-}
+import React from 'react'
+import { Product } from '../types/ProductType'
+import "./scss/product.scss";
+import { send } from 'node:process';
 
 const ProductCard = ({ sendItem }: { sendItem: Product }) => {
+  const salePrice = Math.round(sendItem.price * 0.7);
   return (
     <div>
       <div className="img-box">
-        <img src={sendItem.Image} alt="제품 이미지" />
+        <img src={sendItem.image} />
       </div>
       <div className="text-box">
-        <img src={sendItem.Image} alt="제품 이미지" />
-        <h3>제품제목</h3>
+        <h3>{sendItem.title}</h3>
         <div>
           <strong>30%</strong>
-          <p>{sendItem.price}</p>
+          <div className='price-wrap'>
+            <span className='sale-price'>${salePrice}</span>
+            <p className='price'>${sendItem.price}</p></div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProductCard;
+export default ProductCard

@@ -1,25 +1,30 @@
-import React from "react";
-import { Product } from "../types/ProductType";
-import { Autoplay, Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import React from 'react'
+import { Product } from '../types/ProductType'
+import { Autoplay, Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
-import ProductCard from "./ProductCard";
-import { Link } from "react-router-dom";
-import {sendItem}
+import "swiper/css/navigation"
+import { Link } from 'react-router-dom';
+import ProductCard from './ProductCard';
+
 const SectionSwiper = ({ category }: { category: Product[] }) => {
   return (
-    <div className="goods-list">
-      <Swiper modules={[Autoplay, Navigation]}>
+    <div className='goods-list'>
+      <Swiper
+        modules={[Autoplay, Navigation]}
+        slidesPerView={4}
+        spaceBetween={24}
+        >
         {category.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide>
             <Link to={`/products/${item.id}`}>
-              <ProductCard sendItem={item} />
+              <ProductCard sendItem={item}/>
             </Link>
           </SwiperSlide>
         ))}
       </Swiper>
     </div>
-  );
-};
+  )
+}
 
-export default SectionSwiper;
+export default SectionSwiper

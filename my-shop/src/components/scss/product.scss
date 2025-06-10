@@ -1,19 +1,39 @@
-.goods-list {
-  .img-box {
-  }
-  .text-box {
-    padding: 10px 0;
-    h3 {
-      font-weight: 400;
-      text-transform: uppercase;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+
+@use "../../App.scss" as g;
+ .goods-list {
+    .img-box {
+        border: 1px solid #ccc;
+        padding:50px 30px;
+        text-align: center;
+        img{
+            height:200px;
+        }
     }
-    > div {
-      margin: 20px;
-      @include g.myFlex();
+
+    .text-box {
+        padding: 10px 0;
+        h3{
+            font-weight: 400;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        >div{
+            margin-top: 20px;
+            @include g.myFlex();
+            strong{
+                color:g.$강조색;
+            }
+            .price-wrap{
+                @include g.myFlex($gap:10px);
+            }
+            .sale-price{
+                font-size: 1.25rem;
+            }
+            .price{
+                text-decoration: line-through;
+            }
+        }
     }
-  }
 }
-/* 합계: 34,160 + 36,280 + 22,660 + 170,000 + 365,200 + 250,000 = 878,300 */

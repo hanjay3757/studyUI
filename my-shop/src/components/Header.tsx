@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import "./scss/header.scss"
+import { useCartStore } from '../store/useStore';
 type MenuItem = {
     key: string;
     label: string;
@@ -12,6 +13,7 @@ const menus: MenuItem[] = [
     { key: 'electric', label: "전자제품" },
 ]
 const Header = () => {
+    const {cartCount}=useCartStore();
     return (
         <header>
             <div className="content-inner">
@@ -46,7 +48,7 @@ const Header = () => {
                         <li>
                             <Link to="/cart">
                                 <img src="./images/cart.png" alt="" />
-                                <p>장바구니<span className='cart-num'>0</span></p>
+                                <p>장바구니<span className='cart-num'>{cartCount}</span></p>
                             </Link>
                         </li>
                     </ul>

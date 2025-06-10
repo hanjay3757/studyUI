@@ -4,7 +4,7 @@ import Title from '../components/Title'
 const Notfound = () => {
   return (
     <div className='container'>
-      페이지 없음
+         <Title title="페이지없음"/>
     </div>
   )
 }
