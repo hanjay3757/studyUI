@@ -1,0 +1,11 @@
+@use "../../App.scss" as g;
+.title-box{
+    text-align: center;
+    padding: 50px 0;
+    .title{
+        font-size:g.$섹션제목
+    }
+    .sub-title{
+        font-size:g.$섹션부제목
+    }
+}

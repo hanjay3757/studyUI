@@ -1,9 +1,10 @@
 import React from 'react'
+import Title from '../components/Title'
 
 const Women = () => {
   return (
     <div className='container'>
-      여자
+      <Title title="여자" />
     </div>
   )
 }

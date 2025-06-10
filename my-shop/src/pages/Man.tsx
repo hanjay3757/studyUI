@@ -1,9 +1,10 @@
 import React from 'react'
+import Title from '../components/Title'
 
 const Man = () => {
   return (
     <div className='container'>
-      남자
+     <Title title="남자"/>
     </div>
   )
 }

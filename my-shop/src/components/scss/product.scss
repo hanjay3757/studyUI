@@ -1,0 +1,19 @@
+.goods-list {
+  .img-box {
+  }
+  .text-box {
+    padding: 10px 0;
+    h3 {
+      font-weight: 400;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    > div {
+      margin: 20px;
+      @include g.myFlex();
+    }
+  }
+}
+/* 합계: 34,160 + 36,280 + 22,660 + 170,000 + 365,200 + 250,000 = 878,300 */
