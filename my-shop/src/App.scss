@@ -43,3 +43,22 @@ $섹션부제목:1.25rem;
         }
     }
 }
+
+// swiper
+.swiper{
+    padding-bottom: 30px;
+}
+.swiper-button-prev,
+.swiper-button-next{
+    z-index: 100;
+}
+
+.goods-list-big{
+    @include myFlex();
+    .big-img{
+        width:45%;
+    }
+    .big-swiper{
+        width:50%;
+    }
+}

@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import { Product } from '../types/ProductType';
 import axios from 'axios';
 import "./scss/productDetail.scss";
-import { useStore } from 'zustand';
 import { useCartStore } from '../store/useStore';
 
 const ProductDetail = () => {
@@ -17,6 +16,8 @@ const ProductDetail = () => {
     axios.get(`https://fakestoreapi.com/products/${id}`)
       .then(res => setProduct(res.data))
   }, [id])
+
+
   console.log(product)
   if (!product) return <div>로딩중...</div>
 

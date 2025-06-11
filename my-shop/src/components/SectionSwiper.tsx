@@ -14,6 +14,7 @@ const SectionSwiper = ({ category }: { category: Product[] }) => {
         modules={[Autoplay, Navigation]}
         slidesPerView={4}
         spaceBetween={24}
+        navigation
         >
         {category.map((item) => (
           <SwiperSlide>
