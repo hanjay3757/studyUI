@@ -4,7 +4,13 @@ import { useCartStore } from '../store/useStore'
 import "./scss/cart.scss";
 
 const Cart = () => {
-  const { cartItems,totalPrice,removeCart } = useCartStore();
+  const {
+    cartItems,
+    totalPrice,
+    removeCart,
+    increaseQuantity,
+    decreaseQuantity
+  } = useCartStore();
   // const { cartCount } = useCartStore();
 
   return (
@@ -32,10 +38,17 @@ const Cart = () => {
                   </div>
                   <div className="cart-right">
                     <p>{item.price}</p>
-                    <p className='btn'>
-                      <button>옵션변경</button>
-                      <button onClick={()=>removeCart(item.id)}>삭제</button>
-                    </p>
+                    <div className='btn'>
+                      <p className='amount-wrap'>
+                        <button
+                          onClick={() => decreaseQuantity(item.id)}>-</button>
+                        <span>{item.quantity}</span>
+                        <button
+                          onClick={() => increaseQuantity(item.id)}>+</button>
+                      </p>
+                      <button
+                        onClick={() => removeCart(item.id)}>삭제</button>
+                    </div>
                   </div>
                 </li>
               ))}
