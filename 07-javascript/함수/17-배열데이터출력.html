@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 배열데이터 출력
+        // 배열 선언
+        let data = [10, 4, "홍길동", "4월"];
+        let str = "javaScript es6!";
+        // for
+        for (let i = 0; i < data.length; i++) {
+            console.log(data[i]);
+        }
+        document.write("<br>");
+
+        // forin
+        // for(초기화될 순서 변수 in 배열명) i = index
+        for (let i in data) {
+            console.log(data[i]);
+        }
+        document.write("<br>");
+        // for of
+        // for(배열 안에 있는 데이터를 저장할 변수 of 배열명)
+        for (let el of data) {
+            document.write(el);
+        }
+        document.write("<br>");
+        // 문자열
+        for (let st of str) {
+            document.write(`${st}<br>`);
+        }
+        // 객체
+        let TV = {
+            blend: "삼성",
+            inch: "75",
+            flat: "flat",
+            on: function () { "TV가 켜졌습니다" }
+            , off: function () {
+                alert("TV가 꺼졌습니다")
+            }
+        }
+
+        // for in
+        for(let index in TV){
+            // document.write(`${index} <br>`); (인데스 종류 내용보기)
+            document.write(`${TV[index]}<br>`);// 인덱스 안에 있는 데이터 보기
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

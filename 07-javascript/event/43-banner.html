@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <title>Document</title>
+    <!-- swiper slip plugin -->
+    <style>
+        .carousel-banner {
+            max-width: 600px;
+            margin: 50px auto;
+            border: 2px solid rgb(245, 0, 0);
+        }
+
+        .carousel-list {
+            display: flex;
+            gap: 10px;
+            overflow-x: scroll;
+            /* mobile 같은거 햄버거 는 위아래로 연결하게끔끔 */
+            cursor: grab;
+            user-select: none;
+        }
+
+        .carousel-list:active {
+            cursor: grabbing;
+        }
+
+        .carousel-banner .carousel-list::-webkit-scrollbar {
+            display: none;
+            /* 스크롤바 숨기기 */
+        }
+
+        .carousel-banner .carousel-list>li {
+            /* flex: [flex-grow][flex-shrink] [flex-basis] ""; */
+            /* flex grow 0 남는 공간을 늘리지 않음
+         flex shrink 모자란 공간만큼 줄어들지 않음
+         flex basis auto는 너비값이 그대로 적용되도록 함 */
+            flex: 0 0 auto;
+            width: 200px;
+            height: 120px;
+            background: dodgerblue;
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            /* text center  */
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel-banner">
+        <ul class="carousel-list">
+            <li class="item">1</li>
+            <li class="item">2</li>
+            <li class="item">3</li>
+            <li class="item">4</li>
+            <li class="item">5</li>
+        </ul>
+    </div>
+    <script>
+        const carousel = document.querySelector(".carousel-list");
+        // 시작 변수 (스크롤)
+        let startX;
+        let scrollLeft;
+        // 다운했을 때 움직이는 상태인지를 체크할 변수
+        let isDragg = false;
+
+        function startDrag(e) {
+            isDragg = true; // 드래그 시작
+            console.log(e.clientX);
+            startX = e.clientX; // 시작 위치
+            console.log(
+                carousel.scrollLeft,
+                carousel.offsetLeft,
+                carousel.clientLeft
+            );
+            scrollLeft = carousel.scrollLeft; // 현재 스크롤 위치
+        }
+
+        function drag(e) {
+            if (!isDragg) return; // 드래그 중이 아닐 때는 실행하지 않음
+            // 드래그 중 실행 로직
+            console.log(e.clientX);
+            const x = e.clientX; // 현재 마우스 위치
+            // 드래그 중에 마우스 위치를 가져옴
+            const walk = x - startX; // 드래그한 거리
+            carousel.scrollLeft = scrollLeft - walk // 스크롤 위치 조정
+            // 스크롤 위치를 조정하여 드래그한 거리만큼 이동
+        }
+
+        function endDrag(e) {
+            // 드래그 종료 로직
+            isDragg = false; // 드래그 종료
+        }
+
+        // 시작 위치
+        // 시작 이벤트
+        // 마우스다운
+        carousel.addEventListener("mousedown", startDrag);
+        // 마우스 드래그
+        carousel.addEventListener("mousemove", drag);
+        // 마우스 업
+        carousel.addEventListener("mouseup", endDrag);
+        // 마우스 영역 밖으로 나갈 때도 종료
+        carousel.addEventListener("mouseleave", endDrag);
+    </script>
+</body>
+
+</html>

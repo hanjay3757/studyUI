@@ -1,0 +1,41 @@
+
+@use "../../App.scss" as g;
+ .goods-list {
+    .img-box {
+        border: 1px solid #ccc;
+        padding:20px 40px;
+        text-align: center;
+        img{
+            height:200px;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .text-box {
+        padding: 10px 0;
+        h3{
+            font-weight: 400;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        >div{
+            margin-top: 20px;
+            @include g.myFlex();
+            strong{
+                color:g.$강조색;
+            }
+            .price-wrap{
+                @include g.myFlex($gap:10px);
+            }
+            .sale-price{
+                font-size: 1.25rem;
+            }
+            .price{
+                text-decoration: line-through;
+            }
+        }
+    }
+}

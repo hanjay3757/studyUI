@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 전체적으로 로딩후 실행 onload
+        window.onload = function () {
+            // img 태그 생성
+            let myImg = document.createElement("img");
+            // src alt 속성 필요
+            // 1. dot 연산자
+            // myImg.src = "./images/7.png";
+            // myImg.alt = "선물이미지";
+
+            
+            // 2.setAttribute(속성, 값)
+            myImg.setAttribute("src","./images/7.png");
+            myImg.setAttribute("alt","선물");
+            
+            
+            
+            document.body.appendChild(myImg);
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

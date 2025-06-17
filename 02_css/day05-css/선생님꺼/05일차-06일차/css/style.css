@@ -1,0 +1,261 @@
+:root {
+    /* 색상 */
+    --ibk-main-color: #0055a2;
+    --ibk-main-bg-color: #f0f2f6;
+    --ibk-text-color: #0d020f;
+    --ibk-secondary-color: #72808e;
+    /*  */
+    --border-radius: 4rem;
+}
+
+html {
+    font-size: 10px;
+}
+/* body */
+body {
+    line-height: 3rem;
+    color: var(--ibk-text-color);
+    font-size: 1.6rem;
+}
+
+.content-center {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+
+
+/* header */
+header {
+    box-shadow: 0 0 2rem 0 rgba(13,14,15,0.1);
+    .content-center {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 8rem;
+
+        #mainNav {
+            >ul {
+                display: flex;
+                gap: 40px;
+
+                >li {
+                    position: relative;
+
+                    a {
+                        display: block;
+                        font-size: 1.13em;
+                        font-weight: 500;
+                    }
+
+                    &:first-child {
+                        a {
+                            color: var(--ibk-main-color);
+                            font-weight: 700;
+                        }
+                    }
+
+                    .hm_sub {
+                        display: none;
+                        position: absolute;
+                        background: white;
+                        padding: 20px;
+                        left: 50%;
+                        min-width: 16rem;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
+        }
+
+        .gnb-list {
+            display: flex;
+            gap:10px;
+
+            li {
+                a {
+                    display: block;
+                    border-radius: var(--border-radius);
+                }
+
+                &:first-child {
+                    a {
+                        background: var(--ibk-main-bg-color);
+                        padding: 0 20px 0 45px;
+                        color: var(--ibk-main-color);
+                        font-weight: 700;
+                        position: relative;
+                        line-height: 4rem;
+
+                        &::before {
+                            content: "";
+                            display: block;
+                            width: 16px;
+                            height: 16px;
+                            background-image: url(../images/icon_line_b.svg);
+                            background-position: 100% -8rem;
+                            background-size: 1100%;
+                            position: absolute;
+                            left: 20px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+
+                &:last-child {
+                    a {
+                        text-indent: -9999px;
+                        width: 4rem;
+                        height: 4rem;
+                        background-color: var(--ibk-main-color);
+                        position: relative;
+
+                        &:after {
+                            content: "";
+                            display: block;
+                            width:20px;
+                            height:20px;
+                            position: absolute;   
+                            left:50%;
+                            top:50%;
+                            transform: translate(-50%,-50%);                         
+                            background-image: url(../images/icon_line_w.svg);
+                            background-repeat: no-repeat;
+                            background-position: 40% -24rem;
+                            background-size: 1100%;
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+}
+
+/* main */
+.cm-wrap{
+    .cm-top-wrap{
+        display: flex;
+        justify-content: space-between;
+        .cm-top-left{
+            width:calc(100% / 3 * 2);
+            
+            .cm-slider-wrap{
+                position: relative;
+                background-color:skyblue;
+                border-radius: 5rem 5rem 5rem 10rem;
+                min-height: 500px;
+                height: 50rem;
+                .cm-slider-list-text{
+                    height: 100%;
+                    li{
+                        position: absolute;
+                        padding:3rem;
+                        height: inherit;
+                        a{
+                            >span{
+                                background:var(--ibk-main-color);
+                                padding:5px 20px;
+                                border-radius: 30px;
+                                color:white;
+                            }
+                            strong{
+                                font-size: 3rem;
+                            }
+                            .more-btn{
+                                font-size: 2rem;
+                                background: white;
+                                color:#0055a2;
+                                padding:10px 30px;
+                                position: absolute;
+                                bottom:100px
+                            }
+                        }
+                        
+                    }
+                }
+                .cm-slider-list-img{
+                    position: absolute;
+                    width: 50%;
+                    right:0;
+                    top:0;
+                    li{
+                        img{
+                            width:100%;
+                        }
+                    }
+                }
+                .control-btn-wrap{
+                    position: absolute;
+                    background: white;
+                    border-radius: 8rem;
+                    left:0;
+                    bottom:0;
+                    display: flex;
+                    width:60%;
+                    height:7.2rem;
+                    justify-content: space-between;
+                    align-items: center;
+                    .bar-wrap{
+                        width: 12rem;
+                        height: 0.4rem;
+                        border-radius: 2rem;
+                        background: var(--ibk-secondary-color);
+                        .progress-bar{
+                            display: block;
+                            width:10px;
+                            height:inherit;
+                            background: #0d020f;
+                        }
+                    }
+                    ul{
+                        display: flex;
+                    }
+                }
+                .control-btn-wrap::before{
+                    content:"";
+                    display: block;
+                    width:10rem;
+                    height:7.2rem;
+                    background:url(../images/deco_banner.svg);
+                    background-size: 100%;
+                    position: absolute;
+                    right:-4rem;
+                    bottom:-0.2rem;
+                }
+            }
+        }
+        .cm-top-right{
+            width: calc(100% / 3);
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                li{
+                    width:50%;
+                    padding:5px;
+                    a{
+                        display: block;
+                        background:var(--ibk-main-bg-color);
+                        border-radius:4rem ;
+                        height: 16rem;
+                        padding:2.5rem;
+                        strong{
+                            display: block;
+                            font-size: 2rem;
+                            font-weight: 700;
+                        }
+                        span{
+                            font-size:2rem;
+                            line-height: 3rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* footer */

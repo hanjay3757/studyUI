@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 자식 선택자
+            let list = document.querySelector(".list");
+            let first = list.firstElementChild; // 첫번째 자식
+            first.style.color = "red"; // 글자색 변경
+
+            let last = list.lastElementChild; // 마지막 자식
+            last.style.color = "blue"; // 글자색 변경
+            let second = first.nextElementSibling; // 첫번째 자식의 다음 자식
+            second.style.color = "green"; // 글자색 변경
+            third = second.nextElementSibling; // 두번째 자식의 다음 자식
+            third.style.color = "yellow"; // 글자색 변경        
+            forth = third.nextElementSibling; // 세번째 자식의 다음 자식
+            forth.style.color = "orange"; // 글자색 변경    
+            fifth = forth.nextElementSibling;
+            fifth.style.color = "skyblue"; // 글자색 변경
+            let childs = document.querySelectorAll("menu>li"); // 자식들 선택
+            childs.forEach((childs) => {
+                childs.style["border"] = "1px solid black"; // 테두리 적용      });
+            });
+        })
+    </script>
+ </head>
+
+ <body>
+    <h1>자식선택자</h1>
+    <p>첫번째 자식 = firstChild, firstElementChild</p>
+    <p>마지막 자식 = lastChild, lastElementChild</p>
+    <p>자식들 = children, childrenNodes</p>
+    <p>자식들 수 = childrenElementCount</p>
+
+    <ul class="list">
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+        <li>list4</li>
+        <li>list5</li>
+        <li>list6</li>
+        <li>list7</li>
+    </ul>
+    <ol class="menu">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+    </ol>
+ </body>
+
+</html>

@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.movie-wrap {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  width: 250px;
+}
+
+.genreButtons button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.genreButtons button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.movie-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-list li {
+  margin: 10px;
+  width: 150px;
+}
+
+.movie-list img {
+  width: 100%;
+  height: auto;
+}

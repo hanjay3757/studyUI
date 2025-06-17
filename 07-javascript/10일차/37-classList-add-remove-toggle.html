@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            border: 2px solid black;
+            transition: 0.5s;
+        }
+
+        .bg {
+            background: dodgerblue;
+            color: white;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            //
+            let addBtn = document.querySelector(".addBtn");
+            let removeBtn = document.querySelector(".removeBtn");
+            let toggleBtn = document.querySelector(".toggleBtn");
+            let boxEl = document.querySelector(".box");
+            //addBtn을 클릭하면 .bg클래스가 .box에 적용되도록
+            addBtn.onclick = () => {
+                boxEl.classList.add("bg");
+            }
+            //removeBtn을 클릭하면 .box에서 .bg 클래스가 제거
+            // removeBtn.onclick = () => {
+            //     boxEl.classList.remove("bg");
+            // }
+            removeBtn.addEventListener("click",()=>{
+                boxEl.classList.remove("bg");
+            })
+            //toggleBtn을 클릭하면 .box에서 .bg클래스가 추가/제거 
+            toggleBtn.addEventListener("click",()=>{
+                boxEl.classList.toggle("bg");
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="box">box</div>
+    <button class="addBtn">add</button>
+    <button class="removeBtn">remove</button>
+    <button class="toggleBtn">toggle</button>
+</body>
+
+</html>

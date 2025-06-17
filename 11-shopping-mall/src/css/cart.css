@@ -1,0 +1,86 @@
+.cart-wrap {
+  border-top: 3px solid black;
+  border-bottom: 1px solid #ccc;
+}
+.cart-wrap .cart-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  line-height: 3;
+}
+.cart-wrap .cart-title .cart-left {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+.cart-wrap .cart-title .cart-right {
+  width: 40%;
+  display: flex;
+  align-items: center;
+}
+.cart-wrap .cart-title .cart-right p {
+  flex: 1;
+}
+
+.cart-empty {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 0 20px;
+}
+.cart-list li > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+.cart-list li > div:last-child {
+  border-right: none;
+}
+.cart-list li > div > p {
+  flex: 1;
+  text-align: center;
+}
+.cart-list li > div.cart-left {
+  width: 60%;
+}
+.cart-list li > div.cart-right {
+  width: 40%;
+  justify-content: space-between;
+}
+.cart-list li > div img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cart-list li > div .btn button {
+  display: block;
+  width: 120px;
+  line-height: 2.5rem;
+  background: white;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+.cart-list li > div .btn button.remove-btn {
+  background: black;
+  color: white;
+}
+
+.cart-bottom {
+  font-size: 1.25rem;
+  padding: 20px;
+  font-weight: bold;
+}/*# sourceMappingURL=cart.css.map */

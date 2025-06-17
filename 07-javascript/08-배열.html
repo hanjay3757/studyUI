@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //하나의 이름에 여러개의 데이터를 순차적으로 저장 = 배열
+        // 1. new 
+        // 배열명 = new Array();
+        //배열명[0] = 데이터; 띄어쓰기 x
+        // 배열명[1]=데이터
+
+        // 2.배열명 = new Array("string",11);
+        // 3. 배열명 = [데이터1,데이터2]
+        let fruits = ["딸기", "참외", "오렌지", "포도"];
+        console.log(fruits);
+
+        let rain = ["우산", "막걸리", "파전", "우비"];
+
+        // 특정 위치만 표시
+        console.log(fruits[2]);
+
+        // 배열에 method
+        // 배열 마지막에 데이터를 추가
+        fruits.push("한라봉");
+        console.log(fruits);
+        // 데이터 추출  pop
+        fruits.pop();
+        console.log(fruits);
+
+        // 앞에 데이터 추가 unshift();
+        fruits.unshift("귤");
+        console.log(fruits);
+        //앞 데이터 추출 = shift();
+        fruits.shift();
+        console.log(fruits);
+        // splice 중간에 여러개 추가 /제거
+        fruits.splice(2, 0, "키위", "바나나");
+        console.log(fruits);
+
+        fruits.splice(2, 2);
+        console.log(fruits);
+
+        //오름차순 정렬
+        fruits.sort();
+        console.log(fruits);
+
+
+        // 역순은 reverse()
+        fruits.reverse();
+        console.log(fruits);
+
+
+        // 배열 합치기
+        let total = fruits.concat(rain);
+        console.log(total);
+        //rain 에있는 내용을 * 특수문자는 join
+        let starRain = rain.join("*");
+        console.log(starRain);
+        // 속성 length
+console.log(fruits.length);
+
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=a, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+// <!-- 변수의 종류
+    // 1.  var
+    //  재선언 재할당 변하는 데이털르 저장할때 사용 -->
+     var lang = "한글";
+     var lang = "영문";
+    //  위에꺼는 재선언
+lang ="중문";
+console.log(lang);
+// 이건 재 할당
+
+// 2. let 은 재선언 불가, 재할당은 가능 값이 변하면 안되지만 재할당 할껀 요거
+let userName ="홍길동";
+console.log(userName);
+// let userName= "김철수"; 바로 에러 = 재선언 
+// Uncaught SyntaxError SyntaxError: Identifier 'userName' has already been declared
+    // at (program) (c:\Users\ezen501-10\Desktop\studyUI\07-javascript\01-변수-varletconst.html:22:5)
+console.log(userName);
+
+// 3.const 상수를 저장하는 용도로 사용 값이 변하지 않는건 이거
+// 다른 프로그램에서는 주로 대문자로 선언한다
+// 재선언 불가, 재할당도 불가
+const userAge= 18;
+console.log(userAge);
+// userAge=20; =재할당
+// Uncaught TypeError TypeError: Assignment to constant variable.
+    // at <anonymous> (c:\Users\ezen501-10\Desktop\studyUI\07-javascript\01-변수-varletconst.html:33:8)
+
+// 데이터의 종류
+// 1. 숫자
+// 2. 문자
+// 3. boolean =  true false
+let checked = true;
+let isShow = false;
+console.log(checked,isShow);
+console.log(typeof checked);
+// 4. undifined - 선언은 했는데 값은 안넣은거 애초에 안넣은거
+let undef;
+console.log(undefined);
+// 5. null = 값이 있었는데 뺀경우 
+let myNull = "화요일";
+myNull = null;
+console.log(myNull);
+
+// 6. 객체 데이터
+let user = {
+    name:"kim",
+    age:18,
+    job:"프리랜서"
+}
+console.log(user);
+// 부트연산자를 사용해서 해당 데이터의 특정부분 보기
+console.log(user.name);
+// 전역 변수, 지역변수가 있다 
+    </script>
+</head>
+
+<body>
+   
+</body>
+</html>

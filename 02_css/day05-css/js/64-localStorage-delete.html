@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //setItem() 메서드로 localStorage에 저장
+        // window.localStorage.setItem("", "name");
+        window.localStorage.setItem("uname", "name");
+        window.localStorage.setItem("age", "30");
+        window.localStorage.setItem("hobby", "멍때리기");
+
+        //removeItem() 메서드로 localStorage에서 삭제
+        window.localStorage.removeItem("uname");
+        //데이터 갖고오기
+        const name = window.localStorage.getItem("uname");
+        console.log(name); // null
+
+        //localStorage에 저장된 데이터 확인
+        const count = window.localStorage.length;
+        console.log(count); // 1
+
+        //clear() 메서드로 localStorage의 모든 데이터 삭제
+        window.localStorage.clear();
+        //localStorage에 저장된 데이터 확인
+        console.log(window.localStorage.getItem("age")); // null
+
+        //localStorage에 저장된 데이터 확인
+        console.log(window.localStorage.getItem("uname")); // null
+
+        //localStorage에 저장된 데이터 확인
+        console.log(window.localStorage.getItem("age")); // null
+
+        //localStorage에 저장된 데이터 확인
+        console.log(window.localStorage.getItem("uname")); // null
+
+    </script>
+
+</body>
+
+</html>

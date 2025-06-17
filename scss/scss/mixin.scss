@@ -1,0 +1,28 @@
+//h1,ul>li>a h2 공통크기 , 글자색. 밑줄
+
+// @mixin myText {
+//   font-size: 18px;
+//   color: #000;
+//   text-decoration: underline;
+// }
+
+// 매개변수
+@mixin myText($글자크기, $글자색상, $밑줄: underline) {
+  fint-size: $글자크기;
+  color: $글자색상;
+  text-decoration: $밑줄;
+}
+
+header {
+  h1 {
+    background: #ccc;
+    @include myText(50px, #333, overline);
+  }
+  .nav {
+    li {
+      a {
+        @include myText(18px, #111);
+      }
+    }
+  }
+}

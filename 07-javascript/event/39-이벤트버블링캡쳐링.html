@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.parent{
+    border: 2px solid black;
+    padding:20px;
+    background-color: pink;
+}
+.parent>div{
+    border: 2px solid green;
+    background: greenyellow;
+    padding:50px;
+}
+    </style>
+</head>
+<body>
+    <h1>버블링과 캡쳐링</h1>
+    <!-- //버블링 일반적 자식에서 부모로 -->
+     <div class="parent parent1">
+        <div class="child1">부모1</div>
+     </div>
+
+     <div class="parent parent2">
+        <div class="child2">자식1</div>
+     </div>
+     <div class="parent parent2">
+        <div class="child1">부모2</div>
+        
+     <div class="parent parent2">
+        <div class="child2">자식2</div>
+     </div>
+     </div>
+     <script>
+        document.querySelector('.parent1').addEventListener("click",(e)=>{
+            console.log("부모1 클릭");
+        })
+        document.querySelector('.child1').addEventListener("click",()=>{
+            console.log("자식1 클릭");
+            e.stopPropagation() //버블링 막기
+        })
+        //캡쳐링
+        document.querySelector('.parent2').addEventListener("click",(e)=>{
+            console.log("부모2 클릭");
+        },true) //true를 넣어주면 캡쳐링이 됨
+        document.querySelector('.child2').addEventListener("click",()=>{
+            console.log("자식2 클릭");
+            e.stopPropagation() //버블링 막기
+        })//이벤트 전파 
+        //이벤트 전파는 부모에서 자식으로 가는것을 버블링이라고 하고 자식에서 부모로 가는것을 캡쳐링이라고 한다.
+        //버블링은 기본값이고 캡쳐링은 true를 넣어줘야 한다.
+     </script>
+</body>
+</html>

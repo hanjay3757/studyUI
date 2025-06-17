@@ -1,0 +1,64 @@
+$메인색:#141414;
+$강조색:#e60023;
+$섹션제목:2.5rem;
+$섹션부제목:1.25rem;
+
+@mixin myFlex($jc:space-between,$gap:null,$ai:center){
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    gap:$gap;
+}
+.content-inner{
+    max-width: 1600px;
+    margin: 0 auto;
+    padding:0 16px;
+}
+
+.container{
+    padding:90px 0;
+
+    .title-box{
+        .title{
+            
+        }
+        .sub-title{
+
+        }
+    }
+
+    .btn{
+        @include myFlex($gap:10px );
+        button{
+            display: block;
+            padding:10px 30px;
+            border:1px solid black;
+        }
+        .white-btn{
+            border:1px solid #ccc;
+        }
+        .black-btn{
+            background:black;
+            color:white;
+        }
+    }
+}
+
+// swiper
+.swiper{
+    padding-bottom: 30px;
+}
+.swiper-button-prev,
+.swiper-button-next{
+    z-index: 100;
+}
+
+.goods-list-big{
+    @include myFlex();
+    .big-img{
+        width:45%;
+    }
+    .big-swiper{
+        width:50%;
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/filter.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./filter.js" defer></script>
+</head>
+
+<body>
+    <div class="menu-container" data-filter-id="asian_food">
+        <h1>아시아 음식</h1>
+        <div class="menu-wrap">
+            <ul>
+                <li><button data-filter="all" class="active">All</button></li>
+                <li><button data-filter="kor">Korea</button></li>
+                <li><button data-filter="jp">Japan</button></li>
+                <li><button data-filter="ch">China</button></li>
+            </ul>
+        </div>
+        <div class="menu-list">
+            <ul>
+                <li data-filter="ch">짬봉</li>
+                <li data-filter="ch">자장면</li>
+                <li data-filter="jp">스시</li>
+                <li data-filter="jp">우동</li>
+                <li data-filter="jp">라면</li>
+                <li data-filter="kor">김밥</li>
+                <li data-filter="kor">비빔밥</li>
+                <li data-filter="kor">된장</li>
+                <li data-filter="kor">비빔밥</li>
+                <li data-filter="kor">오징어회</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 필터 버튼들 가져오기
+        const filterBtns = document.querySelectorAll(".menu-wrap button");
+        // 메뉴 항목들 가져오기
+        const filterListItems = document.querySelectorAll(".menu-list li");
+
+        // 각 버튼에 대해 클릭 이벤트 추가
+        filterBtns.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+                const filterType = e.target.dataset.filter;  // 클릭된 버튼의 data-filter 값
+
+                // 모든 버튼에서 'active' 클래스 제거
+                filterBtns.forEach((btn) => {
+                    btn.classList.remove("active");
+                });
+
+                // 클릭된 버튼에 'active' 클래스 추가
+                e.target.classList.add("active");
+
+                // 필터링 처리
+                filterListItems.forEach((item) => {
+                    const itemFilter = item.dataset.filter;  // 메뉴 항목의 data-filter 값
+
+                    if (filterType === "all" || filterType === itemFilter) {
+                        item.style.display = "block";  // 필터에 맞는 항목 보이기
+                    } else {
+                        item.style.display = "none";  // 필터에 맞지 않는 항목 숨기기
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

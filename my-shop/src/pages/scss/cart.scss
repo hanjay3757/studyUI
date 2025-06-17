@@ -1,0 +1,58 @@
+@use "../../App.scss" as g;
+
+.cart-wrap {
+    border-top: 5px solid black;
+
+    >div {
+        @include g.myFlex();
+        border-bottom: 1px solid #ccc;
+
+        &.cart-title {
+            line-height: 3;
+            padding: 0 20px;
+        }
+
+        .cart-left {
+            @include g.myFlex($gap: 20px, $jc: flex-start);
+            width: 70%;
+            span {
+                img {
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .cart-right {
+            @include g.myFlex($gap: 10px);
+            flex:1;
+        }
+
+        &.cart-list-wrap {
+            display: block;
+        }
+
+        ul {
+            li {
+                padding: 10px 20px;
+                border-bottom: 1px solid #ccc;
+                @include g.myFlex($gap: 10px);
+
+            }
+        }
+
+        &.cart-bottom{
+            padding: 20px;
+        }
+
+    }
+
+    .amount-wrap{
+        @include g.myFlex();
+        button{
+            border:none !important;
+            font-size: 1.25rem;
+        }
+    }
+}

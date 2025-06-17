@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let data=[
+            {name:"홍길동",age:18},
+            {name:"짱구",age:5},
+            {name:"흰둥이",age:3},
+            {name:"둘리",age:1000},
+        ]
+        //data 오브젝트에 들어있는 요소중에 age가 15보다 큰요소만 추출
+        // let result = data.filter(item => {
+        //     return item.age>=15
+        // })
+        let result = data.filter(item => data.age>=15)
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

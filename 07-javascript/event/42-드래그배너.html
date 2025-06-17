@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      //pc mousemove,mousedown,mouseup
+      const boxEl = document.querySelector(".box");
+      boxEl.addEventListener("mousedown", (e) => {
+        console.log(e.pageX); // ✅ 문제 없음
+      });
+      //mobile touchstart,touchmove,touchend
+      boxEl.addEventListener("touchstart", (e) => {
+        console.log(e.touches[0].pageX); // ✅ 문제 없음
+      });
+      boxEl.addEventListener("touchmove", (e) => {
+        console.log(e.touches[0].pageX); // ✅ 문제 없음
+      });
+    </script>
+  </body>
+</html>

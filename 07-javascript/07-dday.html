@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+// dday 구하기
+// 특정 날짜의 정보와 오늘날짜 정보 필요
+// 2025.7.1  달은 -1되서 +1로 적음
+let dDay = new Date(2025,6,1);
+console.log(dDay);
+// 오늘날짜 정보 얻기
+let today = new Date();
+console.log(today);
+
+
+let diff=dDay - today;
+// 밀리sec *1000으로 그냥 초 
+console.log(Math.floor(diff / (24 * 60 * 60 * 1000)));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

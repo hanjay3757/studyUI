@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 함수 +* 를 계산하는 함수 만들기
+        function addMul(op, ...num) {
+            let result = 0;
+
+            if (op === "add") {
+                result = 0;
+                for (let item of num) {
+                    result += item;
+                }
+            } else if (op === "mul") {
+                result = 1;
+                for (let item of num) {
+                    result *= item;
+                }
+            }
+            return result; // Return the result
+        }
+
+        let sumResult = addMul("add", 1, 2, 3, 4, 5, 6);  // Add numbers
+        let mulResult = addMul("mul", 2, 4, 5);  // Multiply numbers
+
+        console.log(`더하기 : ${sumResult}`);  // Logs the sum
+        console.log(`곱하기 : ${mulResult}`);  // Logs the multiplication result
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

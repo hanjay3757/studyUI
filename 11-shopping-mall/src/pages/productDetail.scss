@@ -1,0 +1,71 @@
+@use "../App.scss" as g;
+
+.product-detail {
+    padding: 100px;
+    @include g.northFlex($gap: 70px);
+    align-items: flex-start;
+
+    .img-box {
+        width: 30%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .text-box {
+        width: 60%;
+        // display: flex;
+        // flex-direction: column;
+        // gap: 30px;
+        font-size: 1.25rem;
+        color: #777;
+
+        .cate-title {
+            // font-size:1.2rem;
+            text-transform: uppercase;
+        }
+
+        .item-title {
+            font-size: g.$섹션제목;
+            text-transform: uppercase;
+            color: black;
+            font-weight: 600;
+            margin-bottom: 50px;
+        }
+
+        .price-wrap {
+
+            margin-bottom: 30px;
+
+            p {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+                 font-size: 2rem;
+                    color: black;
+
+                strong {
+                    font-size: 2rem;
+                    color: black;
+                }
+
+                span {
+                    color: #c22014;
+                }
+            }
+        }
+
+        .btn {
+            margin-top: 50px;
+
+            button {
+                font-size: 1rem;
+                margin-right: 10px;
+
+            }
+        }
+
+    }
+
+}
