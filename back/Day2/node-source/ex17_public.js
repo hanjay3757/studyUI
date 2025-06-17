@@ -20,7 +20,7 @@ const server = http.createServer((req, res) => {
       }
 
       res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" }); //헤더 설정
-      res.write(data); //응답 body에 내용적기  end(data)는 버그나는경우가 많다고함
+      res.write(data); //응답 body에 내용적기 
       res.end(); //end() 가 호출되면 응답전송이 완료되므로 더이상 데이터 쓰기가 불가능
     });
   }
