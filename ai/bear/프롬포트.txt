@@ -1,0 +1,42 @@
+Scene 1: A small, fluffy brown baby bear stands in a cozy wooden kitchen. It is waiting patiently in front of a pot placed on a gas stove. The bear looks up at the pot with anticipation, occasionally rocking side to side, its little ears twitching. Warm morning light streams through the window, casting a soft glow on the wooden floor and the bear's fur. The atmosphere is peaceful and cute, with detailed 3D textures and soft lighting.
+
+Scene 2: The lid of the pot lifts slightly, and a delicious hot pot dish is revealed inside, bubbling with vegetables and broth. The bear’s eyes widen with joy, and it starts dancing in place—waggling its little arms and feet excitedly. Its brown fur bounces softly with every movement. The camera zooms in to show the happy expression on the bear’s face. The whole scene feels joyful and heartwarming.
+
+Scene 3: The baby bear turns and begins hopping excitedly toward a small wooden dining table across the kitchen. It hops with a light bounce—*boing, boing*—on its two feet, full of energy and anticipation. The table is set with a tiny bowl and chopsticks. The kitchen background remains consistently wooden and warm, creating a cozy, homely atmosphere throughout the 3D animation.
+
+
+behind the pot"
+
+"partially visible", "peeking out"
+
+"camera angle from the front, slightly low"
+
+"only its head and paws seen"
+
+
+Use the attached image as the only reference for the bear character.  
+The character must exactly match the appearance, proportions, and style in the image:  
+– a small, fluffy baby bear with soft brown fur, big round eyes, a chubby body, short limbs, a cute button nose, and slightly oversized ears.  
+– The bear wears a tiny apron with a carrot design.
+
+Scene description:  
+Inside a cozy, warmly lit wooden kitchen in a log cabin, a large metal hotpot is placed on the front burner of a gas stove, positioned close to the camera.  
+Behind the pot, partially obscured, stands the small baby bear on a wooden stool.  
+The pot should naturally block part of the bear’s body from view, such as the lower torso, creating a realistic depth of field.  
+The bear is not holding anything and is not interacting with the pot.  
+It is simply looking forward with a peaceful expression, softly illuminated by golden morning sunlight coming through the nearby window.
+
+Important positioning:  
+– The hotpot must be in the foreground, fully visible and centered.  
+– The bear must be positioned behind the hotpot, with the lower body partially hidden by the pot.  
+– The bear should not appear to be standing inside or on top of the pot.  
+– Carefully adjust the bear’s position so that it is spatially and visually behind the hotpot, maintaining natural proportions and depth.
+
+Visual style:  
+High-quality 3D animation, soft and realistic lighting, cinematic camera angle, detailed textures, and believable fur rendering.  
+The atmosphere should feel peaceful, cozy, and heartwarming inside the wooden kitchen.
+
+– Avoid unnatural overlaps: the bear should never appear inside or above the pot  
+– Do not change object positions mid-scene (no sudden movements or teleporting)  
+– Maintain full consistency with the character’s appearance and proportions from the reference image  
+– Emphasize warm natural lighting and depth of field to create realistic foreground/background layering
