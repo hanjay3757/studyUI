@@ -40,3 +40,25 @@ The atmosphere should feel peaceful, cozy, and heartwarming inside the wooden ki
 – Do not change object positions mid-scene (no sudden movements or teleporting)  
 – Maintain full consistency with the character’s appearance and proportions from the reference image  
 – Emphasize warm natural lighting and depth of field to create realistic foreground/background layering
+
+
+
+봉제입제거 얼굴 표정변경
+
+Use the attached image only to match the bear’s body shape, fur texture, and costume design.  
+Do not copy the facial expression. The bear’s face should reflect its current emotion.
+
+Redesign the bear’s face with fully animated, flexible 3D features.  
+The mouth must not be a static texture — use a real 3D mouth with depth, inner parts, and lip motion.  
+The bear’s face should express emotions naturally with eyebrows, cheeks, and eyes that move softly.
+
+Scene: The baby bear eats happily.
+
+It holds a small wooden spoon with both paws and scoops tofu and mushrooms from the steaming hotpot.  
+It gently blows on the spoon, eyes squinting slightly, then brings it to its mouth with joy.  
+The bear’s mouth opens and closes smoothly as it eats, chewing with a soft, happy smile.  
+Its cheeks move while chewing, and it hums “Mmm!” in satisfaction.  
+The bear sways with joy, and its tail wiggles slightly.
+
+Keep the same cozy kitchen, morning light, and soft 3D animation style.  
+Show the full scene in a single eye-level shot — the bear, the spoon, and the hotpot all visible.
