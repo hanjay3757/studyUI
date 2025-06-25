@@ -1,0 +1,59 @@
+Use the attached image only to reference the baby bear’s body shape, fur texture, apron design, and overall visual style.
+Do not use or include the background from the image.
+Do not copy the facial expression — the bear’s face must reflect the current emotion in the scene.
+Do not display the reference image in the output — apply only its visual features.
+
+Recreate the bear as a fully animated 3D character.
+The bear must have a soft, expressive face.
+Its mouth should be modeled in 3D, with visible depth and natural lip motion.
+The inside of the mouth should show a small pink tongue (no visible teeth).
+The expression must appear natural and match the scene’s emotion.
+
+
+scene 1 = 
+The baby bear lies in bed in a cozy wooden bedroom.
+Morning sunlight shines softly through the window.
+The bear is yawning with its mouth open, eyes gently closed, and arms stretched.
+Inside the open mouth, a small pink tongue is visible — soft and round, not sticking out.
+The mouth looks soft and cartoon-like, without showing any teeth.
+
+The blanket has a carrot pattern and covers the bear’s lower body.
+The camera remains still and focused on the bear’s face and upper body.
+Use soft golden lighting and realistic fur rendering.
+The scene should feel peaceful, warm, and cozy.
+
+
+
+
+
+Same character style as before. The bear’s face and mouth should be fully 3D animated and expressive.
+
+Scene:  
+The baby bear walks into the wooden kitchen, rubbing its tummy with both paws.  
+It pauses and says softly, “I’m hungry…” with a pouty expression.  
+The mouth moves naturally while speaking.  
+Its eyes are wide and sad, and the belly makes a tiny growl sound.  
+Soft morning light fills the kitchen.  
+The camera stays at eye level, showing the whole body.
+
+Maintain consistent style and lighting from previous scenes. Facial animation must be soft and natural.
+
+Scene:  
+The bear opens the refrigerator. Inside, it’s completely empty — except for a lonely rolling carrot.  
+The bear gasps, and its expression changes to shocked disappointment.  
+It drops to the floor dramatically and says, “Oh no…” in a small voice.  
+The fridge light casts a glow on its surprised face.  
+Its ears droop, and its mouth forms a little “O” shape, fully animated.  
+The camera captures the bear and fridge from the side.
+
+
+Keep using the same character. The bear’s face must now look bright and determined, fully animated.
+
+Scene:  
+The baby bear stands up suddenly with energy.  
+It nods to itself and grabs a small cloth shopping bag.  
+It walks to the wooden door and opens it — outside is a sunny forest path.  
+The bear turns to the camera, waves, and says cheerfully, “Let’s go shopping!”  
+Its mouth moves naturally as it speaks, and its body bounces slightly with excitement.  
+Warm sunlight pours into the room.  
+The camera slowly follows the bear as it walks outside.
