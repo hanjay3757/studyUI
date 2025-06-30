@@ -1,0 +1,149 @@
+Header.tsx------------------------
+<Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" fixed="top" bg="dark" data-bs-theme="dark">
+            <Container>
+                <Navbar.Brand as={Link} to="/">
+                    Ezen
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link as={Link} to="/signup">
+                            SingUp
+                        </Nav.Link>
+                        <Nav.Link href="#pricing">Pricing</Nav.Link>
+                        <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
+                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                    <Nav>
+                        <Nav.Link as={Link} to="/posts">
+                            Posts
+                        </Nav.Link>
+                        <Nav.Link eventKey={2} as={Link} to="/mypage">
+                            MyPage
+                        </Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+---------------------------------
+
+--Side.tsx-------------------------------
+<Stack gap={2} className="mx-auto w-100">
+            <Button variant="primary" as={Link as any} to="/">
+                Home
+            </Button>
+
+            <Button variant="outline-success" as={Link as any} to="/signup">
+                SignUp
+            </Button>
+            <div className="alert alert-danger">a님 로그인 중 ...</div>
+
+            <Button variant="outline-success">Logout</Button>
+
+            <Button variant="outline-success">SignIn</Button>
+
+            <Button variant="outline-danger">인증 테스트</Button>
+
+            <hr></hr>
+            <ListGroup>
+                <ListGroup.Item as={Link} to="/hook1">
+                    Menu 1
+                </ListGroup.Item>
+                <ListGroup.Item as={Link} to="/hook2">
+                    Menu 2
+                </ListGroup.Item>
+            </ListGroup>
+        </Stack>
+---------------------------------
+
+--Footer.tsx-------------------------------
+<footer className="footer">
+    <p>&copy; 2025 BestApp. All rights reserved.</p>
+</footer>
+---------------------------------
+--Home.tsx--------------------------
+<div className="container py-4 text-center">
+            <h1>Home</h1>
+        </div>
+-----------------------------------------
+--App.tsx-------------------------------
+<>
+            <div className="container fluid py-5">
+                <BrowserRouter>
+                    <Row>
+                        <Col className="mb-5">
+                            <Header />
+                        </Col>
+                    </Row>
+                    <Row className="main">
+                        <Col xs={12} sm={4} md={4} lg={3} className="d-none d-sm-block mt-3">
+                            <Side />
+                        </Col>
+                        <Col xs={12} sm={8} md={8} lg={9}>
+                            <Routes>
+                                <Route path="/" element={<Home />} />
+                            </Routes>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col lg={12}></Col>
+                    </Row>
+                </BrowserRouter>
+            </div>
+            <Footer />
+        </>
+
+---------------------------------
+--App.css---------------------
+#root {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+.main {
+    min-height: 100vh;
+}
+.footer {
+    text-align: center;
+    background-color: #ccc;
+    width: 100%;
+    min-height: 40px;
+    line-height: 40px;
+    padding: 1em;
+    /* position: fixed;
+    left: 0;
+    bottom: 0; */
+}
+-----------------------------------------
+Post 글쓰기
+-----PostForm.tsx------------------------------------
+<>
+<Form>
+            <Form.Group controlId="name">
+                <Form.Label>Name</Form.Label>
+                <Form.Control type="text" name="name"  required />
+            </Form.Group>
+            <Form.Group controlId="title">
+                <Form.Label>Title</Form.Label>
+                <Form.Control type="text" name="title" required />
+            </Form.Group>
+            <Form.Group controlId="content">
+                <Form.Label>Content</Form.Label>
+                <Form.Control as="textarea" name="content" />
+            </Form.Group>
+            <Form.Group controlId="file">
+                <Form.Label>File</Form.Label>
+                <Form.Control type="file"  />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+                Submit
+            </Button>
+        </Form>
+</>
+----------------------------------------------------------

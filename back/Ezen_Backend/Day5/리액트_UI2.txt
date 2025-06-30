@@ -1,0 +1,173 @@
+--PostView.tsx UI----------------------------------------
+<div className="Post-view">
+  <div className="row my-5">
+    <div className="col px-5">
+      <h1 className="my-5 text-center">Post View [No. 게시글번호]</h1>
+      <div className="text-end my-2">
+        <a href="/postEdit/게시글번호">
+          <button className="btn mx-2">수정</button>
+        </a>
+        <button className="btn btn-danger">삭제</button>
+      </div>
+
+      <div className="card">
+        <div className="card-body">
+          <h5>[게시글번호] 게시글제목</h5>
+          <hr />
+          <div style={{ marginBottom: '1rem' }} className="text-center">
+            <img
+              src="http://localhost:7777/uploads/파일명혹은noimage.PNG"
+              alt="게시글 이미지"
+              style={{ maxWidth: '100%', borderRadius: '0.5rem' }}
+            />
+          </div>
+          <div className="cArea px-5">
+            게시글 내용 영역입니다.
+            <br />
+           <AiFillHeart style={{ color: 'hotpink' }} />
+            <AiFillDislike style={{ color: 'green' }} />
+          </div>
+        </div>
+        <div className="card-footer">
+          Created on 작성일자 by 작성자이름
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div className="row my-5">
+    <div className="col px-5 text-center">
+      <button className="btn mt-4 btn-secondary">
+        Post List 전체 출력
+      </button>
+      <h3 className="mt-5">댓글영역</h3>
+    </div>
+  </div>
+
+  <div className="row my-5">
+    <div className="col px-5">
+      <h3 className="mt-4">댓글추가</h3>
+    </div>
+  </div>
+
+  <div className="row my-5">
+    <div className="col px-5">
+      댓글 수정 폼
+    </div>
+  </div>
+</div>
+--------------------------------------------------------------
+---PostEdit.tsx----------------------------------------------
+<div className="row my-1">
+  <div className="col-md-8 mx-auto p-3">
+    <h1 className="text-center my-5">게시글 수정</h1>
+
+    <form>
+      {/* 제목 */}
+      <div className="mb-3">
+        <label className="form-label">제목</label>
+        <input
+          className="form-control my-2"
+          placeholder="제목을 입력하세요"
+        />
+      </div>
+
+      {/* 작성자 */}
+      <div className="mb-3">
+        <label className="form-label">작성자</label>
+        <input
+          className="form-control my-2"
+          placeholder="작성자 이름"
+        />
+      </div>
+
+      {/* 내용 */}
+      <div className="mb-3">
+        <label className="form-label">내용</label>
+        <textarea
+          className="form-control my-2"
+          rows="6"
+          placeholder="내용을 입력하세요"
+        ></textarea>
+      </div>
+
+      {/* 첨부파일 */}
+      <div className="mb-3">
+        <label className="form-label">첨부파일</label>
+        <input className="form-control" type="file" />
+        <div className="mt-2 text-muted">
+          <img
+            src="첨부파일경로"
+            alt="기존 첨부파일"
+            style={{ width: '120px' }}
+          />
+          <div>현재 파일: 파일명</div>
+        </div>
+      </div>
+
+      {/* 버튼들 */}
+      <div className="text-center">
+        <button className="btn btn-primary mx-1 px-3 btn-sm">
+          글수정
+        </button>
+        <button className="btn btn-warning mx-1 px-3 btn-sm">
+          다시쓰기
+        </button>
+        <button className="btn btn-secondary mx-1 px-3 btn-sm">
+          글 목록
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+--------------------------------------------------------------
+---SignUpForm.tsx UI---------------------------------------
+
+<div className="container py-4">
+    <h1 className="text-center">Signup</h1>
+
+    <form>
+        {/* 이름 */}
+        <div className="mb-3 col-md-8 offset-md-2">
+            <label className="form-label">이름</label>
+            <input className="form-control" name="name" />
+        </div>
+
+        {/* 이메일 */}
+        <div className="mb-3 col-md-8 offset-md-2">
+            <label className="form-label">이메일</label>
+            <input className="form-control" name="email" />
+            <button type="button" className="btn btn-outline-success mt-2">
+                중복 체크
+            </button>
+            <div className="mt-1 small">중복 확인 메시지</div>
+        </div>
+
+        {/* 비밀번호 */}
+        <div className="mb-3 col-md-8 offset-md-2">
+            <label className="form-label">비밀번호</label>
+            <input className="form-control" type="password" name="passwd" />
+        </div>
+
+        {/* 역할 */}
+        <div className="mb-3 col-md-8 offset-md-2">
+            <label className="form-label">역할</label>
+            <select className="form-select" name="role">
+                <option value="USER">USER</option>
+                <option value="ADMIN">ADMIN</option>
+            </select>
+        </div>
+
+        {/* 버튼 */}
+        <div className="text-center">
+            <button className="btn btn-primary me-2" type="submit">
+                회원가입
+            </button>
+            <button className="btn btn-secondary" type="button">
+                초기화
+            </button>
+        </div>
+    </form>
+</div>
+------------------------------------------------------------------------------
