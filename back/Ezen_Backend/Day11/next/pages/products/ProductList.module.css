@@ -1,0 +1,23 @@
+.container {
+  margin-bottom: 2rem;
+  padding: 0 1rem; /* 좌우 여백 추가 */
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold; /* 강조를 위한 볼드 */
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem; /* 아이템 간 간격 */
+}
+
+/* 모바일에서는 그리드를 더 좁게 하거나 한 줄로 표시할 수 있음 */
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr; /* 한 줄로 표시 */
+  }
+}
