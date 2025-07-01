@@ -1,0 +1,24 @@
+/* 404.module.css */
+.container{
+    text-align: center;   
+    padding: 5rem 2rem;
+    color: #333;
+}
+.title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.decription{
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color:#777;
+}
+.homeButton{
+    display: inline-block;
+    padding: .8rem 1.5rem;
+    background-color: rgb(76, 43, 226);
+    color: #fff;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+}
