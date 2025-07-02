@@ -1,0 +1,63 @@
+// 예: src/pages/index.tsx
+import styles from '../styles/Home.module.css';
+import ProductList from '@/components/products/ProductList';
+import TimeDealSlider from '@/components/products/TimeDealSlider';
+
+const dummyProducts = [
+  {
+    id: 1,
+    name: '남성 반팔 티셔츠',
+    price: 19000,
+    image_url: '/images/tshirt_m1.jpg',
+  },
+  {
+    id: 2,
+    name: '여성 크롭 반팔',
+    price: 22900,
+    image_url: '/images/tshirt_f1.jpg',
+  },
+  {
+    id: 3,
+    name: '남성 반바지',
+    price: 27900,
+    image_url: '/images/shorts_m1.jpg',
+  },
+  {
+    id: 4,
+    name: '여성 플리츠 스커트',
+    price: 34900,
+    image_url: '/images/skirt_f1.jpg',
+  },
+];
+const timeDeals = [
+    {
+      id: 1,
+      product_name: '남성 반팔 티셔츠',
+      deal_price: 15000,
+      price: 19000,
+      image_url: '/images/react-shirt.jpg',
+      end_time: '2025-06-23T00:04:00', // 실제 DB에서 가져오기
+    },
+    {
+      id: 2,
+      product_name: '여성 원피스',
+      deal_price: 29900,
+      price: 49900,
+      image_url: '/images/dress_f1.jpg',
+      end_time: '2025-06-22T00:10:00',
+    },
+  ];
+export default function Home() {
+  return (
+    <div className={styles.container}>
+      
+    <TimeDealSlider deals={timeDeals} title="⏰ 지금 진행 중인 타임딜" />
+    <div style={{ padding: '1rem' }}>
+      <ProductList products={dummyProducts} title="🌟 Best 상품" />
+    </div>
+    <div style={{ padding: '1rem' }}>
+      <ProductList products={dummyProducts} title="🌟 HIT 상품" />
+    </div>
+    </div>
+  );
+}

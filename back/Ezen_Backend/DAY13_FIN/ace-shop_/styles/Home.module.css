@@ -1,0 +1,6 @@
+.container{
+    width:90%;
+    max-width: 1024px;
+    /* background-color: #ccc; */
+    margin: auto;
+}

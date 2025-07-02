@@ -1,0 +1,63 @@
+
+// pages/products/[id].tsx
+import { GetStaticPaths, GetStaticProps } from 'next';
+import { Product } from '@/types/Product';
+
+export default function ProductDetail({ product }: { product: Product }) {
+  if (!product) return <p>상품을 찾을 수 없습니다.</p>;
+
+  return (
+    <div>
+      <h1>{product.name}</h1>
+      <p>{product.price.toLocaleString()}원</p>
+      <p>{product.description}</p>
+    </div>
+  );
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  // 빌드 시 미리 생성할 상품 id 목록
+  const prebuildIds = ['1', '2', '3'];
+
+  const paths = prebuildIds.map((id) => ({
+    params: { id },
+  }));
+
+  return {
+    paths,
+    fallback: 'blocking', // 빌드 시 없던 페이지는 서버에서 생성
+  };
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { id } = context.params!;
+
+  const res = await fetch(`http://localhost:7777/api/products/${id}`);
+  
+  if (res.status !== 200) {
+    return {
+      notFound: true, // 404 페이지 보여주기
+    };
+  }
+
+  const product: Product = await res.json();
+
+  return {
+    props: { product },
+    revalidate: 300, // 5분마다 페이지 갱신 (ISR)
+  };
+};
+/*
+fallback 옵션 종류와 의미
+옵션 값	동작 방식 및 특징
+[1] false	- 빌드 시 지정한 paths 이외의 경로는 404 에러 발생
+- 즉, 미리 생성하지 않은 경로는 아예 없음
+- 모든 경로를 빌드 시 생성할 때 적합
+[2] 'blocking'	- 미리 생성하지 않은 경로에 접속 시, 서버에서 요청 시점에 페이지 생성 (SSR처럼 동작)
+- 생성 완료 후 결과를 클라이언트에 반환하고 페이지 캐싱
+- 최초 요청에만 지연 발생, 이후는 정적 페이지처럼 빠름
+[3] 'true'	- 미리 생성하지 않은 경로 요청 시, 우선 빈 페이지(로딩 상태) 보여줌
+- 백그라운드에서 페이지 생성 후, 완성되면 자동 업데이트
+- 사용자 경험 상 loading UI 처리가 필요
+- 초반에 빈 화면 보여줄 수 있음
+*/

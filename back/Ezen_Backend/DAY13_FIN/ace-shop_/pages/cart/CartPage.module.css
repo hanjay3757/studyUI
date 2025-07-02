@@ -1,0 +1,19 @@
+.cartList{
+    width: 90%;
+    margin: auto;
+    padding: 1rem;
+}
+.cartTable{
+    margin: 1rem auto;
+}
+.cartTable th{
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+}
+.cartTable td{
+    padding: 5px;
+}
+.cartTable{
+    width: 100%;
+    border-collapse: collapse;
+}

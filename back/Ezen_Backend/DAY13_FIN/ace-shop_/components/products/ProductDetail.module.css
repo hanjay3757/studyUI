@@ -1,0 +1,132 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 900px;  /* ✅ 폭 제한 */
+  margin: 0 auto;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.imageBox {
+  flex: 0 0 40%; /* ✅ 고정 비율 */
+}
+
+.imageBox img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+.infoBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.priceBox {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.normalPrice {
+  color: #111;
+  font-weight: bold;
+}
+
+.originalPrice {
+  color: #999;
+  font-size: 1.1rem;
+}
+
+.dealPrice {
+  color: #d9480f;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.discount {
+  background-color: #ff4d4f;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.options {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.options input {
+  width: 60px;
+  margin-left: 0.5rem;
+  padding: 0.4rem;
+  font-size: 1rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: .5rem;
+  margin-top: 1.5rem;
+}
+
+.cartBtn {
+  background-color: #2e7d32;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.buyBtn {
+  background-color: navy;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.backBtn {
+  background-color: #d9d9d9;
+  color: #333;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.cartBtn:hover {
+  background-color: #256d27;
+}
+
+.buyBtn:hover {
+  background-color: #4a1dec;
+}
+
+.backBtn:hover {
+  background-color: #c1c1c1;
+}
