@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>k'project gallery</title>
+    <link rel="icon" href="./image/logo.png" />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/plugin/jquery.simplyscroll.min.js"></script>
+    <script src="/js/plugin/scrolla.jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- parallax -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="headerbox">
+        <div class="number">JYoung</div>
+        <div class="timebox">
+          <div class="time">Seoul KR :</div>
+          <div class="clock" id="clock">--:--:--</div>
+        </div>
+      </div>
+    </header>
+    <main id="parallax__cont">
+      <div class="video-background">
+        <video
+          src="./vidoe/121983-724732202_medium.mp4"
+          autoplay
+          loop
+          muted
+          preload="auto"
+        ></video>
+        <section class="visual animate" data-animate="motion">
+          <div class="mainText1">
+            <p><span>UI/UX Design</span></p>
+            <p><span>Web Publisher</span></p>
+            <p><span>K'Portfolio</span></p>
+          </div>
+          <div class="mainText2">
+            <p><span>멈추지 않고 끊임없이 상상하며,</span></p>
+            <p><span>항상 만족할 수 있는 디자인을 추구합니다.</span></p>
+            <p><span>최고가 되려고 항상 공부하고 노력합니다.</span></p>
+          </div>
+        </section>
+        <!-- <div class="img">
+          <img src="./image/logo.png" alt="logo" />
+        </div> -->
+      </div>
+      <section id="section1" class="parallax__item">
+        <div class="parallax__item__text">
+          <div class="center">
+            <p>Hello, thank you for coming to Kim Junyoung's portfolio.</p>
+            <p>From now on, I'mgoing to explain about the projects</p>
+            <p>I've done so farI hope you enjoy it.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="section2" class="parallax__item">
+        <div class="h1">Portfolio List</div>
+        <div class="container">
+          <div class="img01">
+            <div class="imgbox">
+              <div class="imgboxs">
+                <a
+                  href=" https://portfolio-787ae.web.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img class="l1" src="./image/my.png" alt="my"
+                /></a>
+                <a
+                  href="https://portfolio-787ae.web.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="overlay">
+                    <span class="overlay-text">Click!</span>
+                  </div></a
+                >
+              </div>
+
+              <div class="gap">
+                <div class="info">
+                  <p class="h2"><span>Joo Nyeng</span></p>
+                  <p><span>나 자신을 소개하는 </span></p>
+                  <p><span>반응형 프로젝트입니다.</span></p>
+                </div>
+                <div class="projectgap">
+                  <p class="h2"><span>1인 프로젝트</span></p>
+                  <p><span>기여도 : 100%</span></p>
+                </div>
+                <div class="toolsbox">
+                  <p class="h2"><span>Tools</span></p>
+                  <p><span>#Figma</span></p>
+                  <p><span>#Html</span></p>
+                  <p><span>#Scss</span></p>
+                  <p><span>#Script</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="section3">
+            <ul class="list" id="scrollingList">
+              <li>Html</li>
+              <li>Scss</li>
+              <li>Script</li>
+              <li>Figma</li>
+              <li>My Portfolio</li>
+              <li>First Peoject</li>
+              <li>Html</li>
+              <li>Scss</li>
+              <li>Script</li>
+              <li>Figma</li>
+              <li>My Portfolio</li>
+              <li>First Peoject</li>
+              <li>Html</li>
+              <li>Scss</li>
+              <li>Script</li>
+              <li>Figma</li>
+              <li>My Portfolio</li>
+              <li>First Peoject</li>
+              <li>Html</li>
+              <li>Scss</li>
+              <li>Script</li>
+              <li>Figma</li>
+              <li>My Portfolio</li>
+              <li>First Peoject</li>
+            </ul>
+          </section>
+          <div class="img02">
+            <div class="imgbox">
+              <div class="imgboxs">
+                <a
+                  href="https://seoul-beer-festival.web.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="./image/beer.png" alt="my" />
+                </a>
+                <a
+                  href="https://seoul-beer-festival.web.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><div class="overlay">
+                    <span class="overlay-text">Click!</span>
+                  </div></a
+                >
+              </div>
+
+              <div class="gap">
+                <div class="info">
+                  <p class="h2"><span>Seoul Beer Fesitval</span></p>
+
+                  <p><span>맥주라는 카테고리로 가상의</span></p>
+                  <p><span>페스티벌 홍보 사이트입니다.</span></p>
+                </div>
+                <div class="projectgap">
+                  <p class="h2"><span>1인 프로젝트</span></p>
+                  <p><span>기여도 : 100%</span></p>
+                </div>
+                <div class="toolsbox">
+                  <p class="h2"><span>Tools</span></p>
+                  <p><span>#Figma</span></p>
+                  <p><span>#Html</span></p>
+                  <p><span>#Scss</span></p>
+                  <p><span>#Script</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="section3">
+            <ul class="list" id="scrollingList">
+              <li>Html</li>
+              <li>Scss</li>
+              <li>Script</li>
+              <li>Figma</li>
+              <li>A Promotional Site</li>
+              <li>Beer Festival</li>
+              <li>Html</li>
+              <li>Scss</li>
+              <li>Script</li>
+              <li>Figma</li>
+              <li>A Promotional Site</li>
+              <li>Beer Festival</li>
+              <li>Html</li>
+              <li>Scss</li>
+              <li>Script</li>
+              <li>Figma</li>
+              <li>A Promotional Site</li>
+              <li>Beer Festival</li>
+              <li>Html</li>
+              <li>Scss</li>
+              <li>Script</li>
+              <li>Figma</li>
+              <li>A Promotional Site</li>
+              <li>Beer Festival</li>
+            </ul>
+          </section>
+          <div class="img03">
+            <div class="imgbox">
+              <div class="imgboxs">
+                <a
+                  href="
+https://www.figma.com/proto/suVnAlEk9mUju4GkFqfGfh/%EA%B5%90%EB%B3%B4-%EC%A0%84%EC%9E%90%EB%8F%84%EC%84%9C%EA%B4%80-%EB%A6%AC%EB%89%B4%EC%96%BC-%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=2-26391&t=lOeRt1Eu17BpUf8p-1&scaling=min-zoom&content-scaling=fixed&page-id=2%3A4722&starting-point-node-id=2%3A26391&show-proto-sidebar=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="./image/gubo.png" alt="my"
+                /></a>
+                <a
+                  href="https://www.figma.com/proto/suVnAlEk9mUju4GkFqfGfh/%EA%B5%90%EB%B3%B4-%EC%A0%84%EC%9E%90%EB%8F%84%EC%84%9C%EA%B4%80-%EB%A6%AC%EB%89%B4%EC%96%BC-%ED%8C%80%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=2-26391&t=lOeRt1Eu17BpUf8p-1&scaling=min-zoom&content-scaling=fixed&page-id=2%3A4722&starting-point-node-id=2%3A26391&show-proto-sidebar=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="overlay">
+                    <span class="overlay-text">Click!</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="gap">
+                <div class="info">
+                  <p class="h2"><span>교보도서관</span></p>
+                  <p><span>교보도서관 어플을</span></p>
+                  <p><span>리뉴얼 팀 프로젝트입니다.</span></p>
+                </div>
+                <div class="projectgap">
+                  <p class="h2"><span>5인 프로젝트</span></p>
+                  <p><span>기여도 : 20%</span></p>
+                </div>
+                <div class="toolsbox">
+                  <p class="h2"><span>Tools</span></p>
+                  <p><span>#Figma</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="section3">
+            <ul class="list" id="scrollingList">
+              <li>Figma</li>
+              <li>Prototype</li>
+              <li>UI/UX Design</li>
+              <li>Mobile</li>
+              <li>Application</li>
+              <li>Kyobo Library</li>
+              <li>Figma</li>
+              <li>Prototype</li>
+              <li>UI/UX Design</li>
+              <li>Mobile</li>
+              <li>Application</li>
+              <li>Kyobo Library</li>
+              <li>Figma</li>
+              <li>Prototype</li>
+              <li>UI/UX Design</li>
+              <li>Mobile</li>
+              <li>Application</li>
+              <li>Kyobo Library</li>
+              <li>Figma</li>
+              <li>Prototype</li>
+              <li>UI/UX Design</li>
+              <li>Mobile</li>
+              <li>Application</li>
+              <li>Kyobo Library</li>
+            </ul>
+          </section>
+          <div class="img04">
+            <div class="imgbox">
+              <div class="imgboxs">
+                <a
+                  href="https://pado-ott.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="./image/pado.png" alt="my"
+                /></a>
+                <a href="https://pado-ott.vercel.app/"
+                  ><div
+                    class="overlay"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span class="overlay-text">Click!</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="gap">
+                <div class="info">
+                  <p class="h2"><span>Pado(OTT)</span></p>
+                  <p><span>웨이브OTT사이트를 </span></p>
+                  <p><span>리뉴얼한 팀 프로젝트입니다.</span></p>
+                </div>
+                <div class="projectgap">
+                  <p class="h2"><span>5인 프로젝트</span></p>
+                  <p><span>기여도 : 20%</span></p>
+                </div>
+                <div class="toolsbox">
+                  <p class="h2"><span>Tools</span></p>
+                  <p><span>#Next.js</span></p>
+                  <p><span>#Typescript</span></p>
+                  <p><span>#Figma</span></p>
+                  <p><span>#Script</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="section3">
+            <ul class="list" id="scrollingList">
+              <li>Next.Js</li>
+              <li>TypeScript</li>
+              <li>script</li>
+              <li>TMDB Api</li>
+              <li>Figma</li>
+              <li>Ott Platform</li>
+              <li>Next.Js</li>
+              <li>TypeScript</li>
+              <li>script</li>
+              <li>TMDB Api</li>
+              <li>Figma</li>
+              <li>Ott Platform</li>
+              <li>Next.Js</li>
+              <li>TypeScript</li>
+              <li>script</li>
+              <li>TMDB Api</li>
+              <li>Figma</li>
+              <li>Ott Platform</li>
+              <li>Next.Js</li>
+              <li>TypeScript</li>
+              <li>script</li>
+              <li>TMDB Api</li>
+              <li>Figma</li>
+              <li>Ott Platform</li>
+            </ul>
+          </section>
+          <div class="img05">
+            <div class="imgbox">
+              <div class="imgboxs">
+                <a
+                  href="https://kakaostory-b8662.web.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="./image/kakako.png" alt="my"
+                /></a>
+                <a
+                  href="https://kakaostory-b8662.web.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><div class="overlay">
+                    <span class="overlay-text">Click!</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="gap">
+                <div class="info">
+                  <p class="h2"><span>Kakao Stroy</span></p>
+                  <p><span>카카오스토리를 리뉴얼한 </span></p>
+                  <p><span>반응형 팀 프로젝트입니다.</span></p>
+                </div>
+                <div class="projectgap">
+                  <p class="h2"><span>5인 프로젝트</span></p>
+                  <p><span>기여도 : 20%</span></p>
+                </div>
+                <div class="toolsbox">
+                  <p class="h2"><span>Tools</span></p>
+                  <p><span>#Figma</span></p>
+                  <p><span>#Reat</span></p>
+                  <p><span>#Firebase</span></p>
+                  <p><span>#Script</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="section3">
+            <ul class="list" id="scrollingList">
+              <li>React</li>
+              <li>Script</li>
+              <li>FireBase</li>
+              <li>Figma</li>
+              <li>SNS Site</li>
+              <li>KaKao Story</li>
+              <li>React</li>
+              <li>Script</li>
+              <li>FireBase</li>
+              <li>Figma</li>
+              <li>SNS Site</li>
+              <li>KaKao Story</li>
+              <li>React</li>
+              <li>Script</li>
+              <li>FireBase</li>
+              <li>Figma</li>
+              <li>SNS Site</li>
+              <li>KaKao Story</li>
+              <li>React</li>
+              <li>Script</li>
+              <li>FireBase</li>
+              <li>Figma</li>
+              <li>SNS Site</li>
+              <li>KaKao Story</li>
+            </ul>
+          </section>
+          <div class="img06">
+            <div class="imgbox">
+              <div class="imgboxs">
+                <a
+                  href="https://oliveyoung-yesshow.web.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><img src="./image/olive.png" alt="my"
+                /></a>
+                <a
+                  href="https://oliveyoung-yesshow.web.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="overlay">
+                    <span class="overlay-text">Click!</span>
+                  </div></a
+                >
+              </div>
+
+              <div class="gap">
+                <div class="info">
+                  <p class="h2"><span>Olive Young</span></p>
+                  <p><span>올리브영을 리뉴얼한</span></p>
+                  <p><span>반응형 팀 프로젝트입니다.</span></p>
+                </div>
+                <div class="projectgap">
+                  <p class="h2"><span>4인 프로젝트</span></p>
+                  <p><span>기여도 : 25%</span></p>
+                </div>
+                <div class="toolsbox">
+                  <p class="h2"><span>Tools</span></p>
+                  <p><span>#Figma</span></p>
+                  <p><span>#Html</span></p>
+                  <p><span>#Css</span></p>
+                  <p><span>#Script</span></p>
+                  <p><span>#Josn</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section class="section3">
+            <ul class="list" id="scrollingList">
+              <li>Html</li>
+              <li>Css</li>
+              <li>Script</li>
+              <li>Json</li>
+              <li>E-Commerce Site</li>
+              <li>Olive Young</li>
+              <li>Html</li>
+              <li>Css</li>
+              <li>Script</li>
+              <li>Json</li>
+              <li>E-Commerce Site</li>
+              <li>Olive Young</li>
+              <li>Html</li>
+              <li>Css</li>
+              <li>Script</li>
+              <li>Json</li>
+              <li>E-Commerce Site</li>
+              <li>Olive Young</li>
+              <li>Html</li>
+              <li>Css</li>
+              <li>Script</li>
+              <li>Json</li>
+              <li>E-Commerce Site</li>
+              <li>Olive Young</li>
+            </ul>
+          </section>
+        </div>
+      </section>
+      <div id="Contact">
+        <h1>Contact</h1>
+        <div class="container">
+          <form id="contact-form">
+            <div class="input_box">
+              <input type="text" name="from_name" placeholder="Name" />
+              <input type="text" name="form_email" placeholder="Email" />
+              <textarea name="message" placeholder="Message"></textarea>
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+          <div class="infomation">
+            <h3>Email: az3014@naver.com</h3>
+            <h3>Phone: 010.9109.8419</h3>
+            <a
+              href="https://github.com/dghasdf/ui_ux_ezen"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>Github: https://github.com/dghasdf/ui_ux_ezen</h3></a
+            >
+          </div>
+        </div>
+      </div>
+      <button id="goToBtn">↑</button>
+    </main>
+  </body>
+</html>

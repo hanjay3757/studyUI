@@ -1,2 +1,5 @@
 node_modules
 06-api-test/
+*.psd
+*.mp4
+*.exe

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/plugin/jquery.simplyscroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      li {
+        list-style-type: none;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .pd {
+        height: 1000vh;
+        border: 2px solid red;
+      }
+      section {
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid blue;
+      }
+      .sec02 {
+        overflow: hidden;
+      }
+      .simply-scroll .simply-scroll-clip {
+        overflow: hidden;
+        width: 100vw;
+      }
+      .simply-scroll .simply-scroll-clip .simply-scroll-list li {
+        float: left;
+        width: 450px;
+        height: 300px;
+        object-fit: cover;
+        object-position: bottom;
+      }
+      .sec02 .simply-scroll .simply-scroll-clip {
+        transition: 1.2s;
+        transition-delay: 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="sec01"></section>
+    <section class="sec02">
+      <ul class="list">
+        <li><img src="./image/img (1).jpg" alt="" /></li>
+        <li><img src="./image/img (1).jpg" alt="" /></li>
+        <li><img src="./image/img (1).jpg" alt="" /></li>
+        <li><img src="./image/img (1).jpg" alt="" /></li>
+        <li><img src="./image/img (1).jpg" alt="" /></li>
+        <li><img src="./image/img (1).jpg" alt="" /></li>
+      </ul>
+    </section>
+    <section class="pd"></section>
+
+    <script>
+      $(function () {
+        $('.sec02 .list').simplyScroll({
+          speed: 4,
+          pauseOnHover: false,
+          pauseOnTouch: false,
+        });
+      });
+    </script>
+  </body>
+</html>

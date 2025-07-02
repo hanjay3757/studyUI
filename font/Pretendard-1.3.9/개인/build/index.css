@@ -1,0 +1,4540 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+@font-face {
+  font-family: "Cafe24ClassicType-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Cafe24ClassicType-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: none;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background: url(./image/p6.webp);
+  width: 100%;
+  height: 100vh;
+}
+body .custom-cursor {
+  position: fixed;
+  text-align: center;
+  line-height: 60px;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #000;
+  font-size: 12px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+  z-index: 100000;
+  font-family: "Pretendard-Regular";
+  font-weight: bold;
+}
+body .custom-cursor.hovered {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 12px;
+  color: #ff6d70;
+  border: 1px solid #ff6d70;
+  font-family: "Pretendard-Regular";
+  font-weight: bold;
+}
+body header {
+  width: 100%;
+  position: fixed;
+  background: none;
+  background-color: #fff;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+body header.scrolled {
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+body header .nav {
+  padding: 0 240px;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+body header .nav .logo img {
+  width: 60px;
+  height: 60px;
+}
+body header .nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  font-family: "Cafe24ClassicType-Regular";
+}
+body header .nav ul li {
+  font-size: 20px;
+  transition: 0.3s;
+}
+body header .nav ul li:hover {
+  transform: scale(1.2);
+}
+body header .nav .hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: none;
+  gap: 5px;
+  position: relative; /* 위치 지정 */
+  z-index: 1000;
+}
+body header .nav .hamburger span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+body header .nav .hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5.5px, 5.5px);
+}
+body header .nav .hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+body header .nav .hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5.5px, -5.5px);
+}
+body #main {
+  width: 100%;
+  height: 100vh;
+  padding: 0 240px;
+}
+body #main .main_text {
+  width: 100%;
+  height: 100%;
+  font-family: "Cafe24ClassicType-Regular";
+  padding-top: 120px;
+}
+body #main .main_text .first {
+  display: flex;
+  align-items: center;
+}
+body #main .main_text .first .first_text {
+  font-size: 130px;
+}
+body #main .main_text .first .hover_text {
+  position: relative;
+}
+body #main .main_text .first .hover_text img {
+  width: 180px;
+  animation: img1 1.5s ease-in-out infinite alternate;
+}
+@keyframes img1 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+body #main .main_text .first .hover_text .circle {
+  position: absolute;
+  bottom: 100%; /* 이미지의 아래 끝에 배치 */
+  right: 0; /* 오른쪽 끝에 위치 */
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: #27db95;
+  animation: circle 1.5s ease-in-out infinite;
+}
+@keyframes circle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+  90% {
+    transform: translateY(0);
+  }
+}
+body #main .main_text .first .hover_text:hover + .span_box {
+  width: 200px;
+  height: 50px;
+  background-color: #27db95;
+  text-align: center;
+  top: 100px;
+  right: 650px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  color: #fff;
+  font-family: "Pretendard-Regular";
+}
+body #main .main_text .first .span_box {
+  display: none;
+  transition: all 0.3s;
+}
+body #main .main_text .first .span_box span {
+  display: inline-block;
+  width: 100%;
+}
+body #main .main_text .second_text {
+  font-size: 130px;
+  margin-top: 32px;
+  margin-left: 365px;
+}
+body #main .main_text .second {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+  margin-left: 559px;
+}
+body #main .main_text .second .hover_text2 {
+  position: relative;
+}
+body #main .main_text .second .hover_text2 img {
+  width: 148px;
+  height: 141px;
+  animation: img1 1.5s ease-in-out infinite alternate;
+}
+@keyframes img1 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+body #main .main_text .second .hover_text2 .circle2 {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: #27db95;
+  animation: circle 1.5s ease-in-out infinite;
+}
+@keyframes circle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+  90% {
+    transform: translateY(0);
+  }
+}
+body #main .main_text .second .hover_text2:hover + .span_box2 {
+  bottom: 400px;
+  left: 600px;
+  width: 200px;
+  height: 50px;
+  background-color: #27db95;
+  text-align: center;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  color: #fff;
+  font-family: "Pretendard-Regular";
+}
+body #main .main_text .second .span_box2 {
+  display: none;
+  transition: all 0.3s;
+}
+body #main .main_text .second .span_box2 span {
+  display: inline-block;
+  width: 100%;
+}
+body #main .main_text .second .third_text {
+  font-size: 130px;
+}
+body #main .main_text .fourth_text {
+  font-size: 130px;
+  margin-top: 32px;
+}
+body #main .main_text path {
+  width: 100%;
+  margin-bottom: 148px;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 2s forwards ease-out;
+}
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+body #Intro {
+  width: 100%;
+  height: 100vh;
+  padding: 0 240px;
+  margin-top: 200px;
+}
+body #Intro .intro_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #Intro .intro_container span,
+body #Intro .intro_container p {
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+body #Intro .intro_container .span_first {
+  width: 100%;
+  font-family: "Exo 2", sans-serif;
+  font-size: 100px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body #Intro .intro_container .span_second {
+  font-family: "Pretendard-Regular";
+  font-size: 4rem;
+  margin-top: 100px;
+}
+body #Intro .intro_container .p_first {
+  font-family: "Pretendard-Regular";
+  font-size: 36px;
+  text-align: center;
+  margin-top: 45px;
+  min-height: 150px;
+}
+body #Intro .intro_container .circle_button {
+  width: 40px;
+  height: 90px;
+  border: 1px solid #000;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  margin-top: 100px;
+  cursor: pointer;
+}
+body #Intro .intro_container i {
+  margin-bottom: 8px;
+}
+body #Intro .intro_container span {
+  display: flex;
+}
+body #Intro .typing {
+  opacity: 1;
+  animation: typing 10s steps(20), blink 0.5s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0ch;
+  }
+  to {
+    width: 100ch;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+body #About {
+  width: 100%;
+  height: 100vh;
+}
+body #About .about_container {
+  padding: 0 240px;
+}
+body #About .about_container .about_frist_text h1 {
+  font-family: "Exo 2", sans-serif;
+  font-size: 100px;
+  margin-top: 40px;
+}
+body #About .about_container .about_frist_text svg path {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  transition: stroke-dashoffset 10s ease-out;
+}
+body #About .about_container .about_frist_text svg.animate path {
+  stroke-dashoffset: 0;
+}
+body #About .about_container .info_containers {
+  display: flex;
+  gap: 230px;
+}
+body #About .about_container .info_containers .about_img_text {
+  width: 270px;
+  height: 464px;
+  text-align: center;
+}
+body #About .about_container .info_containers .about_img_text img {
+  width: 240px;
+  height: 240px;
+  margin-top: 209px;
+}
+body #About .about_container .info_containers .about_img_text h1 {
+  font-size: 24px;
+  font-family: "Pretendard-Regular";
+  margin-bottom: 24px;
+}
+body #About .about_container .info_containers .about_img_text p {
+  font-family: "Pretendard-Regular";
+  font-size: 20px;
+}
+body #About .about_container .info_containers .about_info_text {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+body #About .about_container .info_containers .about_info_text .info_container {
+  width: 821px;
+  height: 136px;
+  display: flex;
+  gap: 92px;
+}
+body #About .about_container .info_containers .about_info_text .info_container h1 {
+  font-family: "Exo 2", sans-serif;
+  font-size: 40px;
+  margin: 0;
+  line-height: 1;
+}
+body #About .about_container .info_containers .about_info_text .info_container .p_df1 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+body #About .about_container .info_containers .about_info_text .info_container .p_df1 p {
+  font-family: "Pretendard-Regular";
+  font-size: 24px;
+  margin: 0;
+}
+body #About .about_container .info_containers .about_info_text .skill_container {
+  width: 821px;
+  height: 50px;
+  display: flex;
+  gap: 260px;
+}
+body #About .about_container .info_containers .about_info_text .skill_container h1 {
+  font-family: "Exo 2", sans-serif;
+  font-size: 40px;
+}
+body #About .about_container .info_containers .about_info_text .skill_container .skill_icon {
+  width: 456px;
+  height: 50px;
+  display: flex;
+  gap: 8px;
+}
+body #About .about_container .info_containers .about_info_text .skill_container .skill_icon span,
+body #About .about_container .info_containers .about_info_text .skill_container .skill_icon i {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 24px;
+  transition: all 0.3s;
+}
+body #About .about_container .info_containers .about_info_text .skill_container .skill_icon span:hover,
+body #About .about_container .info_containers .about_info_text .skill_container .skill_icon i:hover {
+  background-color: #000;
+  color: #fff;
+}
+body #About .about_container .info_containers .about_info_text .license_container {
+  display: flex;
+  gap: 211px;
+}
+body #About .about_container .info_containers .about_info_text .license_container h1 {
+  font-family: "Exo 2", sans-serif;
+  font-size: 40px;
+  line-height: 1;
+}
+body #About .about_container .info_containers .about_info_text .license_container .p_df2 {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+body #About .about_container .info_containers .about_info_text .license_container .p_df2 p {
+  font-family: "Pretendard-Regular";
+  font-size: 24px;
+}
+body #About .about_container .info_containers .about_info_text .education_container {
+  display: flex;
+  gap: 132px;
+}
+body #About .about_container .info_containers .about_info_text .education_container h1 {
+  width: 233px;
+  font-family: "Exo 2", sans-serif;
+  font-size: 40px;
+  line-height: 1;
+}
+body #About .about_container .info_containers .about_info_text .education_container .education_containers {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 {
+  display: flex;
+  gap: 16px;
+}
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1 p,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2 p,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3 p,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4 p,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5 p,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6 p,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 p {
+  width: 100px;
+  font-family: "Pretendard-Regular";
+  font-size: 24px;
+  text-align: center;
+}
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1 span,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2 span,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3 span,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4 span,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5 span,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6 span,
+body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 span {
+  font-family: "Pretendard-Regular";
+  font-size: 24px;
+}
+body #Project {
+  width: 100%;
+  margin-bottom: 64px;
+  padding: 0 240px;
+}
+body #Project h1 {
+  font-family: sans-serif;
+  font-size: 100px;
+  margin-top: 40px;
+}
+body #Project svg {
+  margin-bottom: 100px;
+}
+body #Project svg path {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  transition: stroke-dashoffset 10s ease-out;
+}
+body #Project svg.animate path {
+  stroke-dashoffset: 0;
+}
+body #Project .video_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+body #Project .video_container .video_box1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+body #Project .video_container .video_box1 .oliveyoung p:nth-child(2) {
+  font-family: "Exo 2", sans-serif;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+body #Project .video_container .video_box1 .oliveyoung p:nth-child(3) {
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  color: #333;
+}
+body #Project .video_container .video_box1 .kakaostory p:nth-child(2) {
+  font-family: "Exo 2", sans-serif;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+body #Project .video_container .video_box1 .kakaostory p:nth-child(3) {
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  color: #333;
+}
+body #Project .video_container .video_box1 .olive,
+body #Project .video_container .video_box1 .kakao {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 16px;
+}
+body #Project .video_container .video_box2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+body #Project .video_container .video_box2 .padoott p:nth-child(2) {
+  font-family: "Exo 2", sans-serif;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+body #Project .video_container .video_box2 .padoott p:nth-child(3) {
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  color: #333;
+}
+body #Project .video_container .video_box2 .portfolios p:nth-child(2) {
+  font-family: "Exo 2", sans-serif;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+body #Project .video_container .video_box2 .portfolios p:nth-child(3) {
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  color: #333;
+}
+body #Project .video_container .video_box2 .pado,
+body #Project .video_container .video_box2 .my {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 16px;
+}
+body #Project .video_container .video_box3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+body #Project .video_container .video_box3 .Seoulbearfestival p:nth-child(2) {
+  font-family: "Exo 2", sans-serif;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+body #Project .video_container .video_box3 .Seoulbearfestival p:nth-child(3) {
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  color: #333;
+}
+body #Project .video_container .video_box3 .gobos p:nth-child(2) {
+  font-family: "Exo 2", sans-serif;
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+body #Project .video_container .video_box3 .gobos p:nth-child(3) {
+  font-family: "Pretendard-Regular";
+  font-size: 16px;
+  color: #333;
+}
+body #Project .video_container .video_box3 .sbf,
+body #Project .video_container .video_box3 .gobo {
+  width: 100%;
+}
+body #Contact {
+  padding: 0 240px;
+  width: 100%;
+  margin-bottom: 40px;
+  border-top: 1px solid #999;
+}
+body #Contact h1 {
+  font-size: 100px;
+  font-family: "Exo 2", sans-serif;
+  margin-bottom: 64px;
+}
+body #Contact .container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 122px;
+}
+body #Contact .container .input_box {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+body #Contact .container .input_box input {
+  width: 588px;
+  height: 69px;
+  margin-bottom: 26px;
+  padding: 20px 20px;
+  font-size: 24px;
+  font-family: "Pretendard-Regular";
+}
+body #Contact .container .input_box textarea {
+  width: 588px;
+  height: 300px;
+  margin-bottom: 16px;
+  padding: 20px 20px;
+  font-size: 16px;
+  font-family: "Pretendard-Regular";
+}
+body #Contact .container .input_box button {
+  width: 588px;
+  height: 49px;
+  border-radius: 50px;
+  background-color: #fff;
+  font-family: "Pretendard-Regular";
+}
+body #Contact .container .icon_box {
+  display: flex;
+  flex-direction: column;
+}
+body #Contact .container .icon_box h1 {
+  font-size: 40px;
+  font-family: "Exo 2", sans-serif;
+  margin-bottom: 36px;
+  text-align: center;
+}
+body #Contact .container .icon_box .p1 {
+  font-size: 24px;
+  font-family: "Pretendard-Regular";
+  margin-bottom: 40px;
+  text-align: center;
+}
+body #Contact .container .icon_box .icon {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+body #Contact .container .icon_box .icon .icon_github,
+body #Contact .container .icon_box .icon .icon_instagram,
+body #Contact .container .icon_box .icon .icon_facebook {
+  width: 400px;
+  height: 69px;
+  display: flex;
+  gap: 15px;
+}
+body #Contact .container .icon_box .icon .icon_github i,
+body #Contact .container .icon_box .icon .icon_instagram i,
+body #Contact .container .icon_box .icon .icon_facebook i {
+  font-size: 24px;
+  width: 69px;
+  height: 69px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #Contact .container .icon_box .icon .icon_github .icon_text,
+body #Contact .container .icon_box .icon .icon_instagram .icon_text,
+body #Contact .container .icon_box .icon .icon_facebook .icon_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+body #Contact .container .icon_box .icon .icon_github .icon_text h2,
+body #Contact .container .icon_box .icon .icon_instagram .icon_text h2,
+body #Contact .container .icon_box .icon .icon_facebook .icon_text h2 {
+  font-size: 16px;
+  font-family: "Pretendard-Regular";
+  font-weight: bold;
+}
+body #Contact .container .icon_box .icon .icon_github .icon_text p,
+body #Contact .container .icon_box .icon .icon_instagram .icon_text p,
+body #Contact .container .icon_box .icon .icon_facebook .icon_text p {
+  font-size: 16px;
+  font-family: "Pretendard-Regular";
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1440px) {
+  body header {
+    width: 100%;
+    position: fixed;
+    background: none;
+    background-color: #fff;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+  }
+  body header.scrolled {
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  body header .nav {
+    padding: 0 180px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  body header .nav .logo img {
+    width: 60px;
+    height: 60px;
+  }
+  body header .nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-family: "Cafe24ClassicType-Regular";
+  }
+  body header .nav ul li {
+    font-size: 20px;
+    transition: 0.3s;
+  }
+  body header .nav ul li:hover {
+    transform: scale(1.2);
+  }
+  body #main {
+    width: 100%;
+    height: 100vh;
+    padding: 0 180px;
+  }
+  body #main .main_text {
+    width: 100%;
+    height: 100%;
+    font-family: "Cafe24ClassicType-Regular";
+    padding-top: 120px;
+  }
+  body #main .main_text .first {
+    display: flex;
+    align-items: center;
+  }
+  body #main .main_text .first .first_text {
+    font-size: 110px;
+  }
+  body #main .main_text .first .hover_text {
+    position: relative;
+  }
+  body #main .main_text .first .hover_text img {
+    width: 180px;
+    animation: img1 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes img1 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  body #main .main_text .first .hover_text .circle {
+    position: absolute;
+    bottom: 100%; /* 이미지의 아래 끝에 배치 */
+    right: -20px; /* 오른쪽 끝에 위치 */
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: #27db95;
+    animation: circle 1.5s ease-in-out infinite;
+  }
+  @keyframes circle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-5px);
+    }
+    90% {
+      transform: translateY(0);
+    }
+  }
+  body #main .main_text .first .hover_text:hover + .span_box {
+    width: 200px;
+    height: 50px;
+    background-color: #27db95;
+    text-align: center;
+    top: 70px;
+    right: 300px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    color: #fff;
+    font-family: "Pretendard-Regular";
+  }
+  body #main .main_text .first .span_box {
+    display: none;
+    transition: all 0.3s;
+  }
+  body #main .main_text .first .span_box span {
+    display: inline-block;
+    width: 100%;
+  }
+  body #main .main_text .second_text {
+    font-size: 110px;
+    margin-top: 40px;
+    margin-left: 273px;
+  }
+  body #main .main_text .second {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    margin-left: 304px;
+  }
+  body #main .main_text .second .hover_text2 {
+    position: relative;
+  }
+  body #main .main_text .second .hover_text2 img {
+    width: 148px;
+    height: 141px;
+    animation: img1 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes img1 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  body #main .main_text .second .hover_text2 .circle2 {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: #27db95;
+    animation: circle 1.5s ease-in-out infinite;
+  }
+  @keyframes circle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-5px);
+    }
+    90% {
+      transform: translateY(0);
+    }
+  }
+  body #main .main_text .second .hover_text2:hover + .span_box2 {
+    bottom: 400px;
+    left: 250px;
+    width: 200px;
+    height: 50px;
+    background-color: #27db95;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    color: #fff;
+    font-family: "Pretendard-Regular";
+  }
+  body #main .main_text .second .span_box2 {
+    display: none;
+    transition: all 0.3s;
+  }
+  body #main .main_text .second .span_box2 span {
+    display: inline-block;
+    width: 100%;
+  }
+  body #main .main_text .second .third_text {
+    font-size: 110px;
+    margin-left: 16px;
+  }
+  body #main .main_text .fourth_text {
+    font-size: 110px;
+    margin-top: 40px;
+  }
+  body #main .main_text path {
+    width: 100%;
+    margin-bottom: 148px;
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    animation: drawLine 2s forwards ease-out;
+  }
+  @keyframes drawLine {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  body #Intro {
+    width: 100%;
+    height: 100vh;
+    padding: 0 180px;
+    margin-top: 200px;
+  }
+  body #Intro .intro_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body #Intro .intro_container span,
+  body #Intro .intro_container p {
+    opacity: 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  body #Intro .intro_container .span_first {
+    width: 100%;
+    font-family: "Exo 2", sans-serif;
+    font-size: 90px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Intro .intro_container .span_second {
+    font-family: "Pretendard-Regular";
+    font-size: 54px;
+    margin-top: 100px;
+  }
+  body #Intro .intro_container .p_first {
+    font-family: "Pretendard-Regular";
+    font-size: 24px;
+    text-align: center;
+    margin-top: 45px;
+    min-height: 150px;
+  }
+  body #Intro .intro_container .circle_button {
+    width: 40px;
+    height: 90px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-top: 100px;
+    cursor: pointer;
+  }
+  body #Intro .intro_container i {
+    margin-bottom: 8px;
+  }
+  body #Intro .intro_container span {
+    display: flex;
+  }
+  body #Intro .typing {
+    opacity: 1;
+    animation: typing 10s steps(20), blink 0.5s step-end infinite;
+  }
+  @keyframes typing {
+    from {
+      width: 0ch;
+    }
+    to {
+      width: 100ch;
+    }
+  }
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  body #About {
+    width: 100%;
+    height: 100vh;
+  }
+  body #About .about_container {
+    padding: 0 180px;
+  }
+  body #About .about_container .about_frist_text h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 90px;
+    margin-top: 40px;
+  }
+  body #About .about_container .about_frist_text svg path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    transition: stroke-dashoffset 10s ease-out;
+  }
+  body #About .about_container .about_frist_text svg.animate path {
+    stroke-dashoffset: 0;
+  }
+  body #About .about_container .info_containers {
+    display: flex;
+    gap: 130px;
+  }
+  body #About .about_container .info_containers .about_img_text {
+    width: 270px;
+    height: 464px;
+    text-align: center;
+  }
+  body #About .about_container .info_containers .about_img_text img {
+    width: 200px;
+    height: 200px;
+    margin-top: 209px;
+  }
+  body #About .about_container .info_containers .about_img_text h1 {
+    font-size: 20px;
+    font-family: "Pretendard-Regular";
+    margin-bottom: 20px;
+  }
+  body #About .about_container .info_containers .about_img_text p {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+  }
+  body #About .about_container .info_containers .about_info_text {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container {
+    width: 821px;
+    height: 136px;
+    display: flex;
+    gap: 66px;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 35px;
+    margin: 0;
+    line-height: 1;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container .p_df1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container .p_df1 p {
+    font-family: "Pretendard-Regular";
+    font-size: 24px;
+    margin: 0;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container {
+    width: 821px;
+    height: 50px;
+    display: flex;
+    gap: 210px;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 35px;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon {
+    width: 456px;
+    height: 50px;
+    display: flex;
+    gap: 8px;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon span,
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon i {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    transition: all 0.3s;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon span:hover,
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon i:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container {
+    display: flex;
+    gap: 165px;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 35px;
+    line-height: 1;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container .p_df2 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container .p_df2 p {
+    font-family: "Pretendard-Regular";
+    font-size: 24px;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container {
+    display: flex;
+    gap: 65px;
+    padding-bottom: 40px;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container h1 {
+    width: 233px;
+    font-family: "Exo 2", sans-serif;
+    font-size: 35px;
+    line-height: 1;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 {
+    display: flex;
+    gap: 16px;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 p {
+    width: 100px;
+    font-family: "Pretendard-Regular";
+    font-size: 24px;
+    text-align: center;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 span {
+    font-family: "Pretendard-Regular";
+    font-size: 24px;
+  }
+  body #Project {
+    width: 100%;
+    padding: 0 180px;
+    margin-top: 40px;
+  }
+  body #Project h1 {
+    font-family: sans-serif;
+    font-size: 90px;
+  }
+  body #Project svg {
+    margin-bottom: 100px;
+  }
+  body #Project svg path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    transition: stroke-dashoffset 10s ease-out;
+  }
+  body #Project svg.animate path {
+    stroke-dashoffset: 0;
+  }
+  body #Project .video_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+  body #Project .video_container .video_box1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box1 .oliveyoung p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box1 .oliveyoung p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box1 .kakaostory p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box1 .kakaostory p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box1 .olive,
+  body #Project .video_container .video_box1 .kakao {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box2 .padoott p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 .padoott p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box2 .portfolios p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 .portfolios p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box2 .pado,
+  body #Project .video_container .video_box2 .my {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box3 .Seoulbearfestival p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 .Seoulbearfestival p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box3 .gobos p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 .gobos p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box3 .sbf,
+  body #Project .video_container .video_box3 .gobo {
+    width: 100%;
+  }
+  body #Contact {
+    padding: 0 180px;
+    width: 100%;
+    margin-bottom: 40px;
+    border-top: 1px solid #999;
+  }
+  body #Contact h1 {
+    font-size: 100px;
+    font-family: "Exo 2", sans-serif;
+    margin-bottom: 64px;
+  }
+  body #Contact .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 122px;
+  }
+  body #Contact .container .input_box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  body #Contact .container .input_box input {
+    width: 588px;
+    height: 60px;
+    margin-bottom: 26px;
+    padding: 20px 20px;
+    font-size: 20px;
+    font-family: "Pretendard-Regular";
+  }
+  body #Contact .container .input_box textarea {
+    width: 588px;
+    height: 250px;
+    margin-bottom: 16px;
+    padding: 20px 20px;
+    font-size: 16px;
+    font-family: "Pretendard-Regular";
+  }
+  body #Contact .container .input_box button {
+    width: 588px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #fff;
+    font-family: "Pretendard-Regular";
+  }
+  body #Contact .container .icon_box {
+    display: flex;
+    flex-direction: column;
+  }
+  body #Contact .container .icon_box h1 {
+    font-size: 35px;
+    font-family: "Exo 2", sans-serif;
+    margin-bottom: 36px;
+    text-align: center;
+  }
+  body #Contact .container .icon_box .p1 {
+    font-size: 20px;
+    font-family: "Pretendard-Regular";
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  body #Contact .container .icon_box .icon {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+  body #Contact .container .icon_box .icon .icon_github,
+  body #Contact .container .icon_box .icon .icon_instagram,
+  body #Contact .container .icon_box .icon .icon_facebook {
+    width: 400px;
+    height: 69px;
+    display: flex;
+    gap: 15px;
+  }
+  body #Contact .container .icon_box .icon .icon_github i,
+  body #Contact .container .icon_box .icon .icon_instagram i,
+  body #Contact .container .icon_box .icon .icon_facebook i {
+    font-size: 24px;
+    width: 69px;
+    height: 69px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text h2,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text h2,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text h2 {
+    font-size: 16px;
+    font-family: "Pretendard-Regular";
+    font-weight: bold;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text p,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text p,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text p {
+    font-size: 16px;
+    font-family: "Pretendard-Regular";
+    font-weight: 500;
+  }
+}
+@media screen and (max-width: 1280px) {
+  body header {
+    width: 100%;
+    position: fixed;
+    background: none;
+    background-color: #fff;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+  }
+  body header.scrolled {
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  body header .nav {
+    padding: 0 160px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  body header .nav .logo img {
+    width: 60px;
+    height: 60px;
+  }
+  body header .nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-family: "Cafe24ClassicType-Regular";
+  }
+  body header .nav ul li {
+    font-size: 20px;
+    transition: 0.3s;
+  }
+  body header .nav ul li:hover {
+    transform: scale(1.2);
+  }
+  body #main {
+    width: 100%;
+    height: 100vh;
+    padding: 0 160px;
+  }
+  body #main .main_text {
+    width: 100%;
+    height: 100%;
+    font-family: "Cafe24ClassicType-Regular";
+    padding-top: 160px;
+  }
+  body #main .main_text .first {
+    display: flex;
+    align-items: center;
+  }
+  body #main .main_text .first .first_text {
+    font-size: 100px;
+  }
+  body #main .main_text .first .hover_text {
+    position: relative;
+  }
+  body #main .main_text .first .hover_text img {
+    width: 150px;
+    height: 108px;
+    animation: img1 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes img1 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  body #main .main_text .first .hover_text .circle {
+    position: absolute;
+    bottom: 100%; /* 이미지의 아래 끝에 배치 */
+    right: -20px; /* 오른쪽 끝에 위치 */
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: #27db95;
+    animation: circle 1.5s ease-in-out infinite;
+  }
+  @keyframes circle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-5px);
+    }
+    90% {
+      transform: translateY(0);
+    }
+  }
+  body #main .main_text .first .hover_text:hover + .span_box {
+    width: 200px;
+    height: 40px;
+    background-color: #27db95;
+    text-align: center;
+    top: 70px;
+    right: 300px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    color: #fff;
+    font-family: "Pretendard-Regular";
+  }
+  body #main .main_text .first .span_box {
+    display: none;
+    transition: all 0.3s;
+  }
+  body #main .main_text .first .span_box span {
+    display: inline-block;
+    width: 100%;
+  }
+  body #main .main_text .second_text {
+    font-size: 100px;
+    margin-top: 24px;
+    margin-left: 245px;
+  }
+  body #main .main_text .second {
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    margin-left: 300px;
+  }
+  body #main .main_text .second .hover_text2 {
+    position: relative;
+  }
+  body #main .main_text .second .hover_text2 img {
+    width: 100px;
+    height: 96px;
+    animation: img1 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes img1 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  body #main .main_text .second .hover_text2 .circle2 {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: #27db95;
+    animation: circle 1.5s ease-in-out infinite;
+  }
+  @keyframes circle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-5px);
+    }
+    90% {
+      transform: translateY(0);
+    }
+  }
+  body #main .main_text .second .hover_text2:hover + .span_box2 {
+    bottom: 400px;
+    left: 250px;
+    width: 200px;
+    height: 40px;
+    background-color: #27db95;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    color: #fff;
+    font-family: "Pretendard-Regular";
+  }
+  body #main .main_text .second .span_box2 {
+    display: none;
+    transition: all 0.3s;
+  }
+  body #main .main_text .second .span_box2 span {
+    display: inline-block;
+    width: 100%;
+  }
+  body #main .main_text .second .third_text {
+    font-size: 100px;
+    margin-left: 16px;
+  }
+  body #main .main_text .fourth_text {
+    font-size: 100px;
+    margin-top: 24px;
+  }
+  body #main .main_text path {
+    width: 100%;
+    margin-bottom: 148px;
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    animation: drawLine 2s forwards ease-out;
+  }
+  @keyframes drawLine {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  body #Intro {
+    width: 100%;
+    height: 100vh;
+    padding: 0 160px;
+    margin-top: 200px;
+  }
+  body #Intro .intro_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body #Intro .intro_container span,
+  body #Intro .intro_container p {
+    opacity: 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  body #Intro .intro_container .span_first {
+    width: 100%;
+    font-family: "Exo 2", sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Intro .intro_container .span_second {
+    font-family: "Pretendard-Regular";
+    font-size: 44px;
+    margin-top: 100px;
+  }
+  body #Intro .intro_container .p_first {
+    font-family: "Pretendard-Regular";
+    font-size: 20px;
+    text-align: center;
+    margin-top: 45px;
+    min-height: 150px;
+  }
+  body #Intro .intro_container .circle_button {
+    width: 30px;
+    height: 70px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-top: 100px;
+    cursor: pointer;
+  }
+  body #Intro .intro_container i {
+    margin-bottom: 8px;
+  }
+  body #Intro .intro_container span {
+    display: flex;
+  }
+  body #Intro .typing {
+    opacity: 1;
+    animation: typing 10s steps(20), blink 0.5s step-end infinite;
+  }
+  @keyframes typing {
+    from {
+      width: 0ch;
+    }
+    to {
+      width: 100ch;
+    }
+  }
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  body #About {
+    width: 100%;
+    height: 100vh;
+  }
+  body #About .about_container {
+    padding: 0 160px;
+  }
+  body #About .about_container .about_frist_text h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 80px;
+    margin-top: 40px;
+  }
+  body #About .about_container .about_frist_text svg path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    transition: stroke-dashoffset 10s ease-out;
+  }
+  body #About .about_container .about_frist_text svg.animate path {
+    stroke-dashoffset: 0;
+  }
+  body #About .about_container .info_containers {
+    display: flex;
+    gap: 66px;
+  }
+  body #About .about_container .info_containers .about_img_text {
+    width: 270px;
+    height: 464px;
+    text-align: center;
+  }
+  body #About .about_container .info_containers .about_img_text img {
+    width: 200px;
+    height: 200px;
+    margin-top: 209px;
+  }
+  body #About .about_container .info_containers .about_img_text h1 {
+    font-size: 20px;
+    font-family: "Pretendard-Regular";
+    margin-bottom: 20px;
+  }
+  body #About .about_container .info_containers .about_img_text p {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+  }
+  body #About .about_container .info_containers .about_info_text {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container {
+    width: 684px;
+    height: 136px;
+    display: flex;
+    gap: 110px;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 30px;
+    margin: 0;
+    line-height: 1;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container .p_df1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container .p_df1 p {
+    font-family: "Pretendard-Regular";
+    font-size: 18px;
+    margin: 0;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container {
+    width: 684px;
+    height: 50px;
+    display: flex;
+    gap: 230px;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 30px;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon {
+    width: 456px;
+    height: 50px;
+    display: flex;
+    gap: 8px;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon span,
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon i {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    transition: all 0.3s;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon span:hover,
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon i:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container {
+    display: flex;
+    gap: 195px;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 30px;
+    line-height: 1;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container .p_df2 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container .p_df2 p {
+    font-family: "Pretendard-Regular";
+    font-size: 18px;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container {
+    display: flex;
+    gap: 75px;
+    padding-bottom: 40px;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container h1 {
+    width: 233px;
+    font-family: "Exo 2", sans-serif;
+    font-size: 30px;
+    line-height: 1;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 {
+    display: flex;
+    gap: 16px;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 p {
+    width: 100px;
+    font-family: "Pretendard-Regular";
+    font-size: 24px;
+    text-align: center;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 span {
+    font-family: "Pretendard-Regular";
+    font-size: 18px;
+  }
+  body #Project {
+    width: 100%;
+    padding: 0 160px;
+    margin-top: 40px;
+  }
+  body #Project h1 {
+    font-family: sans-serif;
+    font-size: 80px;
+  }
+  body #Project svg {
+    margin-bottom: 100px;
+  }
+  body #Project svg path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    transition: stroke-dashoffset 10s ease-out;
+  }
+  body #Project svg.animate path {
+    stroke-dashoffset: 0;
+  }
+  body #Project .video_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+  body #Project .video_container .video_box1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box1 .oliveyoung p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box1 .oliveyoung p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box1 .kakaostory p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box1 .kakaostory p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box1 .olive,
+  body #Project .video_container .video_box1 .kakao {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box2 .padoott p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 .padoott p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box2 .portfolios p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 .portfolios p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box2 .pado,
+  body #Project .video_container .video_box2 .my {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box3 .Seoulbearfestival p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 .Seoulbearfestival p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box3 .gobos p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 .gobos p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box3 .sbf,
+  body #Project .video_container .video_box3 .gobo {
+    width: 100%;
+  }
+  body #Contact {
+    padding: 0 160px;
+    width: 100%;
+    margin-bottom: 40px;
+    border-top: 1px solid #999;
+    margin-top: 40px;
+  }
+  body #Contact h1 {
+    font-size: 80px;
+    font-family: "Exo 2", sans-serif;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+  body #Contact .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 122px;
+  }
+  body #Contact .container .input_box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  body #Contact .container .input_box input {
+    width: 500px;
+    height: 50px;
+    margin-bottom: 26px;
+    padding: 20px 20px;
+    font-size: 20px;
+    font-family: "Pretendard-Regular";
+  }
+  body #Contact .container .input_box textarea {
+    width: 500px;
+    height: 250px;
+    margin-bottom: 16px;
+    padding: 20px 20px;
+    font-size: 16px;
+    font-family: "Pretendard-Regular";
+  }
+  body #Contact .container .input_box button {
+    width: 500px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #fff;
+    font-family: "Pretendard-Regular";
+  }
+  body #Contact .container .icon_box {
+    display: flex;
+    flex-direction: column;
+  }
+  body #Contact .container .icon_box h1 {
+    font-size: 35px;
+    font-family: "Exo 2", sans-serif;
+    margin-bottom: 12px;
+    text-align: center;
+    margin-top: 0;
+  }
+  body #Contact .container .icon_box .p1 {
+    font-size: 20px;
+    font-family: "Pretendard-Regular";
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  body #Contact .container .icon_box .icon {
+    display: flex;
+    flex-direction: column;
+    gap: 84px;
+  }
+  body #Contact .container .icon_box .icon .icon_github,
+  body #Contact .container .icon_box .icon .icon_instagram,
+  body #Contact .container .icon_box .icon .icon_facebook {
+    width: 400px;
+    height: 69px;
+    display: flex;
+    gap: 15px;
+  }
+  body #Contact .container .icon_box .icon .icon_github i,
+  body #Contact .container .icon_box .icon .icon_instagram i,
+  body #Contact .container .icon_box .icon .icon_facebook i {
+    font-size: 24px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text h2,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text h2,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text h2 {
+    font-size: 16px;
+    font-family: "Pretendard-Regular";
+    font-weight: bold;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text p,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text p,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text p {
+    font-size: 16px;
+    font-family: "Pretendard-Regular";
+    font-weight: 500;
+  }
+}
+@media screen and (max-width: 1080px) {
+  body header {
+    width: 100%;
+    position: fixed;
+    background: none;
+    background-color: #fff;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+  }
+  body header.scrolled {
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(px);
+            backdrop-filter: blur(px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  body header .nav {
+    padding: 0 128px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #efefef;
+  }
+  body header .nav .logo img {
+    width: 60px;
+    height: 60px;
+  }
+  body header .nav ul {
+    background-color: #fff;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding-bottom: 10px;
+    font-family: "Cafe24ClassicType-Regular";
+    gap: 10px;
+    opacity: 0;
+    transition: background-color 0.3s ease;
+    color: #000;
+  }
+  body header .nav ul.scrolled {
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  body header .nav ul li {
+    text-align: center;
+    font-size: 16px;
+    transition: 0.3s;
+    padding: 10px 10px;
+    border-bottom: 1px solid #999;
+  }
+  body header .nav ul li:hover {
+    color: #ff6d70;
+    transform: scale(1.2);
+  }
+  body header .nav.active ul {
+    max-height: 500px; /* 메뉴 높이에 맞게 충분히 크게 */
+    opacity: 1;
+  }
+  body header .nav .hamburger {
+    display: flex;
+    margin-top: 20px;
+  }
+  body header .nav.active ul {
+    display: flex;
+  }
+  body #main {
+    width: 100%;
+    height: 100vh;
+    padding: 0 128px;
+  }
+  body #main .main_text {
+    width: 100%;
+    height: 100%;
+    font-family: "Cafe24ClassicType-Regular";
+    padding-top: 200px;
+  }
+  body #main .main_text .first {
+    display: flex;
+    align-items: center;
+  }
+  body #main .main_text .first .first_text {
+    font-size: 90px;
+  }
+  body #main .main_text .first .hover_text {
+    position: relative;
+  }
+  body #main .main_text .first .hover_text img {
+    margin-top: 30px;
+    width: 120px;
+    height: 86px;
+    animation: img1 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes img1 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  body #main .main_text .first .hover_text .circle {
+    position: absolute;
+    bottom: 80%; /* 이미지의 아래 끝에 배치 */
+    right: -20px; /* 오른쪽 끝에 위치 */
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: #27db95;
+    animation: circle 1.5s ease-in-out infinite;
+  }
+  @keyframes circle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-5px);
+    }
+    90% {
+      transform: translateY(0);
+    }
+  }
+  body #main .main_text .first .hover_text:hover + .span_box {
+    width: 200px;
+    height: 40px;
+    background-color: #27db95;
+    text-align: center;
+    top: 70px;
+    right: 300px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    color: #fff;
+    font-family: "Pretendard-Regular";
+  }
+  body #main .main_text .first .span_box {
+    display: none;
+    transition: all 0.3s;
+  }
+  body #main .main_text .first .span_box span {
+    display: inline-block;
+    width: 100%;
+  }
+  body #main .main_text .second_text {
+    font-size: 90px;
+    margin-top: 30px;
+    margin-left: 197px;
+  }
+  body #main .main_text .second {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 232px;
+  }
+  body #main .main_text .second .hover_text2 {
+    position: relative;
+  }
+  body #main .main_text .second .hover_text2 img {
+    width: 100px;
+    height: 96px;
+    animation: img1 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes img1 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  body #main .main_text .second .hover_text2 .circle2 {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: #27db95;
+    animation: circle 1.5s ease-in-out infinite;
+  }
+  @keyframes circle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-5px);
+    }
+    90% {
+      transform: translateY(0);
+    }
+  }
+  body #main .main_text .second .hover_text2:hover + .span_box2 {
+    bottom: 400px;
+    left: 250px;
+    width: 200px;
+    height: 40px;
+    background-color: #27db95;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    color: #fff;
+    font-family: "Pretendard-Regular";
+  }
+  body #main .main_text .second .span_box2 {
+    display: none;
+    transition: all 0.3s;
+  }
+  body #main .main_text .second .span_box2 span {
+    display: inline-block;
+    width: 100%;
+  }
+  body #main .main_text .second .third_text {
+    font-size: 90px;
+    margin-left: 16px;
+  }
+  body #main .main_text .fourth_text {
+    font-size: 90px;
+    margin-top: 30px;
+  }
+  body #main .main_text path {
+    width: 100%;
+    margin-bottom: 148px;
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    animation: drawLine 2s forwards ease-out;
+  }
+  @keyframes drawLine {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  body #Intro {
+    width: 100%;
+    height: 100vh;
+    padding: 0 128px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Intro .intro_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body #Intro .intro_container span,
+  body #Intro .intro_container p {
+    opacity: 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  body #Intro .intro_container .span_first {
+    width: 100%;
+    font-family: "Exo 2", sans-serif;
+    font-size: 70px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Intro .intro_container .span_second {
+    font-family: "Pretendard-Regular";
+    font-size: 34px;
+    margin-top: 90px;
+  }
+  body #Intro .intro_container .p_first {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    text-align: center;
+    margin-top: 30px;
+    min-height: 150px;
+  }
+  body #Intro .intro_container .circle_button {
+    width: 25px;
+    height: 55px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-top: 100px;
+    cursor: pointer;
+  }
+  body #Intro .intro_container i {
+    margin-bottom: 8px;
+  }
+  body #Intro .intro_container span {
+    display: flex;
+  }
+  body #Intro .typing {
+    opacity: 1;
+    animation: typing 10s steps(20), blink 0.5s step-end infinite;
+  }
+  @keyframes typing {
+    from {
+      width: 0ch;
+    }
+    to {
+      width: 100ch;
+    }
+  }
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  body #About {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  body #About .about_container {
+    padding: 0 128px;
+  }
+  body #About .about_container .about_frist_text h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 70px;
+    margin-top: 40px;
+    text-align: center;
+  }
+  body #About .about_container .about_frist_text svg path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    transition: stroke-dashoffset 10s ease-out;
+  }
+  body #About .about_container .about_frist_text svg.animate path {
+    stroke-dashoffset: 0;
+  }
+  body #About .about_container .info_containers {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+  }
+  body #About .about_container .info_containers .about_img_text {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;
+  }
+  body #About .about_container .info_containers .about_img_text img {
+    width: 160px;
+    height: 160px;
+    margin-top: 0px;
+  }
+  body #About .about_container .info_containers .about_img_text h1 {
+    width: 100%;
+    font-size: 17px;
+    font-family: "Pretendard-Regular";
+    margin-bottom: 20px;
+  }
+  body #About .about_container .info_containers .about_img_text p {
+    font-family: "Pretendard-Regular";
+    font-size: 15px;
+  }
+  body #About .about_container .info_containers .about_info_text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 25px;
+    margin: 0;
+    line-height: 1;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container .p_df1 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex-direction: row;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container .p_df1 p {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    margin: 0;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 25px;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    gap: 20px;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon span,
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon i {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    transition: all 0.3s;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon span:hover,
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon i:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 25px;
+    line-height: 1;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container .p_df2 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex-direction: row;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container .p_df2 p {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 40px;
+    align-items: center;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container h1 {
+    width: 197px;
+    font-family: "Exo 2", sans-serif;
+    font-size: 25px;
+    line-height: 1;
+    text-align: center;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 p {
+    width: 100px;
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    text-align: center;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 span {
+    font-family: "Pretendard-Regular";
+    font-size: 14px;
+    text-align: center;
+  }
+  body #Project {
+    width: 100%;
+    padding: 0 128px;
+    margin-top: 40px;
+  }
+  body #Project h1 {
+    font-family: sans-serif;
+    font-size: 80px;
+    text-align: center;
+  }
+  body #Project svg {
+    margin-bottom: 100px;
+  }
+  body #Project svg path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    transition: stroke-dashoffset 10s ease-out;
+  }
+  body #Project svg.animate path {
+    stroke-dashoffset: 0;
+  }
+  body #Project .video_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+  body #Project .video_container .video_box1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box1 .oliveyoung p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box1 .oliveyoung p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box1 .kakaostory p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box1 .kakaostory p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box1 .olive,
+  body #Project .video_container .video_box1 .kakao {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box2 .padoott p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 .padoott p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box2 .portfolios p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 .portfolios p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box2 .pado,
+  body #Project .video_container .video_box2 .my {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box3 .Seoulbearfestival p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 .Seoulbearfestival p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box3 .gobos p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 .gobos p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box3 .sbf,
+  body #Project .video_container .video_box3 .gobo {
+    width: 100%;
+  }
+  body #Contact {
+    padding: 0 128px;
+    width: 100%;
+    margin-bottom: 40px;
+    border-top: 1px solid #999;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Contact h1 {
+    font-size: 70px;
+    font-family: "Exo 2", sans-serif;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+  body #Contact .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  body #Contact .container .input_box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  body #Contact .container .input_box input {
+    width: 350px;
+    height: 50px;
+    margin-bottom: 26px;
+    padding: 20px 20px;
+    font-size: 20px;
+    font-family: "Pretendard-Regular";
+  }
+  body #Contact .container .input_box textarea {
+    width: 350px;
+    height: 250px;
+    margin-bottom: 16px;
+    padding: 20px 20px;
+    font-size: 16px;
+    font-family: "Pretendard-Regular";
+  }
+  body #Contact .container .input_box button {
+    width: 350px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #fff;
+    font-family: "Pretendard-Regular";
+  }
+  body #Contact .container .icon_box {
+    display: flex;
+    flex-direction: column;
+  }
+  body #Contact .container .icon_box h1 {
+    font-size: 30px;
+    font-family: "Exo 2", sans-serif;
+    margin-bottom: 8px;
+    text-align: center;
+    margin-top: 0;
+  }
+  body #Contact .container .icon_box .p1 {
+    font-size: 18px;
+    font-family: "Pretendard-Regular";
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  body #Contact .container .icon_box .icon {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+  body #Contact .container .icon_box .icon .icon_github,
+  body #Contact .container .icon_box .icon .icon_instagram,
+  body #Contact .container .icon_box .icon .icon_facebook {
+    width: 400px;
+    height: 69px;
+    display: flex;
+    gap: 15px;
+  }
+  body #Contact .container .icon_box .icon .icon_github i,
+  body #Contact .container .icon_box .icon .icon_instagram i,
+  body #Contact .container .icon_box .icon .icon_facebook i {
+    font-size: 24px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text h2,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text h2,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text h2 {
+    font-size: 14px;
+    font-family: "Pretendard-Regular";
+    font-weight: bold;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text p,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text p,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text p {
+    font-size: 14px;
+    font-family: "Pretendard-Regular";
+    font-weight: 500;
+  }
+}
+@media screen and (max-width: 768px) {
+  body header {
+    width: 100%;
+    position: fixed;
+    background: none;
+    background-color: #fff;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+  }
+  body header.scrolled {
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(px);
+            backdrop-filter: blur(px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  body header .nav {
+    padding: 0 96px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #efefef;
+  }
+  body header .nav .logo img {
+    width: 60px;
+    height: 60px;
+  }
+  body header .nav ul {
+    background-color: #fff;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding-bottom: 10px;
+    font-family: "Cafe24ClassicType-Regular";
+    gap: 10px;
+    opacity: 0;
+    transition: background-color 0.3s ease;
+    color: #000;
+  }
+  body header .nav ul.scrolled {
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  body header .nav ul li {
+    text-align: center;
+    font-size: 14px;
+    transition: 0.3s;
+    padding: 10px 10px;
+    border-bottom: 1px solid #999;
+  }
+  body header .nav ul li:hover {
+    color: #ff6d70;
+    transform: scale(1.2);
+  }
+  body header .nav.active ul {
+    max-height: 400px; /* 메뉴 높이에 맞게 충분히 크게 */
+    opacity: 1;
+  }
+  body header .nav .hamburger {
+    display: flex;
+    margin-top: 20px;
+  }
+  body header .nav.active ul {
+    display: flex;
+  }
+  body #main {
+    width: 100%;
+    height: 100vh;
+    padding: 0 96px;
+  }
+  body #main .main_text {
+    width: 100%;
+    height: 100%;
+    font-family: "Cafe24ClassicType-Regular";
+    padding-top: 200px;
+  }
+  body #main .main_text .first {
+    display: flex;
+    align-items: center;
+  }
+  body #main .main_text .first .first_text {
+    font-size: 80px;
+  }
+  body #main .main_text .first .hover_text {
+    position: relative;
+  }
+  body #main .main_text .first .hover_text img {
+    margin-top: 30px;
+    width: 120px;
+    height: 86px;
+    animation: img1 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes img1 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  body #main .main_text .first .hover_text .circle {
+    position: absolute;
+    bottom: 80%; /* 이미지의 아래 끝에 배치 */
+    right: -20px; /* 오른쪽 끝에 위치 */
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: #27db95;
+    animation: circle 1.5s ease-in-out infinite;
+  }
+  @keyframes circle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-5px);
+    }
+    90% {
+      transform: translateY(0);
+    }
+  }
+  body #main .main_text .first .hover_text:hover + .span_box {
+    width: 200px;
+    height: 40px;
+    background-color: #27db95;
+    text-align: center;
+    top: 70px;
+    right: 300px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    color: #fff;
+    font-family: "Pretendard-Regular";
+  }
+  body #main .main_text .first .span_box {
+    display: none;
+    transition: all 0.3s;
+  }
+  body #main .main_text .first .span_box span {
+    display: inline-block;
+    width: 100%;
+  }
+  body #main .main_text .second_text {
+    font-size: 80px;
+    margin-top: 30px;
+    margin-left: 120px;
+  }
+  body #main .main_text .second {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 0px;
+  }
+  body #main .main_text .second .hover_text2 {
+    position: relative;
+  }
+  body #main .main_text .second .hover_text2 img {
+    width: 100px;
+    height: 96px;
+    animation: img1 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes img1 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  body #main .main_text .second .hover_text2 .circle2 {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: #27db95;
+    animation: circle 1.5s ease-in-out infinite;
+  }
+  @keyframes circle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-5px);
+    }
+    90% {
+      transform: translateY(0);
+    }
+  }
+  body #main .main_text .second .hover_text2:hover + .span_box2 {
+    bottom: 400px;
+    left: 250px;
+    width: 200px;
+    height: 40px;
+    background-color: #27db95;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    color: #fff;
+    font-family: "Pretendard-Regular";
+  }
+  body #main .main_text .second .span_box2 {
+    display: none;
+    transition: all 0.3s;
+  }
+  body #main .main_text .second .span_box2 span {
+    display: inline-block;
+    width: 100%;
+  }
+  body #main .main_text .second .third_text {
+    font-size: 80px;
+    margin-left: 16px;
+  }
+  body #main .main_text .fourth_text {
+    font-size: 80px;
+    margin-top: 30px;
+  }
+  body #main .main_text path {
+    width: 100%;
+    margin-bottom: 148px;
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    animation: drawLine 2s forwards ease-out;
+  }
+  @keyframes drawLine {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  body #Intro {
+    width: 100%;
+    height: 100vh;
+    padding: 0 96px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Intro .intro_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body #Intro .intro_container span,
+  body #Intro .intro_container p {
+    opacity: 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  body #Intro .intro_container .span_first {
+    width: 100%;
+    font-family: "Exo 2", sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Intro .intro_container .span_second {
+    font-family: "Pretendard-Regular";
+    font-size: 24px;
+    margin-top: 90px;
+  }
+  body #Intro .intro_container .p_first {
+    font-family: "Pretendard-Regular";
+    font-size: 14px;
+    text-align: center;
+    margin-top: 30px;
+    min-height: 150px;
+  }
+  body #Intro .intro_container .circle_button {
+    width: 25px;
+    height: 55px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-top: 100px;
+    cursor: pointer;
+  }
+  body #Intro .intro_container i {
+    margin-bottom: 8px;
+  }
+  body #Intro .intro_container span {
+    display: flex;
+  }
+  body #Intro .typing {
+    opacity: 1;
+    animation: typing 10s steps(20), blink 0.5s step-end infinite;
+  }
+  @keyframes typing {
+    from {
+      width: 0ch;
+    }
+    to {
+      width: 100ch;
+    }
+  }
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  body #About {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  body #About .about_container {
+    padding: 0 96px;
+  }
+  body #About .about_container .about_frist_text h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 70px;
+    margin-top: 40px;
+    text-align: center;
+  }
+  body #About .about_container .about_frist_text svg path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    transition: stroke-dashoffset 10s ease-out;
+  }
+  body #About .about_container .about_frist_text svg.animate path {
+    stroke-dashoffset: 0;
+  }
+  body #About .about_container .info_containers {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+  }
+  body #About .about_container .info_containers .about_img_text {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+  }
+  body #About .about_container .info_containers .about_img_text img {
+    width: 160px;
+    height: 160px;
+    margin-top: 0px;
+  }
+  body #About .about_container .info_containers .about_img_text h1 {
+    width: 100%;
+    font-size: 17px;
+    font-family: "Pretendard-Regular";
+    margin-bottom: 20px;
+  }
+  body #About .about_container .info_containers .about_img_text p {
+    font-family: "Pretendard-Regular";
+    font-size: 15px;
+  }
+  body #About .about_container .info_containers .about_info_text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 20px;
+    margin: 0;
+    line-height: 1;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container .p_df1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-direction: row;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container .p_df1 p {
+    font-family: "Pretendard-Regular";
+    font-size: 14px;
+    margin: 0;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container {
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 20px;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    gap: 4px;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon span,
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon i {
+    width: 40px;
+    height: 35px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 20px;
+    transition: all 0.3s;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon span:hover,
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon i:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 20px;
+    line-height: 1;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container .p_df2 {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    flex-direction: row;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container .p_df2 p {
+    font-family: "Pretendard-Regular";
+    font-size: 14px;
+    width: 45%;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 50px;
+    padding-bottom: 40px;
+    align-items: flex-start;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container h1 {
+    width: 197px;
+    font-family: "Exo 2", sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    text-align: justify;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 {
+    display: flex;
+    gap: 0px;
+    flex-direction: row;
+    align-items: center;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 p {
+    width: 100px;
+    font-family: "Pretendard-Regular";
+    font-size: 14px;
+    text-align: center;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 span {
+    font-family: "Pretendard-Regular";
+    font-size: 14px;
+    text-align: center;
+  }
+  body #Project {
+    width: 100%;
+    padding: 0 96px;
+    margin-top: 40px;
+  }
+  body #Project h1 {
+    font-family: sans-serif;
+    font-size: 80px;
+    text-align: center;
+  }
+  body #Project svg {
+    margin-bottom: 100px;
+  }
+  body #Project svg path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    transition: stroke-dashoffset 10s ease-out;
+  }
+  body #Project svg.animate path {
+    stroke-dashoffset: 0;
+  }
+  body #Project .video_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+  body #Project .video_container .video_box1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box1 .oliveyoung p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box1 .oliveyoung p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box1 .kakaostory p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box1 .kakaostory p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box1 .olive,
+  body #Project .video_container .video_box1 .kakao {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box2 .padoott p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 .padoott p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box2 .portfolios p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 .portfolios p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box2 .pado,
+  body #Project .video_container .video_box2 .my {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box3 .Seoulbearfestival p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 .Seoulbearfestival p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box3 .gobos p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 .gobos p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 16px;
+    color: #333;
+  }
+  body #Project .video_container .video_box3 .sbf,
+  body #Project .video_container .video_box3 .gobo {
+    width: 100%;
+  }
+  body #Contact {
+    padding: 0 96px;
+    width: 100%;
+    margin-bottom: 40px;
+    border-top: 1px solid #999;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Contact h1 {
+    font-size: 70px;
+    font-family: "Exo 2", sans-serif;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+  body #Contact .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-direction: column-reverse;
+  }
+  body #Contact .container .input_box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  body #Contact .container .input_box input {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 26px;
+    padding: 20px 20px;
+    font-size: 20px;
+    font-family: "Pretendard-Regular";
+  }
+  body #Contact .container .input_box textarea {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 16px;
+    padding: 20px 20px;
+    font-size: 16px;
+    font-family: "Pretendard-Regular";
+  }
+  body #Contact .container .input_box button {
+    width: 100%;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #fff;
+    font-family: "Pretendard-Regular";
+  }
+  body #Contact .container .icon_box {
+    display: flex;
+    flex-direction: column;
+  }
+  body #Contact .container .icon_box h1 {
+    font-size: 30px;
+    font-family: "Exo 2", sans-serif;
+    margin-bottom: 8px;
+    text-align: center;
+    margin-top: 0;
+  }
+  body #Contact .container .icon_box .p1 {
+    font-size: 14px;
+    font-family: "Pretendard-Regular";
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  body #Contact .container .icon_box .icon {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  body #Contact .container .icon_box .icon .icon_github,
+  body #Contact .container .icon_box .icon .icon_instagram,
+  body #Contact .container .icon_box .icon .icon_facebook {
+    width: 100%;
+    height: 69px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  body #Contact .container .icon_box .icon .icon_github i,
+  body #Contact .container .icon_box .icon .icon_instagram i,
+  body #Contact .container .icon_box .icon .icon_facebook i {
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text h2,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text h2,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text h2 {
+    font-size: 12px;
+    font-family: "Pretendard-Regular";
+    font-weight: bold;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text p,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text p,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text p {
+    font-size: 12px;
+    font-family: "Pretendard-Regular";
+    font-weight: 500;
+  }
+}
+@media screen and (max-width: 430px) {
+  body header {
+    width: 100%;
+    position: fixed;
+    background: none;
+    background-color: #fff;
+    z-index: 999;
+    transition: background-color 0.3s ease;
+  }
+  body header.scrolled {
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(px);
+            backdrop-filter: blur(px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  body header .nav {
+    padding: 0 40px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #efefef;
+  }
+  body header .nav .logo img {
+    width: 60px;
+    height: 60px;
+  }
+  body header .nav ul {
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding-bottom: 10px;
+    font-family: "Cafe24ClassicType-Regular";
+    gap: 10px;
+    opacity: 0;
+    transition: background-color 0.3s ease;
+    color: #000;
+  }
+  body header .nav ul.scrolled {
+    background-color: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  body header .nav ul li {
+    text-align: center;
+    font-size: 12px;
+    transition: 0.3s;
+    padding: 5px 5px;
+    border-bottom: 1px solid #999;
+  }
+  body header .nav ul li:hover {
+    color: #ff6d70;
+    transform: scale(1.2);
+  }
+  body header .nav.active ul {
+    max-height: 400px; /* 메뉴 높이에 맞게 충분히 크게 */
+    opacity: 1;
+  }
+  body header .nav .hamburger {
+    display: flex;
+    margin-top: 20px;
+  }
+  body header .nav.active ul {
+    display: flex;
+  }
+  body #main {
+    width: 100%;
+    height: 100vh;
+    padding: 0 40px;
+  }
+  body #main .main_text {
+    width: 100%;
+    height: 100%;
+    font-family: "Cafe24ClassicType-Regular";
+    padding-top: 200px;
+  }
+  body #main .main_text .first {
+    display: flex;
+    align-items: center;
+  }
+  body #main .main_text .first .first_text {
+    font-size: 50px;
+  }
+  body #main .main_text .first .hover_text {
+    position: relative;
+  }
+  body #main .main_text .first .hover_text img {
+    margin-top: 30px;
+    width: 80px;
+    height: 46px;
+    animation: img1 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes img1 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  body #main .main_text .first .hover_text .circle {
+    position: absolute;
+    bottom: 80%; /* 이미지의 아래 끝에 배치 */
+    right: -20px; /* 오른쪽 끝에 위치 */
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: #27db95;
+    animation: circle 1.5s ease-in-out infinite;
+  }
+  @keyframes circle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-5px);
+    }
+    90% {
+      transform: translateY(0);
+    }
+  }
+  body #main .main_text .first .hover_text:hover + .span_box {
+    width: 200px;
+    height: 40px;
+    background-color: #27db95;
+    text-align: center;
+    top: 70px;
+    right: 300px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    color: #fff;
+    font-family: "Pretendard-Regular";
+  }
+  body #main .main_text .first .span_box {
+    display: none;
+    transition: all 0.3s;
+  }
+  body #main .main_text .first .span_box span {
+    display: inline-block;
+    width: 100%;
+  }
+  body #main .main_text .second_text {
+    font-size: 50px;
+    margin-top: 30px;
+    margin-left: 80px;
+  }
+  body #main .main_text .second {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 0px;
+  }
+  body #main .main_text .second .hover_text2 {
+    position: relative;
+  }
+  body #main .main_text .second .hover_text2 img {
+    width: 60px;
+    height: 56px;
+    animation: img1 1.5s ease-in-out infinite alternate;
+  }
+  @keyframes img1 {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-10px);
+    }
+  }
+  body #main .main_text .second .hover_text2 .circle2 {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: #27db95;
+    animation: circle 1.5s ease-in-out infinite;
+  }
+  @keyframes circle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-5px);
+    }
+    90% {
+      transform: translateY(0);
+    }
+  }
+  body #main .main_text .second .hover_text2:hover + .span_box2 {
+    bottom: 400px;
+    left: 250px;
+    width: 200px;
+    height: 40px;
+    background-color: #27db95;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    color: #fff;
+    font-family: "Pretendard-Regular";
+  }
+  body #main .main_text .second .span_box2 {
+    display: none;
+    transition: all 0.3s;
+  }
+  body #main .main_text .second .span_box2 span {
+    display: inline-block;
+    width: 100%;
+  }
+  body #main .main_text .second .third_text {
+    font-size: 50px;
+    margin-left: 16px;
+  }
+  body #main .main_text .fourth_text {
+    font-size: 50px;
+    margin-top: 30px;
+  }
+  body #main .main_text path {
+    width: 100%;
+    margin-bottom: 148px;
+    stroke-dasharray: 700;
+    stroke-dashoffset: 700;
+    animation: drawLine 2s forwards ease-out;
+  }
+  @keyframes drawLine {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  body #Intro {
+    width: 100%;
+    height: 100vh;
+    padding: 0 40px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 140px;
+  }
+  body #Intro .intro_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body #Intro .intro_container span,
+  body #Intro .intro_container p {
+    opacity: 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  body #Intro .intro_container .span_first {
+    width: 100%;
+    font-family: "Exo 2", sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Intro .intro_container .span_second {
+    font-family: "Pretendard-Regular";
+    font-size: 20px;
+    margin-top: 90px;
+  }
+  body #Intro .intro_container .p_first {
+    font-family: "Pretendard-Regular";
+    font-size: 12px;
+    text-align: center;
+    margin-top: 30px;
+    min-height: 50px;
+  }
+  body #Intro .intro_container .circle_button {
+    width: 20px;
+    height: 45px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-top: 80px;
+    cursor: pointer;
+  }
+  body #Intro .intro_container i {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+  body #Intro .intro_container span {
+    display: flex;
+  }
+  body #Intro .typing {
+    opacity: 1;
+    animation: typing 10s steps(20), blink 0.5s step-end infinite;
+  }
+  @keyframes typing {
+    from {
+      width: 0ch;
+    }
+    to {
+      width: 100ch;
+    }
+  }
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  body #About {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  body #About .about_container {
+    padding: 0 40px;
+  }
+  body #About .about_container .about_frist_text h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 60px;
+    margin-top: 40px;
+    text-align: center;
+  }
+  body #About .about_container .about_frist_text svg path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    transition: stroke-dashoffset 10s ease-out;
+  }
+  body #About .about_container .about_frist_text svg.animate path {
+    stroke-dashoffset: 0;
+  }
+  body #About .about_container .info_containers {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+  }
+  body #About .about_container .info_containers .about_img_text {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+  }
+  body #About .about_container .info_containers .about_img_text img {
+    width: 160px;
+    height: 160px;
+    margin-top: 0px;
+  }
+  body #About .about_container .info_containers .about_img_text h1 {
+    width: 100%;
+    font-size: 17px;
+    font-family: "Pretendard-Regular";
+    margin-bottom: 20px;
+  }
+  body #About .about_container .info_containers .about_img_text p {
+    font-family: "Pretendard-Regular";
+    font-size: 15px;
+  }
+  body #About .about_container .info_containers .about_info_text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: center;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 20px;
+    margin: 0;
+    line-height: 1;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container .p_df1 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-direction: row;
+  }
+  body #About .about_container .info_containers .about_info_text .info_container .p_df1 p {
+    font-family: "Pretendard-Regular";
+    font-size: 12px;
+    margin: 0;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 20px;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon span,
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon i {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 18px;
+    transition: all 0.3s;
+  }
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon span:hover,
+  body #About .about_container .info_containers .about_info_text .skill_container .skill_icon i:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container h1 {
+    font-family: "Exo 2", sans-serif;
+    font-size: 20px;
+    line-height: 1;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container .p_df2 {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+  }
+  body #About .about_container .info_containers .about_info_text .license_container .p_df2 p {
+    font-family: "Pretendard-Regular";
+    font-size: 12px;
+    width: 45%;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 20px;
+    padding-bottom: 40px;
+    align-items: center;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container h1 {
+    width: 197px;
+    font-family: "Exo 2", sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 140px;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 {
+    display: flex;
+    gap: 0px;
+    flex-direction: column;
+    align-items: center;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6 p,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 p {
+    width: 100px;
+    font-family: "Pretendard-Regular";
+    font-size: 14px;
+    text-align: center;
+  }
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_1 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_2 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_3 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_4 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_5 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_6 span,
+  body #About .about_container .info_containers .about_info_text .education_container .education_containers .text_7 span {
+    font-family: "Pretendard-Regular";
+    font-size: 14px;
+    text-align: center;
+  }
+  body #Project {
+    width: 100%;
+    padding: 0 40px;
+    margin-top: 140px;
+  }
+  body #Project h1 {
+    font-family: sans-serif;
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  body #Project svg {
+    margin-bottom: 100px;
+  }
+  body #Project svg path {
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    transition: stroke-dashoffset 10s ease-out;
+  }
+  body #Project svg.animate path {
+    stroke-dashoffset: 0;
+  }
+  body #Project .video_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+  body #Project .video_container .video_box1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box1 .oliveyoung p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box1 .oliveyoung p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 14px;
+    color: #333;
+  }
+  body #Project .video_container .video_box1 .kakaostory p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box1 .kakaostory p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 14px;
+    color: #333;
+  }
+  body #Project .video_container .video_box1 .olive,
+  body #Project .video_container .video_box1 .kakao {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box2 .padoott p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 .padoott p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 14px;
+    color: #333;
+  }
+  body #Project .video_container .video_box2 .portfolios p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box2 .portfolios p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 14px;
+    color: #333;
+  }
+  body #Project .video_container .video_box2 .pado,
+  body #Project .video_container .video_box2 .my {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  body #Project .video_container .video_box3 .Seoulbearfestival p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 .Seoulbearfestival p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 14px;
+    color: #333;
+  }
+  body #Project .video_container .video_box3 .gobos p:nth-child(2) {
+    font-family: "Exo 2", sans-serif;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  body #Project .video_container .video_box3 .gobos p:nth-child(3) {
+    font-family: "Pretendard-Regular";
+    font-size: 14px;
+    color: #333;
+  }
+  body #Project .video_container .video_box3 .sbf,
+  body #Project .video_container .video_box3 .gobo {
+    width: 100%;
+  }
+  body #Contact {
+    padding: 0 40px;
+    width: 100%;
+    margin-bottom: 40px;
+    border-top: 1px solid #999;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Contact h1 {
+    font-size: 60px;
+    font-family: "Exo 2", sans-serif;
+    margin-bottom: 40px;
+    margin-top: 40px;
+  }
+  body #Contact .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-direction: column-reverse;
+  }
+  body #Contact .container .input_box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  body #Contact .container .input_box input {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 26px;
+    padding: 20px 20px;
+    font-size: 12px;
+    font-family: "Pretendard-Regular";
+  }
+  body #Contact .container .input_box textarea {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 16px;
+    padding: 20px 20px;
+    font-size: 12px;
+    font-family: "Pretendard-Regular";
+  }
+  body #Contact .container .input_box button {
+    width: 100%;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #fff;
+    font-family: "Pretendard-Regular";
+    font-size: 12px;
+  }
+  body #Contact .container .icon_box {
+    display: flex;
+    flex-direction: column;
+  }
+  body #Contact .container .icon_box h1 {
+    font-size: 30px;
+    font-family: "Exo 2", sans-serif;
+    margin-bottom: 8px;
+    text-align: center;
+    margin-top: 0;
+  }
+  body #Contact .container .icon_box .p1 {
+    font-size: 14px;
+    font-family: "Pretendard-Regular";
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  body #Contact .container .icon_box .icon {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  body #Contact .container .icon_box .icon .icon_github,
+  body #Contact .container .icon_box .icon .icon_instagram,
+  body #Contact .container .icon_box .icon .icon_facebook {
+    width: 100%;
+    height: 69px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  body #Contact .container .icon_box .icon .icon_github i,
+  body #Contact .container .icon_box .icon .icon_instagram i,
+  body #Contact .container .icon_box .icon .icon_facebook i {
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text h2,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text h2,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text h2 {
+    font-size: 12px;
+    font-family: "Pretendard-Regular";
+    font-weight: bold;
+  }
+  body #Contact .container .icon_box .icon .icon_github .icon_text p,
+  body #Contact .container .icon_box .icon .icon_instagram .icon_text p,
+  body #Contact .container .icon_box .icon .icon_facebook .icon_text p {
+    font-size: 12px;
+    font-family: "Pretendard-Regular";
+    font-weight: 500;
+  }
+}/*# sourceMappingURL=index.css.map */

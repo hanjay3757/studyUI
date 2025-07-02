@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // setTimeout(function () {
+        //     document.write("2초가 지나면 글씨출력")
+        // }, 2000)
+
+        let num = 1;
+        function showTime() {
+            console.log(`로그인 상태가 ${num++} 초 경과했습니다`)
+
+            if (num > 5) {
+                clearInterval(timeout)
+            }
+        }
+        let timeout = setInterval(showTime, 1000)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

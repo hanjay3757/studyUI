@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/plugin/scrolla.jquery.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li,
+      ul {
+        list-style-type: none;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .pd {
+        height: 1000vh;
+        border: 2px solid red;
+      }
+
+      .visual {
+        width: 100%;
+        height: 100vh;
+        padding-top: 125px;
+        box-sizing: border-box;
+        position: relative;
+        letter-spacing: -1px;
+      }
+
+      .visual .mainText {
+        font-size: 140px;
+        font-weight: 400;
+        line-height: 1.2;
+        margin: 0px 0px 100px;
+        /* background-color: red; */
+        display: inline-block;
+      }
+
+      .visual .mainText p {
+        overflow: hidden;
+      }
+
+      .visual .subText {
+        width: 25%;
+        padding-bottom: 100px;
+        box-sizing: border-box;
+      }
+
+      .visual.motion .mainText {
+        transform: translate3d(0, 0, 0) skewY(0deg);
+        overflow: hidden;
+      }
+
+      .visual.motion .mainText p span {
+        display: block;
+        animation-name: textAni;
+        animation-duration: 0.8s;
+      }
+      .visual.motion .mainText p:nth-child(2) span {
+        animation-duration: 1.7s;
+      }
+      .visual.motion .mainText p:nth-child(3) span {
+        animation-duration: 1.5s;
+      }
+
+      @keyframes textAni {
+        0% {
+          opacity: 0;
+        }
+        30% {
+          opacity: 0;
+          transform: translate3d(0, -90px, 0) skewY(-10deg);
+          transform-origin: top left;
+        }
+      }
+      @keyframes textAni2 {
+        0% {
+          opacity: 0;
+        }
+        30% {
+          opacity: 0;
+        }
+      }
+      .visual.motion .subText {
+        animation-name: textAni2;
+        animation-duration: 2.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="visual animate" data-animate="motion">
+      <div class="mainText">
+        <p><span>Web Publisher</span></p>
+        <p><span>jy</span></p>
+        <p><span>portfolio</span></p>
+      </div>
+      <div class="subText">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid modi
+          laudantium adipisci, aspernatur iure dolor. Dolor voluptas voluptatum
+          dolorem, autem numquam perspiciatis architecto distinctio quam?
+          Doloremque nesciunt inventore non quod?
+        </p>
+      </div>
+    </section>
+    <section class="pd"></section>
+
+    <script>
+      $(function () {
+        $('.animate').scrolla({
+          mobile: true,
+          once: false,
+        });
+      });
+    </script>
+  </body>
+</html>

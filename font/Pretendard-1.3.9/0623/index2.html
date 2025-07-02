@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    ul,
+    li {
+      list-style-type: none;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .pd {
+      height: 1000vh;
+      border: 2px solid red;
+    }
+    section {
+      height: 100vh;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid blue;
+    }
+    .con02 {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+    .con02 .videoWrap video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  </style>
+  <body>
+    <section class="con01"></section>
+    <section class="con02">
+      <div class="videoWrap">
+        <video autoplay muted loop playinline>
+          <source src="./98151-647151488_small.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </section>
+    <section class="pd"></section>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      $(function () {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: '.con02',
+              start: '0% 50%',
+              end: '100% 100%',
+              scrub: 1,
+              markers: true,
+            },
+          })
+
+          .fromTo(
+            '.videoWrap video',
+            { 'clip-path': 'inset(60% 60% 60% 60% round 30%' },
+            {
+              'clip-path': 'inset(0% 0% 0% 0% round 0%',
+              ease: 'none',
+              duration: 10,
+            },
+            0
+          );
+      });
+    </script>
+  </body>
+</html>

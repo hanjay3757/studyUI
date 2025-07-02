@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- plugin/splitting -->
+    <script src="js/plugin/splitting.min.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li,
+      ul {
+        list-style-type: none;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .pd {
+        height: 1000vh;
+        border: 2px solid red;
+      }
+
+      header {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 100;
+        padding: 30px 60px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        transition: 0.3s;
+        align-items: center;
+      }
+
+      header .logo {
+        color: #fff;
+      }
+
+      .gnb ul {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .gnb ul li {
+        margin-left: 70px;
+      }
+
+      .gnb ul li a {
+        display: block;
+      }
+
+      .gnb ul li a .char {
+        display: inline-block;
+        position: relative;
+        color: transparent;
+        overflow: hidden;
+      }
+
+      .gnb ul li a .char:before,
+      .gnb ul li a .char:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.6;
+        color: #fff;
+        content: attr(data-char);
+        transition: transform 0.35s;
+        transition-delay: calc(30ms * var(--char-index));
+      }
+
+      .gnb ul li a .char:before {
+        transform: translateY(100%);
+      }
+      .gnb ul li a:hover .char:before {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .gnb ul li a .char:after {
+        transform: translateY(-100%);
+      }
+
+      header.active {
+        transform: translateY(-100%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" class="logo">hello</a>
+      <nav class="gnb">
+        <ul>
+          <li><a href="#" data-splitting="">About</a></li>
+          <li><a href="#" data-splitting="">Work</a></li>
+          <li><a href="#" data-splitting="">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="pd"></section>
+
+    <script>
+      $(function () {
+        Splitting();
+      });
+
+      $(function () {
+        var prevScrollTop;
+        document.addEventListener('scroll', function () {
+          var nowScrollTop = $(window).scrollTop();
+          if (nowScrollTop > prevScrollTop) {
+            $('header').addClass('active');
+          } else {
+            $('header').removeClass('active');
+          }
+          prevScrollTop = nowScrollTop;
+        });
+      });
+    </script>
+  </body>
+</html>
