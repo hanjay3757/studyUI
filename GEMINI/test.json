@@ -1,0 +1,9 @@
+{
+  "id": 123,
+  "name": "test-item",
+  "enabled": true,
+  "tags": ["test", "example"],
+  "data": {
+    "key": "value"
+  }
+}

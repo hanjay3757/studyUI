@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supabase Edge Function Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f5f5f5;
+      }
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      pre {
+        background-color: #263238;
+        color: #ffffff;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        margin: 10px 5px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .loading {
+        color: #666;
+        font-style: italic;
+      }
+      .error {
+        color: #f44336;
+        background-color: #ffebee;
+        padding: 10px;
+        border-radius: 4px;
+        border-left: 4px solid #f44336;
+      }
+      .success {
+        color: #4caf50;
+        background-color: #e8f5e8;
+        padding: 10px;
+        border-radius: 4px;
+        border-left: 4px solid #4caf50;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🚀 Supabase Edge Function Test</h1>
+
+      <div>
+        <button id="fetchButton">POST 요청 (기본 데이터)</button>
+        <button id="fetchButton2">POST 요청 (다른 데이터)</button>
+        <button id="getButton">GET 요청 테스트</button>
+        <button id="clearButton">결과 지우기</button>
+      </div>
+
+      <h2>Response:</h2>
+      <div id="responseDisplay"></div>
+    </div>
+
+    <script>
+      const API_URL =
+        "https://ycudxvwvnvuphaqihbwz.supabase.co/functions/v1/get-test-items";
+      const AUTH_TOKEN =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljdWR4dnd2bnZ1cGhhcWloYnd6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTE2MDQ4NzUsImV4cCI6MjA2NzE4MDg3NX0.kXr42tMkiSgCczffd0py-PWj-bodj-FZQQmzN5KCo18";
+
+      function showResult(data, type = "success") {
+        const responseDisplay = document.getElementById("responseDisplay");
+
+        if (type === "loading") {
+          responseDisplay.innerHTML =
+            '<div class="loading">API 호출 중...</div>';
+          return;
+        }
+
+        const className = type === "error" ? "error" : "success";
+        const emoji = type === "error" ? "❌" : "✅";
+
+        responseDisplay.innerHTML = `
+                <div class="${className}">
+                    <h4>${emoji} ${type === "error" ? "오류" : "성공"}</h4>
+                    <pre>${JSON.stringify(data, null, 2)}</pre>
+                </div>
+            `;
+      }
+
+      // POST 요청 (기본 데이터)
+      document
+        .getElementById("fetchButton")
+        .addEventListener("click", async () => {
+          showResult(null, "loading");
+
+          try {
+            const response = await fetch(API_URL, {
+              method: "POST", // ✅ 수정: POST 메서드 명시
+              headers: {
+                Authorization: `Bearer ${AUTH_TOKEN}`,
+                "Content-Type": "application/json", // ✅ 수정: Content-Type 추가
+              },
+              body: JSON.stringify({
+                // ✅ 수정: Request Body 추가
+                id: 123,
+                name: "test-item",
+                enabled: true,
+                tags: ["test", "example"],
+                data: {
+                  key: "value",
+                },
+              }),
+            });
+
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            showResult(data, "success");
+          } catch (error) {
+            showResult(
+              {
+                error: error.message,
+                details: "네트워크 오류 또는 CORS 문제일 수 있습니다.",
+              },
+              "error"
+            );
+            console.error("Error fetching data:", error);
+          }
+        });
+
+      // POST 요청 (다른 데이터)
+      document
+        .getElementById("fetchButton2")
+        .addEventListener("click", async () => {
+          showResult(null, "loading");
+
+          try {
+            const response = await fetch(API_URL, {
+              method: "POST",
+              headers: {
+                Authorization: `Bearer ${AUTH_TOKEN}`,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                id: 456,
+                name: "another-test",
+                enabled: false,
+                tags: ["production", "important"],
+                data: {
+                  type: "experiment",
+                  version: "1.0.0",
+                },
+              }),
+            });
+
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            showResult(data, "success");
+          } catch (error) {
+            showResult(
+              {
+                error: error.message,
+                details: "POST 요청 실패",
+              },
+              "error"
+            );
+            console.error("Error fetching data:", error);
+          }
+        });
+
+      // GET 요청 테스트
+      document
+        .getElementById("getButton")
+        .addEventListener("click", async () => {
+          showResult(null, "loading");
+
+          try {
+            const response = await fetch(API_URL, {
+              method: "GET", // GET 요청도 테스트
+              headers: {
+                Authorization: `Bearer ${AUTH_TOKEN}`,
+              },
+            });
+
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            showResult(data, "success");
+          } catch (error) {
+            showResult(
+              {
+                error: error.message,
+                details:
+                  "GET 요청 실패 - Edge Function이 GET을 지원하지 않을 수 있습니다.",
+              },
+              "error"
+            );
+            console.error("Error fetching data:", error);
+          }
+        });
+
+      // 결과 지우기
+      document.getElementById("clearButton").addEventListener("click", () => {
+        document.getElementById("responseDisplay").innerHTML = "";
+      });
+
+      // 페이지 로드 시 초기 메시지
+      window.onload = function () {
+        document.getElementById("responseDisplay").innerHTML =
+          '<div class="success"><h4>준비됨</h4><p>위 버튼을 클릭해서 API를 테스트해보세요!</p></div>';
+      };
+    </script>
+  </body>
+</html>
