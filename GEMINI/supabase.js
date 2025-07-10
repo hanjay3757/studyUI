@@ -1,6 +1,15 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.43.2';
 
 const TABLE_NAME = 'test_items';
+const TIMEOUT_MS = 3000;
+
+// Helper function to add a timeout to any promise
+const withTimeout = (promise) => {
+  const timeout = new Promise((_, reject) =>
+    setTimeout(() => reject(new Error('Request timed out')), TIMEOUT_MS)
+  );
+  return Promise.race([promise, timeout]);
+};
 
 Deno.serve(async (req) => {
   try {
@@ -45,9 +54,9 @@ Deno.serve(async (req) => {
 
       let authResponse;
       if (path === '/auth/signup') {
-        authResponse = await supabase.auth.signUp({ email, password });
+        authResponse = await withTimeout(supabase.auth.signUp({ email, password }));
       } else if (path === '/auth/login') {
-        authResponse = await supabase.auth.signInWithPassword({ email, password });
+        authResponse = await withTimeout(supabase.auth.signInWithPassword({ email, password }));
       } else {
         return new Response(JSON.stringify({ error: 'Invalid auth route' }), 
         { status: 404, headers: { 'Content-Type': 'application/json', ...corsHeaders } });
@@ -71,7 +80,7 @@ Deno.serve(async (req) => {
     }
 
     const token = authHeader.replace('Bearer ', '');
-    const { data: { user }, error: userError } = await supabase.auth.getUser(token);
+    const { data: { user }, error: userError } = await withTimeout(supabase.auth.getUser(token));
 
     if (userError || !user) {
       return new Response(JSON.stringify({ error: userError?.message || 'Invalid or expired token' }), 
@@ -84,21 +93,21 @@ Deno.serve(async (req) => {
         if (url.searchParams.has('id')) {
           query.eq('id', url.searchParams.get('id'));
         }
-        return await query;
+        return await withTimeout(query);
       } else if (req.method === 'POST') {
         const body = await req.json();
-        return await supabase.from(TABLE_NAME).insert(body).select();
+        return await withTimeout(supabase.from(TABLE_NAME).insert(body).select());
       } else if (req.method === 'PUT') {
         if (!url.searchParams.has('id')) {
           return { data: null, error: { message: 'Missing id parameter for update' } };
         }
         const body = await req.json();
-        return await supabase.from(TABLE_NAME).update(body).eq('id', url.searchParams.get('id')).select();
+        return await withTimeout(supabase.from(TABLE_NAME).update(body).eq('id', url.searchParams.get('id')).select());
       } else if (req.method === 'DELETE') {
         if (!url.searchParams.has('id')) {
           return { data: null, error: { message: 'Missing id parameter for delete' } };
         }
-        return await supabase.from(TABLE_NAME).delete().eq('id', url.searchParams.get('id')).select();
+        return await withTimeout(supabase.from(TABLE_NAME).delete().eq('id', url.searchParams.get('id')).select());
       }
       return { data: null, error: { message: `Method ${req.method} not supported.` } };
     };
