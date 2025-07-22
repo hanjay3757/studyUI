@@ -1,0 +1,39 @@
+1. <?php 
+php는 무조건 넣음
+
+
+?> (한칸 뛸경우 이상반응이 있을수있음)
+<script> 단독일때는 스크립트와 스타일은 뺴는데 </script>
+<style></style>
+
+2.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>php를 공부합시다</h1>
+    <?php 
+    echo "안녕하세요";
+    ?>
+</body>
+</html>
+
+3. ; 문장끝날때마다 ; 필수  단 마지막 문장에서는 ; 뺴도 상관은 없음 
+자바스크립트의 경우 let a = let a;
+
+4.
+<?php
+$score = 95;  // 전역 변수 선언
+
+function showScore() {
+    함수안에서는 전역변수를 못읽으니깐 global로 선언해서 전역변수들을 갖고옴  
+  global $score;  // "밖에 있는 $score 갖고올게!"
+  echo "점수는 $score 점입니다.";
+}
+
+showScore();  // 출력: 점수는 95 점입니다.
+?>
