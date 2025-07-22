@@ -47,3 +47,5 @@ php 코드는 <? php ?> 형태로 작성
 php 코드만 있는 경우 종료태그 ?> 는 생략할수 있음 
 
 hello world = <?php echo "hello World"; ?>
+ 
+ $ 이거 변수마다 해야함
