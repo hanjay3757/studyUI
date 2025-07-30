@@ -2,7 +2,11 @@
 // is_int() = 정수 판별
 // is_float() = 실수 판별
 // is_numeric() = 숫자인지 문자인지 판별
-
+// max  , min 
+//abs(절대값) sqrt(루트) round(반올림)
+//난수 rand()
+//define() 상수 ** 제곱    % 나머지 나눴을때 2.5 이면 5나옴  
+//할당 연산자  $a =6 ; $b =$a; $2 +=$a ; = $2 = $2 =$a;
 $x = "300" or 300;
 if(is_numeric($x)){
     echo "정수";
