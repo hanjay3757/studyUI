@@ -1,0 +1,13 @@
+<?php 
+// is_int() = 정수 판별
+// is_float() = 실수 판별
+// is_numeric() = 숫자인지 문자인지 판별
+
+$x = "300" or 300;
+if(is_numeric($x)){
+    echo "정수";
+} else {
+    echo "정수아니다";
+}
+
+?>
