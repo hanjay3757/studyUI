@@ -1,0 +1,55 @@
+<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
+    $gender = $_POST["gender"];
+    $email = $_POST["email"];
+    $website = $_POST["website"];
+    $favtopic = $_POST["favtopic"];
+    $comment = $_POST["comment"];
+}
+
+
+echo "<h2>입력된 회원 정보</h2>";
+echo "이름 : ".$name."<br>";
+echo "성별 : ".$gender."<br>";
+echo "이메일 : ".$email."<br>";
+echo "홈페이지 : ".$website."<br>";
+echo "관심 있는 분야 : ";
+if (!empty($favtopic)) {
+    foreach ($favtopic as $value) {
+        echo $value." ";
+    }
+}
+echo "<br>기타 : ".$comment;
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // 이름에 대한 필수 입력 검증 (문자열 입력 검사)
+    if (empty($_POST["name"])) {
+        $nameMsg = "이름을 입력해 주세요!";
+    } else {
+        $name = $_POST["name"];
+    }
+
+    // 성별에 대한 필수 입력 검증 (라디오 버튼 검사)
+    if (empty($_POST["gender"])) {
+        $genderMsg = "성별을 선택해 주세요!";
+    } else {
+        $gender = $_POST["gender"];
+    }
+
+    $email = $_POST["email"];
+    $website = $_POST["website"];
+
+    // 관심 있는 분야에 대한 필수 입력 검증 (체크박스 검사)
+    if (empty($_POST["favtopic"])) {
+        $favtopicMsg = "하나 이상 골라주세요!";
+    } else {
+        $favtopic = $_POST["favtopic"];
+    }
+
+    $comment = $_POST["comment"];
+}
+
+?>
