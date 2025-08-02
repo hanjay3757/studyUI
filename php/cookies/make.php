@@ -1,6 +1,6 @@
 <?php 
 //쿠키 만들기 전체에쓰고 시간제한
-setcookie("ck_Name","홍길동",time()+240, "/");
+setcookie("ck_Name","id",time()+240, "/");
 
 
 
