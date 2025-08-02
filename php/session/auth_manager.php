@@ -1,7 +1,6 @@
 <?php
 /**
- * 인증 관리 통합 파일
- * 기존 파일들 통합:
+ 
  * - login.php: 로그인 처리
  * - logout.php: 로그아웃 처리
  * - register.php: 회원가입 처리
